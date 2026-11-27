@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { AltiplanoScene } from "@/components/ui/AltiplanoScene";
 import { PhotoSlot } from "@/components/ui/PhotoSlot";
+import { ConceptImage } from "@/components/ui/ConceptImage";
 import type { PhotoMap } from "@/lib/photos";
 import { acts, slideMeta, TOTAL_SLIDES } from "./meta";
 
@@ -216,59 +217,11 @@ function S3(ctx: DeckContext) {
             ))}
           </ol>
         </div>
-        <div {...r(0.3, "relative overflow-hidden rounded-[28px]")}>
-          {ctx.photos.infancia ? (
-            <PhotoSlot k="infancia" photos={ctx.photos} />
-          ) : (
-            <CrtIllustration />
-          )}
+        <div {...r(0.3, "relative overflow-hidden rounded-[28px] text-[24px]")}>
+          {ctx.photos.infancia ? <PhotoSlot k="infancia" photos={ctx.photos} caption /> : <ConceptImage k="cabina-internet" />}
         </div>
       </div>
     </Frame>
-  );
-}
-
-function CrtIllustration() {
-  return (
-    <svg viewBox="0 0 760 780" className="h-full w-full" role="img" aria-label="Ilustración conceptual de un monitor CRT en una cabina de internet">
-      <defs>
-        <radialGradient id="crtglow" cx="0.5" cy="0.45" r="0.6">
-          <stop offset="0" stopColor="#F1B86A" stopOpacity="0.35" />
-          <stop offset="1" stopColor="#F1B86A" stopOpacity="0" />
-        </radialGradient>
-        <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#1f3a5a" />
-          <stop offset="1" stopColor="#0d1a2b" />
-        </linearGradient>
-      </defs>
-      <rect width="760" height="780" fill="#101827" />
-      <rect width="760" height="780" fill="url(#crtglow)" />
-      {/* divisores de cabina */}
-      <rect x="0" y="0" width="40" height="780" fill="#172233" />
-      <rect x="720" y="0" width="40" height="780" fill="#172233" />
-      {/* monitor */}
-      <rect x="150" y="150" width="460" height="380" rx="30" fill="#c9c0ad" />
-      <rect x="150" y="150" width="460" height="380" rx="30" fill="#080D15" opacity="0.35" />
-      <rect x="195" y="190" width="370" height="280" rx="22" fill="url(#screen)" />
-      {Array.from({ length: 28 }, (_, i) => (
-        <line key={i} x1="195" x2="565" y1={194 + i * 10} y2={194 + i * 10} stroke="#53D8F5" strokeOpacity="0.06" />
-      ))}
-      <text x="225" y="250" fill="#66E3B4" fontSize="22" fontFamily="var(--font-geist-mono)">C:\&gt; _</text>
-      <rect x="225" y="280" width="180" height="10" fill="#53D8F5" opacity="0.35" />
-      <rect x="225" y="302" width="260" height="10" fill="#53D8F5" opacity="0.22" />
-      <rect x="225" y="324" width="140" height="10" fill="#53D8F5" opacity="0.22" />
-      <circle cx="560" cy="500" r="6" fill="#66E3B4" />
-      <path d="M300 530 L460 530 L490 600 L270 600 Z" fill="#a8a08f" />
-      {/* teclado */}
-      <rect x="140" y="630" width="480" height="70" rx="10" fill="#b8b09d" />
-      {Array.from({ length: 4 }, (_, row) =>
-        Array.from({ length: 14 }, (_, col) => (
-          <rect key={`${row}-${col}`} x={156 + col * 33} y={640 + row * 14} width="27" height="10" rx="2" fill="#8d8676" />
-        )),
-      )}
-      <line x1="40" y1="720" x2="720" y2="720" stroke="#F1B86A" strokeOpacity="0.4" />
-      <text x="60" y="760" fill="#6B788C" fontSize="18" fontFamily="var(--font-geist-mono)">ilustración conceptual</text>
-    </svg>
   );
 }
 
@@ -375,9 +328,9 @@ function S5(ctx: DeckContext) {
         <p {...r(0.45, "mt-12 max-w-[760px] text-[38px] leading-snug text-muted")}>
           El primer paso no fue técnico. Fue darme cuenta de que había un mundo de oportunidades fuera del aula.
         </p>
-        <div {...r(0.6, "mt-14 flex gap-6")}>
-          <div className="h-[200px] w-[300px] overflow-hidden rounded-2xl"><PhotoSlot k="ieee" photos={ctx.photos} /></div>
-          <div className="h-[200px] w-[300px] overflow-hidden rounded-2xl"><PhotoSlot k="cusco" photos={ctx.photos} /></div>
+        <div {...r(0.6, "mt-14 flex gap-6 text-[20px]")}>
+          <div className="h-[250px] w-[360px] overflow-hidden rounded-2xl"><PhotoSlot k={ctx.photos.ieee ? "ieee" : "flit-2026"} photos={ctx.photos} caption /></div>
+          <div className="h-[250px] w-[360px] overflow-hidden rounded-2xl"><PhotoSlot k={ctx.photos.cusco ? "cusco" : "irf26-huaraz"} photos={ctx.photos} caption /></div>
         </div>
       </div>
     </Frame>
@@ -437,11 +390,14 @@ function S7(ctx: DeckContext) {
   );
   return (
     <Frame n={7}>
+      <div {...r(0.15, "absolute right-[120px] top-[150px] h-[300px] w-[500px] overflow-hidden rounded-3xl text-[18px]")}>
+        <ConceptImage k="infraestructura-electrica" />
+      </div>
       <div className="px-[120px] pt-[170px]">
-        <H className="text-[120px]">
+        <H className="max-w-[1100px] text-[104px]">
           <span {...r(0.05)}>¿Y si no hay internet?</span>
         </H>
-        <p {...r(0.2, "mt-6 max-w-[1200px] text-[34px] text-muted")}>
+        <p {...r(0.2, "mt-6 max-w-[1050px] text-[32px] text-muted")}>
           Caso ECOING: una app que tenía que seguir funcionando en campo, sin señal. Arquitectura offline-first.
         </p>
       </div>
@@ -498,9 +454,8 @@ function S8(ctx: DeckContext) {
             </div>
           </div>
         </div>
-        <div className="grid grid-rows-2 gap-6">
-          <div className="overflow-hidden rounded-3xl"><PhotoSlot k="poder-judicial" photos={ctx.photos} /></div>
-          <div className="overflow-hidden rounded-3xl"><PhotoSlot k="cableado" photos={ctx.photos} /></div>
+        <div {...r(0.3, "overflow-hidden rounded-3xl border border-line bg-navy/60 text-[22px]")}>
+          {ctx.photos["poder-judicial"] ? <PhotoSlot k="poder-judicial" photos={ctx.photos} caption /> : <RackIllustration animate={ctx.animate} />}
         </div>
       </div>
     </Frame>
@@ -555,9 +510,9 @@ function S10(ctx: DeckContext) {
           <Chain items={["HackAru", "SpinOut", "IRF26"]} size={52} />
         </div>
         <div className="mt-auto grid grid-cols-4 gap-6">
-          {(["hackaru", "flit-2026", "ieee", "irf26-utec"] as const).map((k, i) => (
-            <div key={k} {...r(0.7 + i * 0.1, "h-[300px] overflow-hidden rounded-2xl")}>
-              <PhotoSlot k={k} photos={ctx.photos} />
+          {(["irf26-huaraz", "flit-2026", "sep", "irf26-utec"] as const).map((k, i) => (
+            <div key={k} {...r(0.7 + i * 0.1, "h-[330px] overflow-hidden rounded-2xl text-[20px]")}>
+              <PhotoSlot k={k} photos={ctx.photos} caption />
             </div>
           ))}
         </div>
@@ -600,7 +555,11 @@ function S12(ctx: DeckContext) {
   return (
     <Frame n={12}>
       <div className="grid h-full grid-cols-[640px_1fr]">
-        <div className="h-full"><PhotoSlot k="angie" photos={ctx.photos} /></div>
+        <div className="relative h-full">
+          <PhotoSlot k="angie" photos={ctx.photos} position="center 30%" />
+          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-r from-transparent to-obsidian" />
+          <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-obsidian/90 to-transparent" />
+        </div>
         <div className="flex flex-col justify-center px-[100px]">
           <p {...r(0.1, "font-mono text-[26px] text-gold")}>Historia de una compañera</p>
           <H className="mt-6 text-[120px]">
@@ -667,14 +626,17 @@ function S14(ctx: DeckContext) {
   return (
     <Frame n={14}>
       <div className="flex h-full flex-col px-[120px] pb-[110px] pt-[180px]">
+        <div {...r(0.2, "absolute right-[120px] top-[140px] h-[330px] w-[290px] overflow-hidden rounded-3xl text-[20px]")}>
+          <PhotoSlot k="diego" photos={ctx.photos} caption position="center 20%" />
+        </div>
         <p {...r(0.05, "font-mono text-[26px] text-gold")}>Huawei ICT Competition</p>
-        <H className="mt-6 text-[120px]">
-          <span {...r(0.1)}>Diego: competir</span>
+        <H className="mt-6 text-[112px]">
+          <span {...r(0.1)}>Juan Diego: competir</span>
           <br />
           <span {...r(0.2)}>internacionalmente.</span>
         </H>
         <div className="relative mt-auto">
-          <svg viewBox="0 0 1680 360" className="w-full" aria-label="Etapas: universidad, regional, nacional, Latinoamérica; China como siguiente meta">
+          <svg viewBox="0 0 1680 360" className="w-full" aria-label="Etapas: universidad, regional, nacional, Latinoamérica; China como siguiente meta" style={{ marginTop: 40 }}>
             {steps.map((s, i) => {
               const x = 120 + i * 350;
               const y = 300 - i * 70;
@@ -693,10 +655,9 @@ function S14(ctx: DeckContext) {
           </svg>
         </div>
         <div className="mt-8 flex items-end justify-between">
-          <p {...r(0.8, "max-w-[1000px] text-[30px] text-muted")}>
+          <p {...r(0.8, "max-w-[1100px] text-[30px] text-muted")}>
             Llegar a la etapa latinoamericana desde Puno ya demuestra que se puede. La final global sigue siendo una meta pendiente.
           </p>
-          <div className="h-[170px] w-[260px] overflow-hidden rounded-2xl"><PhotoSlot k="diego" photos={ctx.photos} /></div>
         </div>
       </div>
     </Frame>
@@ -707,8 +668,8 @@ function S15(ctx: DeckContext) {
   const r = useRise(ctx);
   return (
     <Frame n={15}>
-      <div className="grid h-full grid-cols-[1fr_640px] gap-[90px] px-[120px] pb-[110px] pt-[180px]">
-        <div className="flex flex-col">
+      <div className="grid h-full grid-cols-[1fr_600px] gap-[90px] px-[120px] pb-[110px] pt-[160px]">
+        <div className="flex min-h-0 flex-col">
           <p {...r(0.05, "font-mono text-[26px] text-gold")}>Un fellow de nuestra universidad</p>
           <H className="mt-6 text-[110px]">
             <span {...r(0.15, "block")}>Paolo Boris</span>
@@ -724,8 +685,8 @@ function S15(ctx: DeckContext) {
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-6">
-          <div className="flex-1 overflow-hidden rounded-3xl"><PhotoSlot k="paolo" photos={ctx.photos} /></div>
+        <div className="flex min-h-0 flex-col gap-6">
+          <div className="min-h-0 flex-1 overflow-hidden rounded-3xl"><PhotoSlot k="paolo" photos={ctx.photos} position="center 35%" /></div>
           <p {...r(0.8, "font-display text-[40px] font-semibold leading-tight")}>Las oportunidades existen antes de egresar.</p>
         </div>
       </div>
@@ -738,42 +699,45 @@ function S16(ctx: DeckContext) {
   const skills = ["Git", "Colaboración", "Revisiones de código", "Postulaciones"];
   return (
     <Frame n={16}>
-      <svg viewBox="0 0 1920 1080" className="absolute inset-0 h-full w-full" aria-hidden>
-        <path d="M1100 860 Q 1450 300 1760 640" fill="none" stroke="url(#g16)" strokeWidth="3" className={ctx.animate ? "animate-draw" : undefined} style={{ ["--len" as string]: 900 } as CSSProperties} />
-        <defs>
-          <linearGradient id="g16" x1="0" x2="1">
-            <stop offset="0" stopColor="#F1B86A" />
-            <stop offset="1" stopColor="#53D8F5" />
-          </linearGradient>
-        </defs>
-        <circle cx="1100" cy="860" r="12" fill="#F1B86A" />
-        <text x="1100" y="920" textAnchor="middle" fill="#F1B86A" fontSize="30" fontFamily="var(--font-geist-mono)">Puno</text>
-        <circle cx="1760" cy="640" r="12" fill="#53D8F5" />
-        <text x="1760" y="700" textAnchor="middle" fill="#53D8F5" fontSize="30" fontFamily="var(--font-geist-mono)">Argentina</text>
-        {skills.map((s, i) => {
-          const t = (i + 1) / (skills.length + 1);
-          const x = (1 - t) * (1 - t) * 1100 + 2 * (1 - t) * t * 1450 + t * t * 1760;
-          const y = (1 - t) * (1 - t) * 860 + 2 * (1 - t) * t * 300 + t * t * 640;
-          const pos = i < 2 ? { dx: -18, dy: 8, a: "end" } : i === 2 ? { dx: 0, dy: -24, a: "middle" } : { dx: 18, dy: 10, a: "start" };
-          return (
-            <g key={s}>
-              <circle cx={x} cy={y} r="6" fill="#F4F7FB" />
-              <text x={x + pos.dx} y={y + pos.dy} textAnchor={pos.a as "end" | "middle" | "start"} fill="#A4B0C2" fontSize="26" fontFamily="var(--font-geist-sans)">{s}</text>
-            </g>
-          );
-        })}
-      </svg>
-      <div className="relative flex h-full flex-col px-[120px] pb-[110px] pt-[180px]">
-        <H className="text-[112px]">
-          <span {...r(0.1, "block")}>Trabajar desde Puno</span>
-          <span {...r(0.2, "block")}>para otros países.</span>
-        </H>
-        <p {...r(0.35, "mt-10 max-w-[820px] text-[36px] leading-snug text-muted")}>
-          Práctica remota con <span className="text-ink">Allprocar</span>, una empresa de Argentina. El idioma de trabajo fue Git: ramas, pull requests y revisiones.
-        </p>
-        <div {...r(0.6, "mt-auto max-w-[820px] rounded-3xl border border-line bg-navy/60 p-10")}>
-          <p className="font-mono text-[24px] text-gold">Ojo</p>
-          <p className="mt-3 text-[30px] leading-snug">“Remoto” no siempre significa “disponible desde cualquier país”. Revisa siempre la restricción geográfica.</p>
+      <div className="grid h-full grid-cols-[1fr_780px] gap-[80px] px-[120px] pb-[110px] pt-[170px]">
+        <div className="flex min-h-0 flex-col">
+          <H className="text-[100px]">
+            <span {...r(0.1, "block")}>Trabajar desde</span>
+            <span {...r(0.2, "block")}>Puno para</span>
+            <span {...r(0.3, "block")}>otros países.</span>
+          </H>
+          <p {...r(0.35, "mt-10 text-[34px] leading-snug text-muted")}>
+            Práctica remota con <span className="text-ink">Allprocar</span>, una empresa de Argentina. El idioma de trabajo fue Git: ramas, pull requests y revisiones.
+          </p>
+          <div {...r(0.6, "mt-auto rounded-3xl border border-line bg-navy/60 p-9")}>
+            <p className="font-mono text-[24px] text-gold">Ojo</p>
+            <p className="mt-3 text-[30px] leading-snug">“Remoto” no siempre significa “disponible desde cualquier país”. Revisa siempre la restricción geográfica.</p>
+          </div>
+        </div>
+        <div className="flex min-h-0 flex-col gap-6">
+          <div {...r(0.25, "relative min-h-0 flex-1 overflow-hidden rounded-3xl text-[20px]")}>
+            {ctx.photos.allprocar ? <PhotoSlot k="allprocar" photos={ctx.photos} caption /> : <ConceptImage k="trabajo-remoto" />}
+            <svg viewBox="0 0 780 200" className="absolute inset-x-0 top-0 w-full" aria-hidden>
+              <defs>
+                <linearGradient id="g16" x1="0" x2="1">
+                  <stop offset="0" stopColor="#F1B86A" />
+                  <stop offset="1" stopColor="#53D8F5" />
+                </linearGradient>
+              </defs>
+              <path d="M90 160 Q 390 -40 690 120" fill="none" stroke="url(#g16)" strokeWidth="4" className={ctx.animate ? "animate-draw" : undefined} style={{ ["--len" as string]: 800 } as CSSProperties} />
+              <circle cx="90" cy="160" r="10" fill="#F1B86A" />
+              <circle cx="690" cy="120" r="10" fill="#53D8F5" />
+              <text x="90" y="194" textAnchor="middle" fill="#fff" fontSize="24" fontFamily="var(--font-geist-mono)">Puno</text>
+              <text x="690" y="160" textAnchor="middle" fill="#fff" fontSize="24" fontFamily="var(--font-geist-mono)">Argentina</text>
+            </svg>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {skills.map((k, i) => (
+              <span key={k} {...r(0.6 + i * 0.1, "rounded-full border border-cyan/40 bg-cyan/5 px-6 py-2.5 text-[26px] text-ink")}>
+                {k}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </Frame>
@@ -783,7 +747,15 @@ function S16(ctx: DeckContext) {
 function S17(ctx: DeckContext) {
   const r = useRise(ctx);
   return (
-    <Frame n={17}>
+    <Frame
+      n={17}
+      bleed={
+        <div className="absolute inset-y-0 right-0 w-[1100px] opacity-45">
+          <ConceptImage k="laboratorio" tag={false} />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,#080D15,rgba(8,13,21,0.55)_45%,rgba(8,13,21,0.75))]" />
+        </div>
+      }
+    >
       <div className="grid h-full grid-cols-[1fr_360px] gap-[80px] px-[120px] pb-[110px] pt-[180px]">
         <div className="flex flex-col">
           <H className="text-[100px]">
@@ -1015,6 +987,10 @@ function S23(ctx: DeckContext) {
           <span {...r(0.2, "block")}>exporta talento.</span>
         </H>
         <p {...r(0.35, "mt-8 text-[44px] text-gold")}>También puede crear oportunidades.</p>
+        <div className="absolute right-[120px] top-[150px] flex gap-6 text-[20px]">
+          <div {...r(0.45, "h-[300px] w-[400px] overflow-hidden rounded-3xl")}><PhotoSlot k="sep" photos={ctx.photos} caption /></div>
+          <div {...r(0.55, "h-[300px] w-[400px] overflow-hidden rounded-3xl")}><PhotoSlot k="irf26-huaraz" photos={ctx.photos} caption /></div>
+        </div>
         <div className="mt-auto grid grid-cols-5 gap-6">
           {items.map((it, i) => (
             <div key={it.name} {...r(0.5 + i * 0.1, "border-t-2 border-gold/70 pt-6")}>
@@ -1045,9 +1021,8 @@ function S24(ctx: DeckContext) {
             Todavía tengo muchísimo por aprender. Gracias a cada persona, comunidad y compañero que compartió una oportunidad conmigo.
           </p>
         </div>
-        <div className="grid grid-rows-2 gap-6">
-          <div {...r(0.3, "overflow-hidden rounded-3xl")}><PhotoSlot k="coinsi-2025" photos={ctx.photos} /></div>
-          <div {...r(0.45, "overflow-hidden rounded-3xl")}><PhotoSlot k="coinsi-2026" photos={ctx.photos} /></div>
+        <div {...r(0.3, "overflow-hidden rounded-3xl text-[22px]")}>
+          <PhotoSlot k={ctx.photos["coinsi-2026"] ? "coinsi-2026" : "irf26-utec"} photos={ctx.photos} caption />
         </div>
       </div>
     </Frame>
@@ -1083,6 +1058,33 @@ function S25(ctx: DeckContext) {
         </div>
       </div>
     </Frame>
+  );
+}
+
+function RackIllustration({ animate }: { animate: boolean }) {
+  const ports = Array.from({ length: 24 }, (_, i) => i);
+  const colors = ["#438BFF", "#53D8F5", "#F1B86A", "#66E3B4"];
+  return (
+    <svg viewBox="0 0 620 700" className="h-full w-full" role="img" aria-label="Ilustración de un gabinete de red con cableado estructurado">
+      <rect width="620" height="700" fill="#101827" />
+      <rect x="90" y="60" width="440" height="580" rx="18" fill="#0b121e" stroke="#243247" strokeWidth="3" />
+      {[0, 1, 2, 3].map((row) => (
+        <g key={row} transform={`translate(120 ${110 + row * 130})`}>
+          <rect width="380" height="70" rx="8" fill="#172233" stroke="#2c3d57" />
+          {ports.slice(0, 12).map((p) => (
+            <rect key={p} x={16 + p * 29.5} y="22" width="20" height="16" rx="3" fill="#080D15" stroke="#3a4c69" />
+          ))}
+          {ports.slice(0, 12).map((p) => (
+            <circle key={`l${p}`} cx={26 + p * 29.5} cy="52" r="3" fill={p % 3 === 0 ? "#66E3B4" : "#2c3d57"} className={animate && p % 3 === 0 ? "animate-shimmer" : undefined} style={{ animationDelay: `${(p + row) * 0.3}s` }} />
+          ))}
+          {row < 3 &&
+            [1, 4, 7, 10].map((p, ci) => (
+              <path key={`c${p}`} d={`M${26 + p * 29.5} 38 C ${26 + p * 29.5} 90, ${60 + ci * 70} 80, ${60 + ci * 70} 130`} fill="none" stroke={colors[(ci + row) % 4]} strokeWidth="4" strokeLinecap="round" opacity="0.85" />
+            ))}
+        </g>
+      ))}
+      <text x="310" y="680" textAnchor="middle" fill="#6B788C" fontSize="18" fontFamily="var(--font-geist-mono)">ilustración conceptual</text>
+    </svg>
   );
 }
 
