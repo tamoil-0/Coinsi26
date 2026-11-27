@@ -70,7 +70,7 @@ export function OpportunityCard({
   const days = status === "open" ? daysUntil(o.applicationDeadline) : null;
   const benefit = o.benefits[0];
   return (
-    <article className="group relative flex flex-col border-b border-line py-5 sm:rounded-2xl sm:border sm:bg-navy/40 sm:p-5 sm:transition-colors sm:hover:border-[#33445f] sm:hover:bg-navy/70">
+    <article className="group relative flex min-w-0 flex-col border-b border-line py-5 sm:rounded-2xl sm:border sm:bg-navy/40 sm:p-5 sm:transition-colors sm:hover:border-[#33445f] sm:hover:bg-navy/70">
       <div className="flex items-start gap-3.5">
         <Monogram org={o.organization} category={o.category} />
         <div className="min-w-0 flex-1">

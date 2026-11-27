@@ -1,0 +1,42 @@
+name: CI y auditoría del directorio
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Lunes 13:17 UTC (8:17 a. m. en Lima): revisa enlaces y fechas vencidas
+    - cron: "17 13 * * 1"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validar datos (esquema, duplicados, fechas)
+        run: npm run validate:data
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build
+        run: npm run build
+
+  enlaces:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Auditar enlaces y vigencia
+        run: npm run audit:data

@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# De Puno al mundo
 
-## Getting Started
+**Cómo construir experiencia real antes de egresar.**
+Ponencia magistral de Jhon Marco Aracayo Mamani en el VI Congreso Internacional de Ingeniería de Sistemas (COINSI 2026), Universidad Nacional del Altiplano, Puno, 27 de noviembre de 2026.
 
-First, run the development server:
+La plataforma tiene dos experiencias:
+
+- **Ponencia interactiva** (`/presentacion`): 25 diapositivas web 16:9 para proyectar en el auditorio.
+- **Directorio público de oportunidades** (`/oportunidades`): prácticas, PEU, becas, investigación, competencias, emprendimiento y comunidades, cada una con fuente oficial y fecha de verificación. Sin registro.
+
+## Rutas
+
+| Ruta | Contenido |
+| --- | --- |
+| `/` | Landing |
+| `/presentacion`, `/presentacion/[1-25]` | Keynote (enlace directo a cada diapositiva) |
+| `/historia` | Versión de lectura de la ponencia |
+| `/oportunidades`, `/oportunidades/[slug]` | Directorio y detalle |
+| `/comunidades` | Comunidades |
+| `/recursos` | Cursos y certificaciones |
+| `/ruta-profesional` | Ruta por semestre y reto de 30 días |
+| `/ponente` | Perfil |
+| `/qr` | QR oficiales (SVG y PNG) |
+
+## Ejecutar localmente
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev            # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Comprobaciones:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run validate:data  # esquema, duplicados, fechas vencidas
+npm run lint
+npm run typecheck
+npm run build
+npm test               # Playwright (CHROME_PATH=/ruta/a/chrome si no instalaste navegadores)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Stack
 
-## Learn More
+Next.js 16 (App Router, todo estático) · React 19 · TypeScript estricto · Tailwind CSS 4 · Zod · Lucide · qrcode · Playwright. Sin base de datos, sin autenticación, sin rastreadores. El contenido vive en archivos JSON versionados en `data/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Documentación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Guía del presentador](docs/guia-presentador.md)
+- [Cómo actualizar oportunidades](docs/actualizar-oportunidades.md)
+- [Cómo sustituir fotografías](docs/fotografias.md)
+- [Despliegue](docs/despliegue.md)
+- [Arquitectura](docs/arquitectura.md)
+- [Inventario de fuentes y limitaciones](docs/fuentes-y-limitaciones.md)

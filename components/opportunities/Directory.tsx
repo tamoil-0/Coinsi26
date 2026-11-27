@@ -202,7 +202,7 @@ export function Directory({ items, lastUpdate }: { items: Opportunity[]; lastUpd
   const anyFilter = activeFilters > 0 || st.c.size > 0 || st.q !== "" || st.fav;
 
   return (
-    <div>
+    <div data-hydrated={hydrated ? "true" : "false"}>
       {/* Búsqueda */}
       <div className="sticky top-14 z-30 -mx-5 border-b border-line/70 bg-obsidian/92 px-5 pb-3 pt-3 backdrop-blur-md md:top-16 md:mx-0 md:rounded-b-2xl md:px-0">
         <label htmlFor="buscar" className="sr-only">
@@ -286,7 +286,7 @@ export function Directory({ items, lastUpdate }: { items: Opportunity[]; lastUpd
             </>
           )}
         </p>
-        <div className="ml-auto flex items-center gap-2">
+        <div className="flex w-full items-center gap-2 sm:ml-auto sm:w-auto">
           <button
             type="button"
             onClick={() => setSt((s) => ({ ...s, fav: !s.fav }))}
@@ -315,7 +315,7 @@ export function Directory({ items, lastUpdate }: { items: Opportunity[]; lastUpd
             id="orden"
             value={st.sort}
             onChange={(e) => setSt((s) => ({ ...s, sort: e.target.value as Sort }))}
-            className="rounded-lg border border-line bg-navy px-2.5 py-2 text-[13px] text-ink"
+            className="min-w-0 flex-1 rounded-lg border border-line bg-navy px-2.5 py-2 text-[13px] text-ink sm:flex-none"
           >
             <option value="relevancia">Relevancia</option>
             <option value="cierre">Cierre más próximo</option>
@@ -387,7 +387,7 @@ export function Directory({ items, lastUpdate }: { items: Opportunity[]; lastUpd
 
       {/* Resultados */}
       {results.length > 0 ? (
-        <div className="mt-4 grid sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-4 grid grid-cols-1 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
           {results.map(({ o, status }) => (
             <OpportunityCard key={o.slug} o={o} status={status} saved={fav.items.has(o.slug)} onToggleSave={() => fav.toggle(o.slug)} />
           ))}

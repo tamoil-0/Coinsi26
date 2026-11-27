@@ -754,11 +754,11 @@ function S16(ctx: DeckContext) {
           const t = (i + 1) / (skills.length + 1);
           const x = (1 - t) * (1 - t) * 1100 + 2 * (1 - t) * t * 1450 + t * t * 1760;
           const y = (1 - t) * (1 - t) * 860 + 2 * (1 - t) * t * 300 + t * t * 640;
-          const left = i < 2;
+          const pos = i < 2 ? { dx: -18, dy: 8, a: "end" } : i === 2 ? { dx: 0, dy: -24, a: "middle" } : { dx: 18, dy: 10, a: "start" };
           return (
             <g key={s}>
               <circle cx={x} cy={y} r="6" fill="#F4F7FB" />
-              <text x={left ? x - 18 : x + 18} y={left ? y + 8 : y - 14} textAnchor={left ? "end" : "start"} fill="#A4B0C2" fontSize="26" fontFamily="var(--font-geist-sans)">{s}</text>
+              <text x={x + pos.dx} y={y + pos.dy} textAnchor={pos.a as "end" | "middle" | "start"} fill="#A4B0C2" fontSize="26" fontFamily="var(--font-geist-sans)">{s}</text>
             </g>
           );
         })}
@@ -791,11 +791,11 @@ function S17(ctx: DeckContext) {
             <span {...r(0.2, "block")}>oportunidades internacionales.</span>
           </H>
           <div className="mt-auto">
-            {ctx.research.slice(0, 6).map((o, i) => (
+            {ctx.research.slice(0, 4).map((o, i) => (
               <div key={o.title} {...r(0.35 + i * 0.08, "grid grid-cols-[1fr_auto] items-baseline gap-8 border-t border-line py-5")}>
                 <div>
-                  <span className="font-display text-[40px] font-semibold">{o.title}</span>
-                  <span className="ml-5 text-[26px] text-muted">{o.organization}</span>
+                  <span className="block font-display text-[36px] font-semibold leading-tight">{o.title}</span>
+                  <span className="text-[24px] text-muted">{o.organization}</span>
                 </div>
                 <span className="font-mono text-[24px] text-cyan">{o.when}</span>
               </div>
@@ -925,8 +925,8 @@ function S20(ctx: DeckContext) {
             const a = (i / loop.length) * Math.PI * 2 - Math.PI / 2;
             const x = 380 + Math.cos(a) * 220;
             const y = 380 + Math.sin(a) * 220;
-            const lx = 380 + Math.cos(a) * 285;
-            const ly = 380 + Math.sin(a) * 285 + (Math.sin(a) > 0.5 ? 14 : 0);
+            const lx = 380 + Math.cos(a) * 300;
+            const ly = 380 + Math.sin(a) * 300 + (Math.sin(a) > 0.5 ? 18 : 0);
             return (
               <g key={l}>
                 <circle cx={x} cy={y} r="14" fill={i === 2 ? "#F1B86A" : "#53D8F5"} />

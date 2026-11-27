@@ -20,10 +20,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line/70 bg-obsidian/85 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-[1320px] items-center gap-6 px-5 md:h-16 md:px-8">
+      <div className="mx-auto flex h-14 max-w-[1320px] items-center gap-3 px-4 sm:gap-6 sm:px-5 md:h-16 md:px-8">
         <Link href="/" className="flex items-center gap-2.5 text-ink" onClick={() => setOpen(false)}>
           <Mark className="h-6 w-6" />
-          <span className="whitespace-nowrap font-display text-[15px] font-semibold tracking-tight">De Puno al mundo</span>
+          <span className="hidden whitespace-nowrap font-display text-[15px] font-semibold tracking-tight min-[380px]:inline">De Puno al mundo</span>
         </Link>
 
         <nav aria-label="Principal" className="ml-auto hidden items-center gap-1 lg:flex">
@@ -47,7 +47,7 @@ export function Header() {
 
         <Link
           href="/oportunidades"
-          className="ml-auto whitespace-nowrap rounded-full bg-gold px-4 py-1.5 text-sm font-semibold text-obsidian transition hover:bg-[#f6c988] lg:ml-2"
+          className="ml-auto whitespace-nowrap rounded-full bg-gold px-3.5 py-1.5 text-[13px] sm:px-4 sm:text-sm font-semibold text-obsidian transition hover:bg-[#f6c988] lg:ml-2"
           onClick={() => setOpen(false)}
         >
           <span className="sm:hidden">Oportunidades</span>

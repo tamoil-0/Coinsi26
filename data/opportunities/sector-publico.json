@@ -17,7 +17,19 @@
     "programEnd": "2027-03-19",
     "duration": "320 horas (clases presenciales en Lima)",
     "eligibility": "Estudiantes de último año, egresados y bachilleres no titulados (hasta el semestre 2026-1) de Derecho, Economía e Ingeniería. La convocatoria de la edición 2027 cerró el 31/10/2026.",
-    "eligibleCareers": ["Ingeniería de Sistemas", "Ingeniería Informática", "Ingeniería de Software", "Ingeniería Electrónica", "Ingeniería de Telecomunicaciones", "Ingeniería de Redes y Comunicaciones", "Ingeniería de la Información", "Ingeniería Industrial", "Economía", "Ingeniería Económica", "Derecho"],
+    "eligibleCareers": [
+      "Ingeniería de Sistemas",
+      "Ingeniería Informática",
+      "Ingeniería de Software",
+      "Ingeniería Electrónica",
+      "Ingeniería de Telecomunicaciones",
+      "Ingeniería de Redes y Comunicaciones",
+      "Ingeniería de la Información",
+      "Ingeniería Industrial",
+      "Economía",
+      "Ingeniería Económica",
+      "Derecho"
+    ],
     "academicCycles": "Último año de estudios, egresados o bachilleres no titulados",
     "languageRequirements": null,
     "requirements": [
@@ -49,7 +61,14 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "XXXII PEU (2028). En ediciones anteriores la convocatoria se abrió entre setiembre y noviembre; la fecha no está anunciada.",
     "featured": true,
-    "tags": ["telecomunicaciones", "regulacion", "beca-integral", "ia", "cuota-regional", "practicas"]
+    "tags": [
+      "telecomunicaciones",
+      "regulacion",
+      "beca-integral",
+      "ia",
+      "cuota-regional",
+      "practicas"
+    ]
   },
   {
     "id": "osinergmin-peu-2027",
@@ -57,19 +76,33 @@
     "title": "Programa de Extensión Universitaria de Osinergmin (PEU 2027) – Regulación y Supervisión de la Industria Energética y Minera",
     "organization": "Organismo Supervisor de la Inversión en Energía y Minería (Osinergmin)",
     "category": "peu",
-    "description": "Programa becado y virtual de especialización en regulación y fiscalización de energía y minería. Ofrece 270 becas en seis especialidades, entre ellas Gestión Pública de la Energía y Minería. Otorga doble certificación de Osinergmin y ENAP-SERVIR.",
+    "description": "Programa becado y virtual de especialización en regulación y fiscalización de energía y minería. Ofrece 270 becas en seis especialidades, entre ellas Gestión Pública de la Energía y Minería. Otorga doble certificación de Osinergmin y ENAP-SERVIR. Ingeniería de Sistemas figuró entre las carreras admitidas en la edición 2026; revisa la lista vigente en Requisitos e Inscripción.",
     "country": "Perú",
     "region": "peru",
     "modality": "remoto",
-    "status": "unconfirmed",
-    "applicationStart": "2026-10-01",
+    "status": "open",
+    "applicationStart": "2026-10-09",
     "applicationDeadline": "2026-11-30",
     "deadlineTimezone": "America/Lima",
     "programStart": "2027-01-14",
     "programEnd": "2027-03-15",
     "duration": "Aprox. 8 semanas, 100 % virtual",
-    "eligibility": "Egresados universitarios de 2026 o estudiantes del último ciclo de 2026. Las fechas de la edición 2027 (inscripción hasta el 30/11/2026, examen el 12 y 13/12/2026) vienen de portales no oficiales, porque no se pudo leer el sitio oficial. Verificar en becas.osinergmin.gob.pe antes de postular.",
-    "eligibleCareers": ["Ingeniería de Sistemas", "Ingeniería Eléctrica", "Ingeniería Mecánica", "Ingeniería Civil", "Ingeniería de Minas", "Ingeniería Geológica", "Ingeniería Industrial", "Ingeniería Química", "Derecho", "Economía", "Administración", "Contabilidad", "Ciencias de la Comunicación"],
+    "eligibility": "Egresados recientes o estudiantes del último ciclo. La página oficial anuncia el PEU 2027 con inscripciones abiertas del 9 de octubre al 30 de noviembre. El examen (12 y 13/12/2026) y las fechas del programa provienen de portales no oficiales: confírmalos en el cronograma oficial.",
+    "eligibleCareers": [
+      "Ingeniería de Sistemas",
+      "Ingeniería Eléctrica",
+      "Ingeniería Mecánica",
+      "Ingeniería Civil",
+      "Ingeniería de Minas",
+      "Ingeniería Geológica",
+      "Ingeniería Industrial",
+      "Ingeniería Química",
+      "Derecho",
+      "Economía",
+      "Administración",
+      "Contabilidad",
+      "Ciencias de la Comunicación"
+    ],
     "academicCycles": "Egresados del año en curso o estudiantes del último ciclo (en el PEU 2026 se exigió egreso entre el 01/01/2025 y el 31/12/2025)",
     "languageRequirements": null,
     "requirements": [
@@ -91,15 +124,24 @@
     "officialUrl": "https://becas.osinergmin.gob.pe/requisitos-e-inscripcion/",
     "applicationUrl": "https://becas.osinergmin.gob.pe/requisitos-e-inscripcion/",
     "sourceUrls": [
+      "https://becas.osinergmin.gob.pe/",
       "https://andina.pe/agencia/noticia-impulsa-tu-carrera-osinergmin-lanza-270-becas-especializacion-el-sector-energetico-1052290.aspx",
       "https://proactivo.com.pe/osinergmin-lanza-270-becas-de-especializacion-en-el-sector-energetico-y-minero/",
       "https://www.formate.pe/convocatoria-becas-osinergmin-programa-especializacion-fiscalizacion-sector-hidrocarburos-requisitos-beneficios-51.html",
       "https://grupoceuperu.com/noticias/peu-osinergmin-2027-postula-a-una-de-las-270-becas-gratuitas-y-conoce-los-requisitos-y-fechas-del-examen"
     ],
     "lastVerifiedAt": "2026-11-27",
-    "nextExpectedEdition": "Según portales no oficiales, la edición 2027 está con inscripciones hasta el 30/11/2026. Hay que confirmarlo en la fuente oficial.",
+    "nextExpectedEdition": null,
     "featured": true,
-    "tags": ["energia", "mineria", "regulacion", "beca-integral", "virtual", "enap", "practicas"]
+    "tags": [
+      "energia",
+      "mineria",
+      "regulacion",
+      "beca-integral",
+      "virtual",
+      "enap",
+      "practicas"
+    ]
   },
   {
     "id": "sbs-programa-extension",
@@ -119,7 +161,13 @@
     "programEnd": null,
     "duration": "Aprox. 12 semanas",
     "eligibility": "Estudiantes del último ciclo o egresados recientes con buen rendimiento académico e interés en la supervisión financiera. La convocatoria 2026 cerró el 01/09/2026.",
-    "eligibleCareers": ["Ingeniería de Sistemas", "Economía", "Contabilidad", "Administración", "Ingeniería Industrial"],
+    "eligibleCareers": [
+      "Ingeniería de Sistemas",
+      "Economía",
+      "Contabilidad",
+      "Administración",
+      "Ingeniería Industrial"
+    ],
     "academicCycles": "Último ciclo o egresados recientes",
     "languageRequirements": null,
     "requirements": [
@@ -146,7 +194,13 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "Programa anual. La convocatoria 2026 estuvo abierta hasta setiembre; la siguiente no está anunciada.",
     "featured": true,
-    "tags": ["finanzas", "supervision-financiera", "beca-integral", "datos", "riesgos"]
+    "tags": [
+      "finanzas",
+      "supervision-financiera",
+      "beca-integral",
+      "datos",
+      "riesgos"
+    ]
   },
   {
     "id": "minem-peu-2027",
@@ -195,7 +249,12 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "Es la primera edición y no hay una próxima anunciada.",
     "featured": false,
-    "tags": ["energia", "mineria", "beca-integral", "hibrido"]
+    "tags": [
+      "energia",
+      "mineria",
+      "beca-integral",
+      "hibrido"
+    ]
   },
   {
     "id": "oefa-peu-2027",
@@ -215,7 +274,22 @@
     "programEnd": "2027-02-26",
     "duration": "6 semanas (160 horas), de lunes a viernes de 8:00 a 13:00",
     "eligibility": "Estudiantes de los dos últimos años o egresados 2026, del tercio superior. Ingeniería de Sistemas NO figura en la lista publicada (solo dice \"otras ingenierías afines\"). La convocatoria 2027 cerró el 22/11/2026.",
-    "eligibleCareers": ["Ingeniería Ambiental", "Ingeniería de Minas", "Ingeniería Eléctrica", "Ingeniería Geográfica", "Ingeniería Geológica", "Ingeniería Industrial", "Ingeniería Pesquera", "Ingeniería Petrolera", "Ingeniería Química", "Ingeniería Forestal", "Biología", "Economía", "Ingeniería Económica", "Derecho"],
+    "eligibleCareers": [
+      "Ingeniería Ambiental",
+      "Ingeniería de Minas",
+      "Ingeniería Eléctrica",
+      "Ingeniería Geográfica",
+      "Ingeniería Geológica",
+      "Ingeniería Industrial",
+      "Ingeniería Pesquera",
+      "Ingeniería Petrolera",
+      "Ingeniería Química",
+      "Ingeniería Forestal",
+      "Biología",
+      "Economía",
+      "Ingeniería Económica",
+      "Derecho"
+    ],
     "academicCycles": "Dos últimos años de estudios o egresados 2026; tercio superior",
     "languageRequirements": null,
     "requirements": [
@@ -244,7 +318,12 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "PEU 2028: en el ciclo anterior la convocatoria abrió en noviembre; la fecha no está anunciada.",
     "featured": false,
-    "tags": ["ambiental", "fiscalizacion", "beca-integral", "virtual"]
+    "tags": [
+      "ambiental",
+      "fiscalizacion",
+      "beca-integral",
+      "virtual"
+    ]
   },
   {
     "id": "sunass-peu",
@@ -264,7 +343,13 @@
     "programEnd": "2026-02-27",
     "duration": "7 semanas",
     "eligibility": "Estudiantes de últimos ciclos y egresados recientes de universidades licenciadas por Sunedu. Ingeniería de Sistemas NO está entre las carreras publicadas. Las fechas son de la XIX edición (PEU 2026); no se pudo verificar la edición 2027.",
-    "eligibleCareers": ["Derecho", "Economía", "Ingeniería Económica", "Ingeniería Ambiental", "Ingeniería Sanitaria"],
+    "eligibleCareers": [
+      "Derecho",
+      "Economía",
+      "Ingeniería Económica",
+      "Ingeniería Ambiental",
+      "Ingeniería Sanitaria"
+    ],
     "academicCycles": "Últimos ciclos o egresados recientes",
     "languageRequirements": null,
     "requirements": [
@@ -292,7 +377,11 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "No se pudo verificar el estado del PEU 2027. La edición anterior tuvo inscripciones entre setiembre y noviembre.",
     "featured": false,
-    "tags": ["saneamiento", "regulacion", "beca-integral"]
+    "tags": [
+      "saneamiento",
+      "regulacion",
+      "beca-integral"
+    ]
   },
   {
     "id": "ositran-ceu",
@@ -312,7 +401,13 @@
     "programEnd": "2026-02-26",
     "duration": "Aprox. 6 semanas",
     "eligibility": "Estudiantes de últimos ciclos y egresados recientes. Ingeniería de Sistemas NO está entre las carreras publicadas. Las fechas son del CEU 2026; no se pudo verificar la edición 2027.",
-    "eligibleCareers": ["Derecho", "Economía", "Ingeniería Económica", "Ingeniería Civil", "Ingeniería de Transporte"],
+    "eligibleCareers": [
+      "Derecho",
+      "Economía",
+      "Ingeniería Económica",
+      "Ingeniería Civil",
+      "Ingeniería de Transporte"
+    ],
     "academicCycles": "Últimos ciclos o egresados recientes",
     "languageRequirements": null,
     "requirements": [
@@ -338,7 +433,13 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "No se pudo verificar el estado del CEU 2027. La edición anterior tuvo inscripciones hasta octubre.",
     "featured": false,
-    "tags": ["transporte", "regulacion", "beca-integral", "datos", "ia"]
+    "tags": [
+      "transporte",
+      "regulacion",
+      "beca-integral",
+      "datos",
+      "ia"
+    ]
   },
   {
     "id": "proinversion-peu",
@@ -358,7 +459,17 @@
     "programEnd": null,
     "duration": "Aprox. 3 meses",
     "eligibility": "Estudiantes y egresados. Las fuentes revisadas no mencionan Ingeniería de Sistemas. El sitio oficial enlaza una \"edición 2027\", pero no se pudo leer su contenido ni sus fechas.",
-    "eligibleCareers": ["Economía", "Derecho", "Ingeniería Civil", "Ingeniería Económica", "Ingeniería Eléctrica", "Ingeniería Mecánica Eléctrica", "Ingeniería Sanitaria", "Ingeniería Ambiental", "Ingeniería Industrial"],
+    "eligibleCareers": [
+      "Economía",
+      "Derecho",
+      "Ingeniería Civil",
+      "Ingeniería Económica",
+      "Ingeniería Eléctrica",
+      "Ingeniería Mecánica Eléctrica",
+      "Ingeniería Sanitaria",
+      "Ingeniería Ambiental",
+      "Ingeniería Industrial"
+    ],
     "academicCycles": null,
     "languageRequirements": null,
     "requirements": [],
@@ -384,7 +495,12 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "El sitio oficial enlaza una edición 2027; no se pudieron verificar sus fechas.",
     "featured": false,
-    "tags": ["app", "inversion-publica", "infraestructura", "enap"]
+    "tags": [
+      "app",
+      "inversion-publica",
+      "infraestructura",
+      "enap"
+    ]
   },
   {
     "id": "bcrp-cursos-extension",
@@ -404,7 +520,9 @@
     "programEnd": "2026-03-27",
     "duration": "Aprox. 12 semanas (enero a marzo)",
     "eligibility": "Estudiantes de Economía o carreras afines de universidades licenciadas. Las fuentes no mencionan Ingeniería de Sistemas; las carreras afines las evalúa el BCRP.",
-    "eligibleCareers": ["Economía"],
+    "eligibleCareers": [
+      "Economía"
+    ],
     "academicCycles": "En el Curso de Invierno 2025: 8.º a 10.º ciclo o egresados de los dos años anteriores",
     "languageRequirements": "Inglés (incluido en el examen; nivel intermedio en el Curso de Invierno)",
     "requirements": [
@@ -431,7 +549,11 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "Cursos anuales (verano de enero a marzo e invierno de agosto a setiembre). No se pudo verificar la edición 2027 porque el sitio del BCRP bloqueó el acceso automatizado.",
     "featured": false,
-    "tags": ["economia", "finanzas", "banca-central"]
+    "tags": [
+      "economia",
+      "finanzas",
+      "banca-central"
+    ]
   },
   {
     "id": "mef-ceu-lideres",
@@ -451,7 +573,11 @@
     "programEnd": "2026-07-20",
     "duration": "Aprox. 12 semanas",
     "eligibility": "Egresados recientes de Economía, Ingeniería Económica y Finanzas. Ingeniería de Sistemas NO está entre las carreras publicadas.",
-    "eligibleCareers": ["Economía", "Ingeniería Económica", "Finanzas"],
+    "eligibleCareers": [
+      "Economía",
+      "Ingeniería Económica",
+      "Finanzas"
+    ],
     "academicCycles": "Egresados recientes",
     "languageRequirements": "Inglés aplicado a la economía (parte de la evaluación)",
     "requirements": [
@@ -479,7 +605,12 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "La edición 2026 tuvo postulación en marzo; la de 2027 no está anunciada.",
     "featured": false,
-    "tags": ["economia", "finanzas-publicas", "machine-learning", "ia"]
+    "tags": [
+      "economia",
+      "finanzas-publicas",
+      "machine-learning",
+      "ia"
+    ]
   },
   {
     "id": "midis-peudis",
@@ -499,7 +630,17 @@
     "programEnd": null,
     "duration": "156 horas académicas",
     "eligibility": "Estudiantes de los dos últimos ciclos y egresados 2025. Admite \"Ingeniería\" en general, sin precisar si incluye Sistemas. La primera edición se lanzó en enero de 2026.",
-    "eligibleCareers": ["Ingeniería", "Ciencias de la Salud", "Economía", "Derecho", "Administración", "Educación", "Ciencias Sociales", "Comunicaciones", "Gestión Pública"],
+    "eligibleCareers": [
+      "Ingeniería",
+      "Ciencias de la Salud",
+      "Economía",
+      "Derecho",
+      "Administración",
+      "Educación",
+      "Ciencias Sociales",
+      "Comunicaciones",
+      "Gestión Pública"
+    ],
     "academicCycles": "Dos últimos ciclos o egresados del año anterior",
     "languageRequirements": null,
     "requirements": [],
@@ -519,7 +660,11 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "No hay una segunda edición anunciada.",
     "featured": false,
-    "tags": ["inclusion-social", "politicas-publicas", "virtual"]
+    "tags": [
+      "inclusion-social",
+      "politicas-publicas",
+      "virtual"
+    ]
   },
   {
     "id": "mincetur-cnci",
@@ -539,7 +684,12 @@
     "programEnd": "2027-03-12",
     "duration": "10 semanas",
     "eligibility": "Estudiantes de los tres últimos ciclos y egresados recientes del tercio superior. Ingeniería de Sistemas NO figura entre las carreras publicadas (solo dice \"afines\").",
-    "eligibleCareers": ["Derecho", "Economía", "Administración", "Negocios Internacionales"],
+    "eligibleCareers": [
+      "Derecho",
+      "Economía",
+      "Administración",
+      "Negocios Internacionales"
+    ],
     "academicCycles": "Últimos tres ciclos o egresados recientes; tercio superior",
     "languageRequirements": null,
     "requirements": [
@@ -564,7 +714,11 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "XV CNCI: la convocatoria de la XIV edición se abrió en octubre; la siguiente no está anunciada.",
     "featured": false,
-    "tags": ["comercio-exterior", "negociaciones", "omc"]
+    "tags": [
+      "comercio-exterior",
+      "negociaciones",
+      "omc"
+    ]
   },
   {
     "id": "sunat-practicas",
@@ -584,7 +738,10 @@
     "programEnd": null,
     "duration": "Hasta el 31 de diciembre del año de la convocatoria, sujeto a presupuesto",
     "eligibility": "Prácticas preprofesionales para estudiantes universitarios y prácticas profesionales para egresados universitarios o técnicos de las especialidades de cada convocatoria. Solo se puede postular a una oficina por convocatoria.",
-    "eligibleCareers": ["Ingeniería de Sistemas", "Ingeniería de Computación y Sistemas"],
+    "eligibleCareers": [
+      "Ingeniería de Sistemas",
+      "Ingeniería de Computación y Sistemas"
+    ],
     "academicCycles": "Varía según la convocatoria (para prácticas profesionales se pide constancia de egresado)",
     "languageRequirements": null,
     "requirements": [
@@ -612,7 +769,13 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "Convocatorias varias veces al año. En 2026 hubo prácticas preprofesionales para la División de Gestión de Proyectos de Sistemas en febrero, según un agregador.",
     "featured": true,
-    "tags": ["practicas", "tributacion", "sistemas", "estadistica", "subvencion"]
+    "tags": [
+      "practicas",
+      "tributacion",
+      "sistemas",
+      "estadistica",
+      "subvencion"
+    ]
   },
   {
     "id": "talento-peru-servir",
@@ -656,7 +819,13 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": null,
     "featured": true,
-    "tags": ["empleo-publico", "practicas", "portal", "cas", "puno"]
+    "tags": [
+      "empleo-publico",
+      "practicas",
+      "portal",
+      "cas",
+      "puno"
+    ]
   },
   {
     "id": "mef-practicas-convomef",
@@ -700,7 +869,11 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "Convocatorias varias veces al año.",
     "featured": false,
-    "tags": ["practicas", "finanzas-publicas", "portal"]
+    "tags": [
+      "practicas",
+      "finanzas-publicas",
+      "portal"
+    ]
   },
   {
     "id": "inei-practicas",
@@ -748,7 +921,13 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "Convocatorias durante todo el año.",
     "featured": false,
-    "tags": ["practicas", "estadistica", "datos", "puno", "subvencion"]
+    "tags": [
+      "practicas",
+      "estadistica",
+      "datos",
+      "puno",
+      "subvencion"
+    ]
   },
   {
     "id": "poder-judicial-convocatorias",
@@ -787,7 +966,12 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": null,
     "featured": false,
-    "tags": ["empleo-publico", "cas", "justicia", "puno"]
+    "tags": [
+      "empleo-publico",
+      "cas",
+      "justicia",
+      "puno"
+    ]
   },
   {
     "id": "pcm-talento-digital-cursos",
@@ -826,7 +1010,13 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": null,
     "featured": false,
-    "tags": ["ia", "ciberseguridad", "programacion-web", "gobierno-digital", "certificacion"]
+    "tags": [
+      "ia",
+      "ciberseguridad",
+      "programacion-web",
+      "gobierno-digital",
+      "certificacion"
+    ]
   },
   {
     "id": "servir-enap-cursos-mooc",
@@ -869,6 +1059,11 @@
     "lastVerifiedAt": "2026-11-27",
     "nextExpectedEdition": "La ENAP abre nuevas ofertas MOOC periódicamente; no se verificó la oferta vigente.",
     "featured": false,
-    "tags": ["gestion-publica", "transformacion-digital", "mooc", "certificacion"]
+    "tags": [
+      "gestion-publica",
+      "transformacion-digital",
+      "mooc",
+      "certificacion"
+    ]
   }
 ]
