@@ -22,3 +22,7 @@ Formatos: `.webp` (recomendado), `.avif`, `.jpg`, `.png`. Ejemplo: `public/image
 Recomendaciones: 1600 px en el lado largo, WebP calidad 80 (`cwebp -q 80 foto.jpg -o angie.webp`). Publica fotos de terceros solo con su autorización.
 
 Las ilustraciones actuales (altiplano, monitor CRT, diagramas) son SVG originales y conceptuales: no son evidencia documental. Ver `public/images/MANIFIESTO.md`.
+
+## Imágenes conceptuales (IA)
+
+`public/images/concept/` contiene imágenes generadas con IA en Figma (archivo "De Puno al mundo — imágenes conceptuales"). Las versiones actuales son ampliaciones de miniaturas. Para mejorar la nitidez, exporta cada imagen desde Figma en PNG y reemplaza el archivo con el mismo nombre (`hero-titicaca`, `cabina-internet`, `trabajo-remoto`, `infraestructura-electrica`, `laboratorio`) en formato `.webp`.

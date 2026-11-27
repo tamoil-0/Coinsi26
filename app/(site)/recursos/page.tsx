@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
 import { resources } from "@/lib/data";
+import { ConceptImage } from "@/components/ui/ConceptImage";
 import type { Resource } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -27,7 +28,10 @@ const order: Resource["category"][] = ["cursos", "ia", "certificaciones", "herra
 export default function ResourcesPage() {
   return (
     <div className="mx-auto max-w-[1100px] px-5 md:px-8">
-      <section className="pb-10 pt-12 md:pt-20">
+      <div className="mt-8 aspect-[21/8] overflow-hidden rounded-3xl text-[12px] md:mt-12">
+        <ConceptImage k="laboratorio" />
+      </div>
+      <section className="pb-10 pt-10 md:pt-14">
         <h1 className="font-display text-[44px] font-semibold leading-[0.95] md:text-[76px]">Aprende con lo que ya existe.</h1>
         <p className="mt-6 max-w-[60ch] text-[17px] leading-relaxed text-muted">
           {resources.length} plataformas para formarte y certificarte. Te indicamos cuándo el acceso es gratuito y cuándo el certificado tiene

@@ -4,7 +4,8 @@ test.describe("presentación", () => {
   test.skip(({ isMobile }) => isMobile, "La navegación por teclado se prueba en escritorio");
 
   test("teclado: flechas, Home, End y vista general", async ({ page }) => {
-    await page.goto("/presentacion/1");
+    await page.goto("/presentacion/1", { waitUntil: "networkidle" });
+    await page.waitForTimeout(500);
     await page.keyboard.press("ArrowRight");
     await expect(page).toHaveURL(/\/presentacion\/2$/);
     await page.keyboard.press(" ");

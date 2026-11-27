@@ -15,6 +15,7 @@ import {
 import { Monogram } from "@/components/opportunities/OpportunityCard";
 import { LiveStatus } from "@/components/opportunities/LiveStatus";
 import { ShareActions } from "@/components/opportunities/ShareActions";
+import { ConceptImage, type ConceptKey } from "@/components/ui/ConceptImage";
 import { SaveButton } from "@/components/opportunities/SaveButton";
 
 export const dynamicParams = false;
@@ -68,6 +69,18 @@ function Field({ label, value }: { label: string; value: string | null | undefin
   );
 }
 
+const categoryImage: Record<string, ConceptKey> = {
+  "sector-publico": "hero-titicaca",
+  peu: "hero-titicaca",
+  practicas: "trabajo-remoto",
+  "empleo-junior": "trabajo-remoto",
+  investigacion: "laboratorio",
+  becas: "laboratorio",
+  startups: "infraestructura-electrica",
+  competencias: "cabina-internet",
+  cursos: "cabina-internet",
+};
+
 export default async function OpportunityPage({ params }: PageProps<"/oportunidades/[slug]">) {
   const { slug } = await params;
   const o = getOpportunity(slug);
@@ -97,6 +110,9 @@ export default async function OpportunityPage({ params }: PageProps<"/oportunida
         <ArrowLeft size={15} /> Todas las oportunidades
       </Link>
 
+      <div className="mt-6 h-[160px] overflow-hidden rounded-3xl text-[11px] md:h-[220px]">
+        <ConceptImage k={categoryImage[o.category]} />
+      </div>
       <header className="mt-8">
         <div className="flex items-center gap-3">
           <Monogram org={o.organization} category={o.category} size={52} />

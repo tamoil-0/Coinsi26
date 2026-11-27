@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { acts, slideMeta } from "@/components/presentation/meta";
+import { ConceptImage, type ConceptKey } from "@/components/ui/ConceptImage";
+import { PhotoSlot } from "@/components/ui/PhotoSlot";
+import { getAvailablePhotos } from "@/lib/photos.server";
+import type { PhotoKey } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Historia",
@@ -8,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/historia" },
 };
 
-const chapters: { act: number; title: string; slide: number; body: string[] }[] = [
+const chapters: { act: number; title: string; slide: number; body: string[]; photo?: PhotoKey[]; concept?: ConceptKey }[] = [
   {
     act: 0,
     slide: 2,
@@ -21,6 +25,7 @@ const chapters: { act: number; title: string; slide: number; body: string[] }[] 
   {
     act: 0,
     slide: 3,
+    concept: "cabina-internet",
     title: "Todo empezó con curiosidad",
     body: [
       "Cabinas de internet, videojuegos y las primeras computadoras. Antes de saber qué era la ingeniería de sistemas, ya existía la curiosidad por entender cómo funcionaba la tecnología.",
@@ -29,6 +34,7 @@ const chapters: { act: number; title: string; slide: number; body: string[] }[] 
   {
     act: 1,
     slide: 5,
+    photo: ["flit-2026"],
     title: "Salir de mi burbuja",
     body: [
       "El primer paso no fue técnico. Fue darme cuenta de que había un mundo de oportunidades fuera del aula: IEEE, un viaje a Cusco, comunidades y personas que ya estaban haciendo cosas.",
@@ -37,6 +43,7 @@ const chapters: { act: number; title: string; slide: number; body: string[] }[] 
   {
     act: 1,
     slide: 7,
+    concept: "infraestructura-electrica",
     title: "¿Y si no hay internet?",
     body: [
       "En mi primer trabajo, con ECOING, aprendí que “eso es sencillo” casi nunca lo es. La aplicación tenía que seguir funcionando en campo, sin señal.",
@@ -62,6 +69,7 @@ const chapters: { act: number; title: string; slide: number; body: string[] }[] 
   {
     act: 1,
     slide: 10,
+    photo: ["irf26-utec", "irf26-huaraz"],
     title: "Perdimos una hackathon. Ganamos una comunidad.",
     body: [
       "De HackAru llegamos a SpinOut y de ahí al Impact Regional Fellowship 2026. El networking no es pedir favores: es construir relaciones con personas que quieren hacer cosas.",
@@ -70,6 +78,7 @@ const chapters: { act: number; title: string; slide: number; body: string[] }[] 
   {
     act: 2,
     slide: 11,
+    photo: ["angie", "diego", "paolo"],
     title: "No existe una sola ruta profesional",
     body: [
       "Sector público, prácticas remotas, investigación, comunidades, competencias y emprendimiento. Cada ruta tiene su propio camino de entrada y todas están en el directorio.",
@@ -89,6 +98,7 @@ const chapters: { act: number; title: string; slide: number; body: string[] }[] 
   {
     act: 4,
     slide: 23,
+    photo: ["sep"],
     title: "Puno no solo exporta talento",
     body: [
       "También puede crear oportunidades. SpinOut, Comunitarios, Agendia, el Semillero de Emprendedores Perú e IEEE lo demuestran.",
@@ -98,6 +108,7 @@ const chapters: { act: number; title: string; slide: number; body: string[] }[] 
 ];
 
 export default function StoryPage() {
+  const photos = getAvailablePhotos();
   return (
     <article className="mx-auto max-w-[760px] px-5 pb-10 pt-12 md:pt-20">
       <p className="font-mono text-[13px] text-gold">La ponencia en versión de lectura</p>
@@ -114,6 +125,20 @@ export default function StoryPage() {
             {items.map((c) => (
               <div key={c.title} className="mt-10">
                 <h2 className="font-display text-[28px] font-semibold leading-tight md:text-[34px]">{c.title}</h2>
+                {c.concept && (
+                  <div className="mt-6 aspect-[16/9] overflow-hidden rounded-2xl text-[12px]">
+                    <ConceptImage k={c.concept} />
+                  </div>
+                )}
+                {c.photo && (
+                  <div className={`mt-6 grid gap-3 text-[12px] ${c.photo.length === 3 ? "grid-cols-3" : c.photo.length === 2 ? "grid-cols-2" : "grid-cols-1"}`}>
+                    {c.photo.map((k) => (
+                      <div key={k} className={`overflow-hidden rounded-2xl ${c.photo!.length === 1 ? "aspect-[16/9]" : c.photo!.length === 3 ? "aspect-[3/4]" : "aspect-[4/3]"}`}>
+                        <PhotoSlot k={k} photos={photos} caption={c.photo!.length < 3} position={k === "diego" ? "center 20%" : "center 30%"} />
+                      </div>
+                    ))}
+                  </div>
+                )}
                 {c.body.map((p) => (
                   <p key={p.slice(0, 20)} className="mt-4 text-[17.5px] leading-[1.75] text-ink/85">
                     {p}

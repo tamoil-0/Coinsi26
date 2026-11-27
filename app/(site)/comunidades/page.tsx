@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
 import { communities } from "@/lib/data";
+import { getAvailablePhotos } from "@/lib/photos.server";
+import { PhotoSlot } from "@/components/ui/PhotoSlot";
 import { formatDate } from "@/lib/labels";
 import type { Community } from "@/lib/schema";
 
@@ -36,6 +38,7 @@ const linkLabel: Record<keyof Community["links"], string> = {
 };
 
 export default function CommunitiesPage() {
+  const photos = getAvailablePhotos();
   const groups = scopeOrder
     .map((s) => ({ scope: s, items: communities.filter((c) => c.scope === s).sort((a, b) => Number(b.featured) - Number(a.featured)) }))
     .filter((g) => g.items.length);
@@ -50,6 +53,21 @@ export default function CommunitiesPage() {
           Las comunidades comparten convocatorias, organizan eventos y te presentan a personas que están construyendo cosas. Aquí están{" "}
           {communities.length}, con sus canales públicos oficiales. No publicamos grupos privados ni invitaciones sin autorización.
         </p>
+      </section>
+
+      <section className="grid grid-cols-2 gap-3 pb-14 text-[12px] md:grid-cols-4 md:grid-rows-2 md:gap-4" aria-label="Galería de comunidades">
+        <div className="col-span-2 aspect-[16/10] overflow-hidden rounded-3xl md:row-span-2 md:aspect-auto">
+          <PhotoSlot k="irf26-utec" photos={photos} caption />
+        </div>
+        <div className="aspect-square overflow-hidden rounded-3xl md:aspect-auto md:h-[220px]">
+          <PhotoSlot k="irf26-huaraz" photos={photos} caption />
+        </div>
+        <div className="aspect-square overflow-hidden rounded-3xl md:aspect-auto md:h-[220px]">
+          <PhotoSlot k="sep" photos={photos} caption />
+        </div>
+        <div className="col-span-2 aspect-[16/9] overflow-hidden rounded-3xl md:aspect-auto md:h-[220px]">
+          <PhotoSlot k="flit-2026" photos={photos} caption />
+        </div>
       </section>
 
       {groups.map((g) => (

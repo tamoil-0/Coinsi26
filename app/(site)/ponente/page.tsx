@@ -62,7 +62,7 @@ export default function SpeakerPage() {
           </div>
         </div>
         <div className="aspect-[4/5] overflow-hidden rounded-3xl">
-          <PhotoSlot k="ponente" photos={photos} />
+          <PhotoSlot k={photos.ponente ? "ponente" : "sep"} photos={photos} caption position="78% center" />
         </div>
       </div>
 

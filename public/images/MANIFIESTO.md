@@ -9,6 +9,8 @@
 | `public/icon.svg` | SVG original | Del proyecto | Favicon |
 | Fuentes Geist / Geist Mono | Paquete `geist` (Vercel) | SIL OFL 1.1 | Tipografía |
 | Fuente Space Grotesk | `@fontsource-variable/space-grotesk` | SIL OFL 1.1 | Tipografía |
-| `public/images/real/*` | Fotografías aportadas por el ponente | Con autorización de las personas retratadas | Documental |
+| `public/images/concept/*.webp` (Titicaca, cabina, trabajo remoto, infraestructura eléctrica, laboratorio) | Generadas con IA (Figma AI, modelo gpt-image) en el archivo de Figma del ponente; ampliadas con superresolución EDSR | Del proyecto | **Ilustración conceptual**, rotulada "Imagen conceptual · IA" en la web |
+| `public/images/real/*` | Fotografías aportadas por el ponente (Angie, Juan Diego, Paolo, SEP, IRF26 Huaraz, FLIT Arequipa, final IRF26 UTEC) | Aportadas por el ponente; confirmar autorización de las personas retratadas | Documental |
+| `public/images/real/diego.webp` | Foto original de 152×174 px mejorada con superresolución EDSR ×4, reducción de ruido y recorte | — | Documental mejorada |
 
-No se usan imágenes externas por hotlink. Ninguna ilustración representa a personas, premios, viajes ni proyectos reales.
+No se usan imágenes externas por hotlink. Ninguna imagen conceptual representa a personas, premios, viajes ni proyectos reales.

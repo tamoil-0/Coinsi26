@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { AltiplanoScene } from "@/components/ui/AltiplanoScene";
+import { HeroConnections } from "@/components/ui/HeroConnections";
+import { ConceptImage } from "@/components/ui/ConceptImage";
+import { PhotoSlot } from "@/components/ui/PhotoSlot";
+import { DirectoryStats } from "@/components/opportunities/DirectoryStats";
+import { getAvailablePhotos } from "@/lib/photos.server";
+import type { PhotoKey } from "@/lib/photos";
 import { communities, opportunities, resources } from "@/lib/data";
 import { effectiveStatus } from "@/lib/status";
 import { categoryLabel, formatDate } from "@/lib/labels";
@@ -18,18 +24,24 @@ const routes = [
   { name: "Emprendimiento", text: "Incubación, aceleración y capital semilla para ideas con impacto.", href: "/oportunidades?c=startups", count: byCat(["startups"]) },
 ];
 
-const stories = [
+const stories: { name: string; title: string; text: string; photo: PhotoKey; pos: string }[] = [
   {
+    photo: "angie",
+    pos: "center 30%",
     name: "Angie",
     title: "De un PEU a una práctica",
     text: "Postuló a un Programa de Extensión Universitaria, se formó cerca de tres meses en Lima y desde ahí llegó una oportunidad profesional.",
   },
   {
-    name: "Diego",
+    photo: "diego",
+    pos: "center 20%",
+    name: "Juan Diego",
     title: "Competir internacionalmente",
     text: "En la Huawei ICT Competition pasó de la etapa universitaria a la regional, nacional y latinoamericana. La final global sigue siendo su siguiente meta.",
   },
   {
+    photo: "paolo",
+    pos: "center 30%",
     name: "Paolo Boris Luna Luque",
     title: "Un fellow de nuestra universidad",
     text: "Estudiante de Ingeniería de Sistemas y representante regional del Impact Regional Fellowship 2026. Las oportunidades existen antes de egresar.",
@@ -44,6 +56,7 @@ const month = [
 ];
 
 export default function Home() {
+  const photos = getAvailablePhotos();
   const today = new Date();
   const featured = opportunities
     .map((o) => ({ o, s: effectiveStatus(o, today) }))
@@ -57,8 +70,14 @@ export default function Home() {
       {/* HERO */}
       <section className="relative -mt-14 overflow-hidden md:-mt-16">
         <div className="relative h-[92svh] min-h-[600px] w-full">
-          <AltiplanoScene className="absolute inset-0 h-full w-full max-md:[&_text]:hidden" align="xMaxYMax" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,13,21,0.55),rgba(8,13,21,0)_35%,rgba(8,13,21,0.15)_65%,#080D15)] md:bg-[linear-gradient(90deg,rgba(8,13,21,0.9),rgba(8,13,21,0.25)_60%,transparent),linear-gradient(180deg,transparent_70%,#080D15)]" />
+          <div className="absolute inset-0">
+            <ConceptImage k="hero-titicaca" tag={false} position="right bottom" className="scale-[1.02]" />
+          </div>
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,13,21,0.7),rgba(8,13,21,0.15)_35%,rgba(8,13,21,0.35)_65%,#080D15)] md:bg-[linear-gradient(90deg,rgba(8,13,21,0.92),rgba(8,13,21,0.45)_50%,rgba(8,13,21,0.1)),linear-gradient(180deg,rgba(8,13,21,0.4),transparent_30%,transparent_70%,#080D15)]" />
+          <HeroConnections className="absolute inset-0 h-full w-full" />
+          <span className="absolute bottom-4 right-5 z-10 rounded-full bg-black/50 px-3 py-1 font-mono text-[10.5px] text-white/70 backdrop-blur md:right-8">
+            Imagen conceptual · IA
+          </span>
           <div className="relative mx-auto flex h-full max-w-[1320px] flex-col justify-end px-5 pb-14 md:justify-center md:px-8 md:pb-0">
             <p className="animate-rise font-mono text-[12px] text-muted md:text-[13px]">
               {talk.eventShort} · {talk.universityShort} · {speaker.name}
@@ -84,11 +103,14 @@ export default function Home() {
       </section>
 
       {/* LA PARADOJA */}
-      <section className="mx-auto grid max-w-[1320px] gap-8 px-5 py-20 md:grid-cols-[1.3fr_1fr] md:items-end md:px-8 md:py-28">
+      <section className="mx-auto grid max-w-[1320px] gap-10 px-5 py-20 md:grid-cols-[1.2fr_1fr] md:items-center md:px-8 md:py-28">
         <h2 className="font-display text-[38px] font-semibold leading-[0.98] md:text-[64px]">
           ¿Cómo consigo experiencia si me piden experiencia para empezar?
         </h2>
-        <div className="text-[17px] leading-relaxed text-muted md:text-[18px]">
+        <div className="text-[17px] leading-relaxed text-muted md:row-span-2 md:text-[18px]">
+          <div className="mb-8 aspect-[4/3] overflow-hidden rounded-3xl text-[14px]">
+            <ConceptImage k="cabina-internet" />
+          </div>
           <p>
             La respuesta no es esperar a egresar. Es construir evidencia mientras estudias: proyectos, comunidades, programas públicos,
             competencias y prácticas.
@@ -129,10 +151,15 @@ export default function Home() {
           <h2 className="max-w-[18ch] font-display text-[34px] font-semibold leading-[1] md:text-[52px]">Historias de estudiantes cercanos</h2>
           <div className="mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
             {stories.map((s) => (
-              <article key={s.name} className="border-t-2 border-gold/70 pt-6">
+              <article key={s.name} className="group">
+                <div className="aspect-[4/5] overflow-hidden rounded-3xl text-[14px]">
+                  <PhotoSlot k={s.photo} photos={photos} position={s.pos} className="transition duration-700 group-hover:scale-[1.03]" />
+                </div>
+                <div className="mt-6 border-t-2 border-gold/70 pt-5">
                 <p className="font-mono text-[13px] text-gold">{s.name}</p>
                 <h3 className="mt-3 font-display text-[26px] font-semibold leading-tight">{s.title}</h3>
                 <p className="mt-3 text-[16px] leading-relaxed text-muted">{s.text}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -152,12 +179,13 @@ export default function Home() {
               {openCount ? `, ${openCount} abiertas` : ""}
             </Link>
           </div>
-          <ul className="mt-10 divide-y divide-line border-y border-line">
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_360px]">
+          <ul className="divide-y divide-line border-y border-line">
             {featured.map(({ o, s }) => (
               <li key={o.slug}>
                 <Link
                   href={`/oportunidades/${o.slug}`}
-                  className="group grid gap-2 py-5 transition-colors hover:bg-navy/40 md:grid-cols-[1fr_200px_160px_24px] md:items-center md:gap-6 md:px-3"
+                  className="group grid gap-2 py-5 transition-colors hover:bg-navy/40 md:grid-cols-[1fr_130px_150px_20px] md:items-center md:gap-5 md:px-3"
                 >
                   <span>
                     <span className="block font-display text-[20px] font-semibold leading-snug md:text-[22px]">{o.title}</span>
@@ -173,6 +201,8 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <DirectoryStats items={opportunities} />
+          </div>
         </section>
       )}
 
@@ -181,6 +211,13 @@ export default function Home() {
         <div className="mx-auto max-w-[1320px] px-5 md:px-8">
           <div className="grid gap-8 md:grid-cols-[1fr_1.4fr]">
             <div>
+              <div className="mb-10 grid grid-cols-2 gap-3 text-[12px]">
+                {(["irf26-utec", "flit-2026", "irf26-huaraz"] as const).map((k, i) => (
+                  <div key={k} className={`overflow-hidden rounded-2xl ${i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"}`}>
+                    <PhotoSlot k={k} photos={photos} caption />
+                  </div>
+                ))}
+              </div>
               <h2 className="font-display text-[34px] font-semibold leading-[1] md:text-[52px]">Comunidades que vale la pena conocer</h2>
               <p className="mt-5 max-w-[42ch] text-[17px] leading-relaxed text-muted">
                 Perdimos una hackathon y ganamos una comunidad. Muchas oportunidades llegan primero a quienes ya están conectados.
@@ -226,15 +263,22 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <AltiplanoScene className="absolute inset-0 h-full w-full opacity-50" connections={false} tone="dawn" animate={false} />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,#080D15,rgba(8,13,21,0.6)_50%,#080D15)]" />
+        <div className="absolute bottom-0 right-0 top-0 hidden w-[46%] lg:block">
+          <div className="h-full py-16 pr-8 text-[12px]">
+            <div className="h-full overflow-hidden rounded-3xl"><PhotoSlot k="sep" photos={photos} caption /></div>
+          </div>
+        </div>
         <div className="relative mx-auto max-w-[1320px] px-5 py-28 md:px-8 md:py-40">
+          <div className="lg:max-w-[50%]">
           <p className="font-mono text-[13px] text-gold">Puno, {LAKE_ALTITUDE}</p>
-          <h2 className="mt-4 max-w-[16ch] font-display text-[40px] font-semibold leading-[0.98] md:text-[72px]">
+          <h2 className="mt-4 max-w-[16ch] font-display text-[40px] font-semibold leading-[0.98] md:text-[64px]">
             Puno no solo exporta talento. También puede crear oportunidades.
           </h2>
           <p className="mt-6 max-w-[56ch] text-[17px] leading-relaxed text-muted">
             SpinOut, Comunitarios, Agendia, el Semillero de Emprendedores Perú e IEEE muestran que el ecosistema también se construye desde
             aquí. Las próximas ediciones e iniciativas se anunciarán cuando estén confirmadas.
           </p>
+          </div>
         </div>
       </section>
 

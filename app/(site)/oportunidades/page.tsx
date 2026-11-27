@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Directory } from "@/components/opportunities/Directory";
+import { DirectoryStats } from "@/components/opportunities/DirectoryStats";
+import { ConceptImage } from "@/components/ui/ConceptImage";
 import { communities, lastDataUpdate, opportunities } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -18,13 +20,14 @@ export const metadata: Metadata = {
 export default function OpportunitiesPage() {
   return (
     <div className="mx-auto max-w-[1320px] px-5 md:px-8">
-      <section className="pb-6 pt-10 md:pb-8 md:pt-16">
+      <section className="grid gap-8 pb-6 pt-10 md:pb-8 md:pt-16 lg:grid-cols-[1fr_380px] lg:items-end">
+        <div>
         <h1 className="font-display text-[40px] font-semibold leading-[0.95] sm:text-[56px] md:text-[76px]">
           Tu próxima oportunidad
           <br />
           empieza aquí.
         </h1>
-        <div className="mt-5 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="mt-5 flex flex-col gap-4">
           <p className="max-w-[56ch] text-[16px] leading-relaxed text-muted md:text-[18px]">
             Explora prácticas, becas, comunidades, programas públicos y oportunidades para construir tu futuro. Cada entrada enlaza a su fuente
             oficial.
@@ -37,6 +40,13 @@ export default function OpportunitiesPage() {
               Ver la ponencia
             </Link>
           </p>
+        </div>
+        </div>
+        <div className="hidden space-y-4 lg:block">
+          <div className="aspect-[16/9] overflow-hidden rounded-2xl text-[12px]">
+            <ConceptImage k="trabajo-remoto" />
+          </div>
+          <DirectoryStats items={opportunities} variant="compact" />
         </div>
       </section>
       <Directory items={opportunities} lastUpdate={lastDataUpdate} />
