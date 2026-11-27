@@ -1,8 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
-import { AltiplanoScene } from "@/components/ui/AltiplanoScene";
 import { PhotoSlot } from "@/components/ui/PhotoSlot";
-import { ConceptImage } from "@/components/ui/ConceptImage";
-import type { PhotoMap } from "@/lib/photos";
+import { photoSlots, type PhotoMap } from "@/lib/photos";
 import { acts, slideMeta, TOTAL_SLIDES } from "./meta";
 
 export type DeckQr = { url: string; svg: string };
@@ -19,43 +17,112 @@ export type DeckContext = {
   animate: boolean;
 };
 
-/* ---------- utilidades de composición ---------- */
+type Concept =
+  | "puno-noche"
+  | "dos-caminos"
+  | "campo-offline"
+  | "rack"
+  | "escenario"
+  | "senderos"
+  | "estado"
+  | "startup"
+  | "codigo"
+  | "agentes-ia"
+  | "amanecer"
+  | "noche-estrellas"
+  | "hero-titicaca"
+  | "cabina-internet"
+  | "trabajo-remoto"
+  | "infraestructura-electrica"
+  | "laboratorio";
 
-function useRise(ctx: DeckContext) {
+/* ====================== primitivas ====================== */
+
+function rise(ctx: DeckContext) {
   return (delay: number, extra = ""): { className: string; style?: CSSProperties } =>
-    ctx.animate
-      ? { className: `animate-rise ${extra}`, style: { animationDelay: `${delay}s` } }
-      : { className: extra };
+    ctx.animate ? { className: `animate-rise ${extra}`, style: { animationDelay: `${delay}s` } } : { className: extra };
 }
 
-function Frame({
-  n,
-  children,
-  className = "",
-  bleed,
-  chrome = true,
+const mono = "font-mono tracking-[0.02em]";
+
+/** Fondo fotográfico a sangre con movimiento lento y capas de luz. */
+function Bg({
+  src,
+  ctx,
+  overlay = "left",
+  dim = 0.55,
+  position = "center",
 }: {
-  n: number;
-  children: ReactNode;
-  className?: string;
-  bleed?: ReactNode;
-  chrome?: boolean;
+  src: Concept;
+  ctx: DeckContext;
+  overlay?: "left" | "bottom" | "full" | "right" | "center";
+  dim?: number;
+  position?: string;
 }) {
+  const overlays: Record<string, string> = {
+    left: "linear-gradient(90deg, rgba(5,8,14,0.96) 0%, rgba(5,8,14,0.78) 38%, rgba(5,8,14,0.25) 70%, rgba(5,8,14,0.45) 100%)",
+    right: "linear-gradient(270deg, rgba(5,8,14,0.96) 0%, rgba(5,8,14,0.75) 40%, rgba(5,8,14,0.2) 75%)",
+    bottom: "linear-gradient(0deg, rgba(5,8,14,0.97) 0%, rgba(5,8,14,0.7) 40%, rgba(5,8,14,0.15) 75%, rgba(5,8,14,0.5) 100%)",
+    full: "linear-gradient(0deg, rgba(5,8,14,0.9), rgba(5,8,14,0.6))",
+    center: "radial-gradient(ellipse at center, rgba(5,8,14,0.55), rgba(5,8,14,0.95) 75%)",
+  };
+  return (
+    <div className="absolute inset-0 overflow-hidden">
+      {/* eslint-disable-next-line @next/next/no-img-element -- recurso local, funciona offline */}
+      <img
+        src={`/images/concept/${src}.webp`}
+        alt=""
+        className={`absolute inset-0 h-full w-full object-cover ${ctx.animate ? "animate-kenburns" : ""}`}
+        style={{ objectPosition: position, filter: "saturate(1.08) contrast(1.05)" }}
+      />
+      <div className="absolute inset-0" style={{ background: overlays[overlay] }} />
+      <div className="absolute inset-0" style={{ background: `rgba(5,8,14,${Math.max(0, dim - 0.5)})` }} />
+      <div className="absolute inset-0 shadow-[inset_0_0_240px_rgba(0,0,0,0.8)]" />
+      <div className="grain absolute inset-0" />
+    </div>
+  );
+}
+
+/** Marco HUD: esquinas, progreso por actos, coordenadas. */
+function Frame({ n, children, bleed, concept = false }: { n: number; children: ReactNode; bleed?: ReactNode; concept?: boolean }) {
   const meta = slideMeta[n - 1];
   const act = acts[meta.act];
+  const corner = "absolute h-[34px] w-[34px] border-cyan/50";
   return (
-    <div className={`relative h-[1080px] w-[1920px] overflow-hidden bg-obsidian text-ink ${className}`}>
-      {bleed}
-      {chrome && (
-        <div className="absolute inset-x-[120px] top-[64px] z-10 flex items-baseline justify-between font-mono text-[22px] text-faint">
-          <span>
-            Acto {act.n} <span className="text-muted">{act.name}</span>
-          </span>
-          <span className="tabular">
-            {String(n).padStart(2, "0")} / {TOTAL_SLIDES}
-          </span>
+    <div className="relative h-[1080px] w-[1920px] overflow-hidden bg-[#05080e] text-ink">
+      {bleed ?? (
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(67,139,255,0.16),transparent_55%),radial-gradient(ellipse_at_10%_90%,rgba(241,184,106,0.10),transparent_50%)]" />
+          <div className="hud-grid absolute inset-0" />
+          <div className="grain absolute inset-0" />
         </div>
       )}
+      <div className="pointer-events-none absolute inset-0 z-10">
+        <span className={`${corner} left-[56px] top-[48px] border-l-2 border-t-2`} />
+        <span className={`${corner} right-[56px] top-[48px] border-r-2 border-t-2`} />
+        <span className={`${corner} bottom-[48px] left-[56px] border-b-2 border-l-2`} />
+        <span className={`${corner} bottom-[48px] right-[56px] border-b-2 border-r-2`} />
+        <div className={`absolute left-[120px] right-[120px] top-[58px] flex items-center gap-8 text-[20px] text-white/60 ${mono}`}>
+          <span className="text-white/90">DE PUNO AL MUNDO</span>
+          <span className="h-px w-10 bg-white/25" />
+          <span>
+            ACTO {act.n} · <span className="text-cyan">{act.name.toUpperCase()}</span>
+          </span>
+          <span className="ml-auto flex items-center gap-2">
+            {acts.map((a, i) => (
+              <span key={a.n} className={`h-[5px] rounded-full ${i < meta.act ? "w-10 bg-cyan/70" : i === meta.act ? "w-16 bg-gold" : "w-10 bg-white/15"}`} />
+            ))}
+          </span>
+          <span className="tabular text-white/90">
+            {String(n).padStart(2, "0")}
+            <span className="text-white/40"> / {TOTAL_SLIDES}</span>
+          </span>
+        </div>
+        <div className={`absolute bottom-[56px] left-[120px] right-[120px] flex items-center justify-between text-[18px] text-white/40 ${mono}`}>
+          <span>15.84°S 70.02°O · 3812 m s. n. m.</span>
+          <span>{concept ? "Fotografía conceptual generada con IA" : "COINSI 2026 · UNA PUNO"}</span>
+        </div>
+      </div>
       <div className="relative z-[5] h-full w-full">{children}</div>
     </div>
   );
@@ -64,224 +131,240 @@ function Frame({
 function Qr({ qr, size, caption }: { qr: DeckQr | null | undefined; size: number; caption?: boolean }) {
   if (!qr) {
     return (
-      <div
-        style={{ width: size, height: size }}
-        className="flex items-center justify-center rounded-2xl border border-dashed border-line p-6 text-center font-mono text-[20px] text-faint"
-      >
+      <div style={{ width: size, height: size }} className={`glass flex items-center justify-center rounded-[28px] p-8 text-center text-[20px] text-white/50 ${mono}`}>
         El QR se genera con la URL real de producción
       </div>
     );
   }
   return (
-    <div className="flex flex-col items-center gap-4">
-      <div
-        style={{ width: size, height: size }}
-        className="overflow-hidden rounded-2xl bg-ink p-3 [&_svg]:h-full [&_svg]:w-full"
-        dangerouslySetInnerHTML={{ __html: qr.svg }}
-        role="img"
-        aria-label={`Código QR hacia ${qr.url}`}
-      />
-      {caption && <span className="font-mono text-[22px] text-muted">{qr.url.replace(/^https?:\/\//, "")}</span>}
+    <div className="flex flex-col items-center gap-5">
+      <div className="relative">
+        <div className="absolute -inset-6 rounded-[44px] bg-[conic-gradient(from_120deg,#53D8F5,#438BFF,#F1B86A,#53D8F5)] opacity-50 blur-2xl" />
+        <div
+          style={{ width: size, height: size }}
+          className="relative overflow-hidden rounded-[28px] bg-ink p-4 [&_svg]:h-full [&_svg]:w-full"
+          dangerouslySetInnerHTML={{ __html: qr.svg }}
+          role="img"
+          aria-label={`Código QR hacia ${qr.url}`}
+        />
+      </div>
+      {caption && <span className={`text-[24px] text-white/80 ${mono}`}>{qr.url.replace(/^https?:\/\//, "")}</span>}
     </div>
   );
 }
 
-function Chain({ items, accent = "#53D8F5", size = 40, dashedLast = false, gap = 120 }: { items: string[]; accent?: string; size?: number; dashedLast?: boolean; gap?: number }) {
+function Kicker({ children, color = "text-cyan" }: { children: ReactNode; color?: string }) {
+  return (
+    <p className={`flex items-center gap-4 text-[24px] ${color} ${mono}`}>
+      <span className="h-[2px] w-12 bg-current" />
+      {children}
+    </p>
+  );
+}
+
+function Flow({ items, color = "#53D8F5", size = 40 }: { items: string[]; color?: string; size?: number }) {
   return (
     <div className="flex items-center">
-      {items.map((it, i) => {
-        const last = i === items.length - 1;
-        const dashed = dashedLast && last;
-        return (
-          <div key={it} className="flex items-center">
-            <div className={`flex items-center gap-4 ${dashed ? "opacity-70" : ""}`}>
-              <span
-                className="block h-4 w-4 rounded-full"
-                style={dashed ? { border: `2px dashed ${accent}` } : { background: accent }}
-              />
-              <span className="font-display font-medium" style={{ fontSize: size }}>
-                {it}
-              </span>
-            </div>
-            {!last && (
-              <svg width={gap} height="20" className="mx-5 shrink-0" aria-hidden>
-                <line
-                  x1="0"
-                  y1="10"
-                  x2={gap - 16}
-                  y2="10"
-                  stroke={accent}
-                  strokeOpacity="0.6"
-                  strokeWidth="2"
-                  strokeDasharray={dashedLast && i === items.length - 2 ? "6 8" : undefined}
-                />
-                <path d={`M${gap - 20} 4 L${gap - 10} 10 L${gap - 20} 16`} fill="none" stroke={accent} strokeOpacity="0.8" strokeWidth="2" />
-              </svg>
-            )}
+      {items.map((it, i) => (
+        <div key={it} className="flex items-center">
+          <div className="glass flex items-center gap-4 rounded-full px-7 py-4">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full text-[18px] font-semibold text-obsidian" style={{ background: color }}>
+              {i + 1}
+            </span>
+            <span className="font-display font-medium" style={{ fontSize: size }}>
+              {it}
+            </span>
           </div>
-        );
-      })}
+          {i < items.length - 1 && <span className="mx-3 h-[2px] w-12" style={{ background: `linear-gradient(90deg, ${color}, transparent)` }} />}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Photo({
+  k,
+  ctx,
+  className = "",
+  position = "center",
+  caption = true,
+}: {
+  k: keyof typeof photoSlots;
+  ctx: DeckContext;
+  className?: string;
+  position?: string;
+  caption?: boolean;
+}) {
+  return (
+    <div className={`relative overflow-hidden rounded-[28px] border border-white/10 text-[21px] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.8)] ${className}`}>
+      <PhotoSlot k={k} photos={ctx.photos} caption={caption} position={position} />
     </div>
   );
 }
 
 const H = ({ children, className = "", style }: { children: ReactNode; className?: string; style?: CSSProperties }) => (
-  <h2 className={`font-display font-semibold leading-[0.92] ${className}`} style={style}>
+  <h2 className={`font-display font-semibold leading-[0.92] tracking-[-0.04em] ${className}`} style={style}>
     {children}
   </h2>
 );
 
-/* ---------- diapositivas ---------- */
+/* ====================== diapositivas ====================== */
 
 function S1(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
+  const P = { x: 1500, y: 860 };
+  const dests = [
+    { l: "Lima", x: 1230, y: 480, d: false },
+    { l: "Buenos Aires", x: 1380, y: 330, d: false },
+    { l: "Ginebra", x: 1610, y: 210, d: false },
+    { l: "Okinawa", x: 1790, y: 330, d: false },
+    { l: "Shenzhen", x: 1740, y: 520, d: true },
+  ];
   return (
-    <Frame
-      n={1}
-      chrome={false}
-      bleed={<AltiplanoScene className="absolute inset-x-0 bottom-0 h-[900px] w-full" animate={ctx.animate} />}
-    >
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,13,21,0.85),rgba(8,13,21,0.2)_55%,transparent)]" />
-      <div className="relative flex h-full flex-col justify-between px-[120px] py-[96px]">
-        <p {...r(0.1, "font-mono text-[24px] text-muted")}>
-          COINSI 2026 · UNA Puno · Jhon Marco Aracayo Mamani
-        </p>
-        <div>
-          <h1 {...r(0.25, "font-display text-[200px] font-bold leading-[0.84] tracking-[-0.05em]")}>
-            DE PUNO
-            <br />
-            AL MUNDO.
-          </h1>
-          <p {...r(0.5, "mt-10 max-w-[1000px] text-[44px] leading-tight text-ink/90")}>
-            Cómo construir experiencia real antes de egresar.
-          </p>
+    <Frame n={1} concept bleed={<Bg src="puno-noche" ctx={ctx} overlay="left" position="right center" />}>
+      <svg viewBox="0 0 1920 1080" className="absolute inset-0 h-full w-full" aria-hidden>
+        <defs>
+          <linearGradient id="s1a" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stopColor="#F1B86A" />
+            <stop offset="0.6" stopColor="#53D8F5" />
+            <stop offset="1" stopColor="#438BFF" />
+          </linearGradient>
+        </defs>
+        {dests.map((d, i) => (
+          <g key={d.l}>
+            <path
+              d={`M${P.x},${P.y} Q${(P.x + d.x) / 2 + (d.x < P.x ? -90 : 90)},${Math.min(P.y, d.y) - 200} ${d.x},${d.y}`}
+              fill="none"
+              stroke="url(#s1a)"
+              strokeWidth="2.5"
+              strokeDasharray={d.d ? "8 12" : undefined}
+              className={ctx.animate && !d.d ? "animate-draw" : undefined}
+              style={ctx.animate && !d.d ? ({ ["--len" as string]: 1400, animationDelay: `${0.6 + i * 0.2}s` } as CSSProperties) : undefined}
+            />
+            <circle cx={d.x} cy={d.y} r="7" fill={d.d ? "none" : "#53D8F5"} stroke="#53D8F5" strokeWidth="2" />
+            <circle cx={d.x} cy={d.y} r="18" fill="none" stroke="#53D8F5" strokeOpacity="0.35" className={ctx.animate ? "animate-glow" : undefined} />
+            <text x={d.x + (d.x > 1700 ? -26 : 26)} y={d.y - 16} textAnchor={d.x > 1700 ? "end" : "start"} fill="#E8F4FF" fontSize="24" fontFamily="var(--font-geist-mono)">
+              {d.l}
+            </text>
+          </g>
+        ))}
+        <circle cx={P.x} cy={P.y} r="10" fill="#F1B86A" />
+        <circle cx={P.x} cy={P.y} r="30" fill="none" stroke="#F1B86A" strokeOpacity="0.6" className={ctx.animate ? "animate-glow" : undefined} />
+        <text x={P.x} y={P.y + 62} textAnchor="middle" fill="#F1B86A" fontSize="26" fontFamily="var(--font-geist-mono)">
+          PUNO
+        </text>
+      </svg>
+      <div className="relative flex h-full flex-col justify-center px-[120px]">
+        <div {...r(0.1, "")}>
+          <Kicker color="text-gold">COINSI 2026 · UNA PUNO</Kicker>
         </div>
-        <p {...r(0.7, "font-mono text-[22px] text-faint")}>
-          VI Congreso Internacional de Ingeniería de Sistemas — 27 de noviembre de 2026
-        </p>
+        <h1 {...r(0.25, "mt-10 font-display text-[210px] font-bold leading-[0.82] tracking-[-0.055em]")}>
+          <span className="block text-gradient">DE PUNO</span>
+          <span className="block">AL MUNDO.</span>
+        </h1>
+        <p {...r(0.5, "mt-12 max-w-[900px] text-[46px] leading-tight text-white/90")}>Cómo construir experiencia real antes de egresar.</p>
+        <div {...r(0.7, "mt-14 flex items-center gap-6")}>
+          <span className="glass rounded-full px-7 py-3 text-[26px]">{ctx.speakerName}</span>
+          <span className={`text-[22px] text-white/60 ${mono}`}>27 · 11 · 2026</span>
+        </div>
       </div>
     </Frame>
   );
 }
 
 function S2(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame n={2}>
+    <Frame n={2} concept bleed={<Bg src="escenario" ctx={ctx} overlay="left" dim={0.75} />}>
       <div className="flex h-full items-center px-[120px]">
-        <div className="max-w-[1250px]">
-          <H className="text-[132px]">
+        <div className="max-w-[1200px]">
+          <Kicker>LA PARADOJA</Kicker>
+          <H className="mt-10 text-[124px]">
             <span {...r(0.1, "block")}>¿Cómo consigo</span>
-            <span {...r(0.3, "block text-muted")}>experiencia si me</span>
-            <span {...r(0.5, "block text-muted")}>piden experiencia</span>
-            <span {...r(0.7, "block")}>para empezar?</span>
+            <span {...r(0.25, "block text-white/55")}>experiencia si me</span>
+            <span {...r(0.4, "block text-white/55")}>piden experiencia</span>
+            <span {...r(0.55, "block text-gradient-gold")}>para empezar?</span>
           </H>
         </div>
-        <svg viewBox="0 0 400 400" className="ml-auto h-[520px] w-[520px]" aria-label="Ciclo: sin experiencia no hay trabajo, sin trabajo no hay experiencia">
-          <circle cx="200" cy="200" r="150" fill="none" stroke="#243247" strokeWidth="2" />
-          <path
-            d="M200 50 A150 150 0 1 1 64 136"
-            fill="none"
-            stroke="#F1B86A"
-            strokeWidth="3"
-            className={ctx.animate ? "animate-draw" : undefined}
-            style={{ ["--len" as string]: 900 } as CSSProperties}
-          />
-          <path d="M56 150 L64 132 L80 144" fill="none" stroke="#F1B86A" strokeWidth="3" />
-          <text x="200" y="40" textAnchor="middle" fill="#F4F7FB" fontSize="22" fontFamily="var(--font-geist-mono)">experiencia</text>
-          <text x="200" y="378" textAnchor="middle" fill="#F4F7FB" fontSize="22" fontFamily="var(--font-geist-mono)">trabajo</text>
-          <text x="200" y="210" textAnchor="middle" fill="#A4B0C2" fontSize="20" fontFamily="var(--font-geist-mono)">¿por dónde entro?</text>
-        </svg>
+        <div className="relative ml-auto h-[540px] w-[540px]">
+          <svg viewBox="0 0 400 400" className="absolute inset-0 h-full w-full" aria-label="Ciclo: sin experiencia no hay trabajo y sin trabajo no hay experiencia">
+            <defs>
+              <linearGradient id="s2g" x1="0" x2="1">
+                <stop offset="0" stopColor="#F1B86A" />
+                <stop offset="1" stopColor="#53D8F5" />
+              </linearGradient>
+            </defs>
+            <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="18" />
+            <circle
+              cx="200"
+              cy="200"
+              r="150"
+              fill="none"
+              stroke="url(#s2g)"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeDasharray="900"
+              className={ctx.animate ? "animate-draw" : undefined}
+              style={{ ["--len" as string]: 900 } as CSSProperties}
+              transform="rotate(-90 200 200)"
+            />
+            <circle cx="200" cy="50" r="9" fill="#F1B86A" />
+            <circle cx="200" cy="350" r="9" fill="#53D8F5" />
+          </svg>
+          <span className={`glass absolute left-1/2 top-[-6px] -translate-x-1/2 rounded-full px-6 py-2 text-[24px] ${mono}`}>experiencia</span>
+          <span className={`glass absolute bottom-[-6px] left-1/2 -translate-x-1/2 rounded-full px-6 py-2 text-[24px] ${mono}`}>trabajo</span>
+          <span className={`absolute inset-0 flex items-center justify-center text-[30px] text-white/70 ${mono}`}>¿por dónde entro?</span>
+        </div>
       </div>
     </Frame>
   );
 }
 
 function S3(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   const moments = ["Cabinas de internet", "Videojuegos", "Primeras computadoras", "Interés por la tecnología"];
   return (
-    <Frame n={3}>
-      <div className="grid h-full grid-cols-[1fr_760px] gap-[100px] px-[120px] pb-[110px] pt-[190px]">
-        <div className="flex flex-col">
-          <H className="text-[120px]">
-            <span {...r(0.1, "block")}>Todo empezó</span>
-            <span {...r(0.25, "block")}>con curiosidad.</span>
-          </H>
-          <ol className="mt-auto space-y-6">
-            {moments.map((m, i) => (
-              <li key={m} {...r(0.4 + i * 0.12, "flex items-baseline gap-8 border-t border-line pt-6")}>
-                <span className="font-mono text-[24px] text-gold">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-[40px]">{m}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-        <div {...r(0.3, "relative overflow-hidden rounded-[28px] text-[24px]")}>
-          {ctx.photos.infancia ? <PhotoSlot k="infancia" photos={ctx.photos} caption /> : <ConceptImage k="cabina-internet" />}
-        </div>
+    <Frame n={3} concept bleed={<Bg src="cabina-internet" ctx={ctx} overlay="left" position="right center" />}>
+      <div className="flex h-full flex-col justify-center px-[120px]">
+        <Kicker color="text-gold">EL ORIGEN</Kicker>
+        <H className="mt-8 text-[132px]">
+          <span {...r(0.1, "block")}>Todo empezó</span>
+          <span {...r(0.25, "block text-gradient-gold")}>con curiosidad.</span>
+        </H>
+        <ol className="mt-16 grid max-w-[1000px] grid-cols-2 gap-5">
+          {moments.map((m, i) => (
+            <li key={m} {...r(0.45 + i * 0.12, "glass flex items-center gap-6 rounded-2xl px-7 py-6")}>
+              <span className={`text-[24px] text-gold ${mono}`}>{String(i + 1).padStart(2, "0")}</span>
+              <span className="text-[34px]">{m}</span>
+            </li>
+          ))}
+        </ol>
       </div>
     </Frame>
   );
 }
 
 function S4(ctx: DeckContext) {
-  const r = useRise(ctx);
-  const academic = ["Fundamentos", "Algoritmos", "Bases de datos", "Ingeniería de software", "Tesis"];
-  const practical = ["Curiosidad", "Comunidades", "Primer proyecto real", "Prácticas", "Portafolio"];
+  const r = rise(ctx);
   return (
-    <Frame n={4}>
-      <div className="flex h-full flex-col px-[120px] pb-[110px] pt-[190px]">
-        <H className="text-[112px]">
-          <span {...r(0.1)}>Dos caminos que</span>
-          <br />
-          <span {...r(0.2)}>pueden convivir.</span>
+    <Frame n={4} concept bleed={<Bg src="dos-caminos" ctx={ctx} overlay="bottom" dim={0.5} />}>
+      <div className="flex h-full flex-col px-[120px] pb-[130px] pt-[150px]">
+        <H className="text-[120px]">
+          <span {...r(0.1, "block")}>Dos caminos que</span>
+          <span {...r(0.25, "block text-gradient")}>pueden convivir.</span>
         </H>
-        <div className="relative mt-auto">
-          <svg viewBox="0 0 1680 360" className="w-full" aria-hidden>
-            <path
-              d="M0 90 C 600 90, 1000 90, 1400 170"
-              fill="none"
-              stroke="#438BFF"
-              strokeWidth="4"
-              className={ctx.animate ? "animate-draw" : undefined}
-              style={{ ["--len" as string]: 1800 } as CSSProperties}
-            />
-            <path
-              d="M0 270 C 600 270, 1000 270, 1400 190"
-              fill="none"
-              stroke="#F1B86A"
-              strokeWidth="4"
-              className={ctx.animate ? "animate-draw" : undefined}
-              style={{ ["--len" as string]: 1800, animationDelay: "0.3s" } as CSSProperties}
-            />
-            {academic.map((_, i) => (
-              i < 4 ? <circle key={`a${i}`} cx={80 + i * 300} cy={90 + (i > 2 ? 12 : 0)} r="9" fill="#438BFF" /> : null
-            ))}
-            {practical.map((_, i) => (
-              i < 4 ? <circle key={`p${i}`} cx={80 + i * 300} cy={270 - (i > 2 ? 12 : 0)} r="9" fill="#F1B86A" /> : null
-            ))}
-          </svg>
-          <div className="absolute inset-0">
-            {academic.map((a, i) => (
-              <span key={a} className="absolute -translate-x-1/4 text-[26px] text-ink" style={{ left: `${((80 + i * 300) / 1680) * 100}%`, top: 10 }}>
-                {i === 4 ? "" : a}
-              </span>
-            ))}
-            {practical.map((p, i) => (
-              <span key={p} className="absolute -translate-x-1/4 text-[26px] text-ink" style={{ left: `${((80 + i * 300) / 1680) * 100}%`, top: 300 }}>
-                {i === 4 ? "" : p}
-              </span>
-            ))}
-            <span className="absolute right-0 top-[130px] w-[230px] font-display text-[38px] font-semibold leading-tight">
-              Egresas con
-              <br />
-              <span className="text-gold">evidencia</span>
-            </span>
+        <div className="mt-auto grid grid-cols-[1fr_auto_1fr] items-end gap-10">
+          <div {...r(0.45, "glass rounded-3xl p-9")}>
+            <p className={`text-[22px] text-[#8db8ff] ${mono}`}>FORMACIÓN ACADÉMICA</p>
+            <p className="mt-4 text-[34px] leading-snug">Fundamentos · Algoritmos · Bases de datos · Ingeniería de software</p>
           </div>
-          <div className="mt-10 flex gap-16 font-mono text-[24px]">
-            <span className="text-blue">— Formación académica</span>
-            <span className="text-gold">— Experiencia práctica</span>
+          <div {...r(0.75, "pb-6 text-center")}>
+            <p className={`text-[22px] text-white/60 ${mono}`}>CONVERGEN EN</p>
+            <p className="mt-2 font-display text-[56px] font-semibold text-gradient-gold">Evidencia</p>
+          </div>
+          <div {...r(0.6, "glass rounded-3xl p-9")}>
+            <p className={`text-[22px] text-gold ${mono}`}>EXPERIENCIA PRÁCTICA</p>
+            <p className="mt-4 text-[34px] leading-snug">Curiosidad · Comunidades · Primer proyecto real · Prácticas</p>
           </div>
         </div>
       </div>
@@ -290,47 +373,45 @@ function S4(ctx: DeckContext) {
 }
 
 function S5(ctx: DeckContext) {
-  const r = useRise(ctx);
-  const rings = [
-    { label: "Mi universidad", r: 90 },
-    { label: "IEEE", r: 170 },
-    { label: "Viaje a Cusco", r: 250 },
-    { label: "Comunidades", r: 330 },
-    { label: "Oportunidades", r: 410 },
-  ];
+  const r = rise(ctx);
+  const rings = ["Mi universidad", "IEEE", "Viaje a Cusco", "Comunidades", "Oportunidades"];
   return (
-    <Frame n={5}>
-      <svg viewBox="0 0 1100 1080" className="absolute right-[-120px] top-0 h-full" aria-hidden>
-        {rings.map((ring, i) => (
-          <g key={ring.label}>
-            <circle
-              cx="560"
-              cy="600"
-              r={ring.r}
-              fill="none"
-              stroke={i === 0 ? "#F1B86A" : "#438BFF"}
-              strokeOpacity={i === 0 ? 0.9 : 0.75 - i * 0.12}
-              strokeWidth="2"
-              strokeDasharray={i === rings.length - 1 ? "4 10" : undefined}
-            />
-            <text x="560" y={600 - ring.r - 14} textAnchor="middle" fill={i === 0 ? "#F1B86A" : "#A4B0C2"} fontSize="24" fontFamily="var(--font-geist-mono)">
-              {ring.label}
-            </text>
-          </g>
-        ))}
-        <circle cx="560" cy="560" r="10" fill="#F1B86A" />
+    <Frame n={5} concept bleed={<Bg src="noche-estrellas" ctx={ctx} overlay="left" dim={0.6} />}>
+      <svg viewBox="0 0 1000 1000" className="absolute right-[-60px] top-[70px] h-[960px] w-[960px]" aria-hidden>
+        {rings.map((l, i) => {
+          const rr = 90 + i * 85;
+          return (
+            <g key={l}>
+              <circle
+                cx="500"
+                cy="500"
+                r={rr}
+                fill="none"
+                stroke={i === 0 ? "#F1B86A" : "#53D8F5"}
+                strokeOpacity={i === 0 ? 0.9 : 0.55 - i * 0.07}
+                strokeWidth={i === 0 ? 3 : 1.6}
+                strokeDasharray={i === rings.length - 1 ? "4 10" : undefined}
+              />
+              <rect x={500 - l.length * 8 - 18} y={500 - rr - 22} width={l.length * 16 + 36} height="44" rx="22" fill="rgba(5,8,14,0.85)" stroke="rgba(255,255,255,0.15)" />
+              <text x="500" y={500 - rr + 8} textAnchor="middle" fill={i === 0 ? "#F1B86A" : "#E8F4FF"} fontSize="24" fontFamily="var(--font-geist-mono)">
+                {l}
+              </text>
+            </g>
+          );
+        })}
+        <circle cx="500" cy="500" r="14" fill="#F1B86A" className={ctx.animate ? "animate-glow" : undefined} />
       </svg>
-      <div className="flex h-full flex-col justify-center px-[120px]">
-        <H className="text-[150px]">
+      <div className="relative flex h-full flex-col justify-center px-[120px]">
+        <H className="text-[140px]">
           <span {...r(0.1, "block")}>Salir de</span>
-          <span {...r(0.25, "block")}>mi burbuja.</span>
+          <span {...r(0.25, "block text-gradient")}>mi burbuja.</span>
         </H>
-        <p {...r(0.45, "mt-12 max-w-[760px] text-[38px] leading-snug text-muted")}>
+        <p {...r(0.45, "mt-10 max-w-[760px] text-[36px] leading-snug text-white/75")}>
           El primer paso no fue técnico. Fue darme cuenta de que había un mundo de oportunidades fuera del aula.
         </p>
-        <div {...r(0.6, "mt-14 flex gap-6 text-[20px]")}>
-          <div className="h-[250px] w-[360px] overflow-hidden rounded-2xl"><PhotoSlot k={ctx.photos.ieee ? "ieee" : "flit-2026"} photos={ctx.photos} caption /></div>
-          <div className="h-[250px] w-[360px] overflow-hidden rounded-2xl"><PhotoSlot k={ctx.photos.cusco ? "cusco" : "irf26-huaraz"} photos={ctx.photos} caption /></div>
+        <div {...r(0.6, "mt-14 flex gap-6")}>
+          <Photo k={ctx.photos.ieee ? "ieee" : "flit-2026"} ctx={ctx} className="h-[260px] w-[390px]" />
+          <Photo k={ctx.photos.cusco ? "cusco" : "irf26-huaraz"} ctx={ctx} className="h-[260px] w-[390px]" />
         </div>
       </div>
     </Frame>
@@ -338,30 +419,34 @@ function S5(ctx: DeckContext) {
 }
 
 function S6(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame n={6}>
+    <Frame n={6} concept bleed={<Bg src="campo-offline" ctx={ctx} overlay="full" dim={0.72} position="center" />}>
       <div className="grid h-full grid-cols-2">
-        <div className="flex flex-col justify-center border-r border-line px-[120px]">
-          <p {...r(0.1, "font-mono text-[26px] text-gold")}>Expectativa</p>
-          <p {...r(0.25, "mt-8 font-display text-[96px] font-semibold leading-[0.95]")}>
+        <div className="flex flex-col justify-center px-[120px]">
+          <div {...r(0.1, "")}>
+            <Kicker color="text-gold">EXPECTATIVA</Kicker>
+          </div>
+          <p {...r(0.25, "mt-10 font-display text-[100px] font-semibold leading-[0.95] tracking-[-0.04em]")}>
             “Sí, ingeniero,
             <br />
             eso es sencillo.”
           </p>
         </div>
-        <div className="flex flex-col justify-center bg-navy px-[110px]">
-          <p {...r(0.5, "font-mono text-[26px] text-cyan")}>Realidad</p>
-          <p {...r(0.6, "mt-8 font-display text-[96px] font-semibold leading-[0.95]")}>¿Por qué no funciona?</p>
-          <div {...r(0.8, "mt-12 rounded-2xl border border-line bg-obsidian p-8 font-mono text-[24px] leading-relaxed text-muted")}>
-            <span className="text-faint">$</span> sync --push
-            <br />
-            <span className="text-[#ff8f8f]">error: no hay conexión a internet</span>
-            <br />
-            <span className="text-faint">{"// el campo no es la oficina"}</span>
+        <div className="flex flex-col justify-center pr-[120px]">
+          <div {...r(0.5, "")}>
+            <Kicker>REALIDAD</Kicker>
           </div>
-          <p {...r(1, "mt-12 text-[34px]")}>
-            Mi primer trabajo: <span className="font-semibold text-gold">ECOING</span>
+          <p {...r(0.6, "mt-10 font-display text-[100px] font-semibold leading-[0.95] tracking-[-0.04em] text-gradient")}>¿Por qué no funciona?</p>
+          <div {...r(0.8, `glass mt-12 rounded-3xl p-9 text-[26px] leading-relaxed ${mono}`)}>
+            <span className="text-white/40">$</span> sync --push
+            <br />
+            <span className="text-[#ff8f8f]">✕ error: no hay conexión a internet</span>
+            <br />
+            <span className="text-white/40">{"// el campo no es la oficina"}</span>
+          </div>
+          <p {...r(1, "mt-12 text-[38px]")}>
+            Mi primer trabajo: <span className="font-semibold text-gradient-gold">ECOING</span>
           </p>
         </div>
       </div>
@@ -370,92 +455,87 @@ function S6(ctx: DeckContext) {
 }
 
 function S7(ctx: DeckContext) {
-  const r = useRise(ctx);
-  const box = (x: number, y: number, w: number, label: string, sub: string, color: string, delay: number) => (
-    <g className={ctx.animate ? "animate-rise" : undefined} style={ctx.animate ? { animationDelay: `${delay}s` } : undefined}>
-      <rect x={x} y={y} width={w} height="150" rx="20" fill="#101827" stroke={color} strokeWidth="2" />
-      <text x={x + 32} y={y + 66} fill="#F4F7FB" fontSize="38" fontFamily="var(--font-display)" fontWeight="600">
-        {label}
-      </text>
-      <text x={x + 32} y={y + 110} fill="#A4B0C2" fontSize="22" fontFamily="var(--font-geist-mono)">
-        {sub}
-      </text>
-    </g>
-  );
-  const arrow = (x1: number, x2: number, y: number, color: string, dashed = false) => (
-    <g>
-      <line x1={x1} y1={y} x2={x2 - 10} y2={y} stroke={color} strokeWidth="3" strokeDasharray={dashed ? "8 10" : undefined} />
-      <path d={`M${x2 - 18} ${y - 10} L${x2} ${y} L${x2 - 18} ${y + 10}`} fill="none" stroke={color} strokeWidth="3" />
-    </g>
+  const r = rise(ctx);
+  const node = (label: string, sub: string, color: string, delay: number) => {
+    const p = r(delay, "glass min-w-[220px] rounded-2xl px-7 py-6");
+    return (
+      <div className={p.className} style={{ ...p.style, boxShadow: `inset 0 0 0 1px ${color}55, 0 0 40px -10px ${color}66` }}>
+        <p className="font-display text-[36px] font-semibold">{label}</p>
+        <p className={`mt-1 text-[20px] text-white/60 ${mono}`}>{sub}</p>
+      </div>
+    );
+  };
+  const arrow = (c: string, dashed = false) => (
+    <svg width="64" height="24" className="shrink-0" aria-hidden>
+      <line x1="2" y1="12" x2="52" y2="12" stroke={c} strokeWidth="3" strokeDasharray={dashed ? "6 7" : undefined} />
+      <path d="M46 4 L60 12 L46 20" fill="none" stroke={c} strokeWidth="3" />
+    </svg>
   );
   return (
-    <Frame n={7}>
-      <div {...r(0.15, "absolute right-[120px] top-[150px] h-[300px] w-[500px] overflow-hidden rounded-3xl text-[18px]")}>
-        <ConceptImage k="infraestructura-electrica" />
-      </div>
-      <div className="px-[120px] pt-[170px]">
-        <H className="max-w-[1100px] text-[104px]">
+    <Frame n={7} concept bleed={<Bg src="infraestructura-electrica" ctx={ctx} overlay="full" dim={0.62} />}>
+      <div className="flex h-full flex-col px-[120px] pb-[130px] pt-[150px]">
+        <Kicker color="text-gold">CASO ECOING · OFFLINE-FIRST</Kicker>
+        <H className="mt-8 text-[120px]">
           <span {...r(0.05)}>¿Y si no hay internet?</span>
         </H>
-        <p {...r(0.2, "mt-6 max-w-[1050px] text-[32px] text-muted")}>
-          Caso ECOING: una app que tenía que seguir funcionando en campo, sin señal. Arquitectura offline-first.
-        </p>
+        <p {...r(0.2, "mt-6 max-w-[1300px] text-[34px] text-white/75")}>Una app que tenía que seguir funcionando en campo, sin señal.</p>
+        <div className="mt-auto flex items-stretch gap-4">
+          <div className="rounded-[32px] border-2 border-dashed border-gold/50 bg-black/20 p-8">
+            <p className={`mb-6 text-[22px] text-gold ${mono}`}>SIN CONEXIÓN · EN CAMPO</p>
+            <div className="flex items-center gap-3">
+              {node("Flutter", "app móvil", "#F1B86A", 0.4)}
+              {arrow("#F1B86A")}
+              {node("SQLite", "datos locales", "#F1B86A", 0.55)}
+            </div>
+            <p className="mt-6 text-[24px] text-white/70">Todo se registra localmente.</p>
+          </div>
+          <div className="flex items-center">{arrow("#66E3B4", true)}</div>
+          <div className="flex-1 rounded-[32px] border-2 border-dashed border-cyan/50 bg-black/20 p-8">
+            <p className={`mb-6 text-[22px] text-cyan ${mono}`}>AL RECUPERAR INTERNET</p>
+            <div className="flex items-center gap-3">
+              {node("Sync", "cola de cambios", "#53D8F5", 0.8)}
+              {arrow("#53D8F5")}
+              {node("API REST", "servidor", "#438BFF", 0.95)}
+              {arrow("#438BFF")}
+              {node("Dashboard", "seguimiento", "#438BFF", 1.1)}
+            </div>
+            <p className="mt-6 text-[24px] text-white/70">Los cambios se envían, se validan y llegan al panel del equipo.</p>
+          </div>
+        </div>
       </div>
-      <svg viewBox="0 0 1680 520" className="absolute bottom-[90px] left-[120px] w-[1680px]" aria-label="Flutter, SQLite, sincronización, API REST y dashboard">
-        <rect x="0" y="20" width="640" height="480" rx="28" fill="none" stroke="#F1B86A" strokeOpacity="0.4" strokeDasharray="6 10" />
-        <text x="32" y="70" fill="#F1B86A" fontSize="26" fontFamily="var(--font-geist-mono)">Sin conexión — en campo</text>
-        <rect x="700" y="20" width="980" height="480" rx="28" fill="none" stroke="#53D8F5" strokeOpacity="0.4" strokeDasharray="6 10" />
-        <text x="732" y="70" fill="#53D8F5" fontSize="26" fontFamily="var(--font-geist-mono)">Al recuperar internet</text>
-
-        {box(40, 140, 250, "Flutter", "app móvil", "#F1B86A", 0.4)}
-        {arrow(290, 350, 215, "#F1B86A")}
-        {box(350, 140, 250, "SQLite", "datos locales", "#F1B86A", 0.6)}
-        <text x="40" y="380" fill="#A4B0C2" fontSize="24" fontFamily="var(--font-geist-sans)">Se registra todo localmente.</text>
-        <text x="40" y="418" fill="#A4B0C2" fontSize="24" fontFamily="var(--font-geist-sans)">Nada se pierde si no hay señal.</text>
-
-        {arrow(600, 760, 215, "#66E3B4", true)}
-        {box(760, 140, 270, "Sincronización", "cola de cambios", "#53D8F5", 0.9)}
-        {arrow(1030, 1090, 215, "#53D8F5")}
-        {box(1090, 140, 240, "API REST", "servidor", "#438BFF", 1.1)}
-        {arrow(1330, 1390, 215, "#438BFF")}
-        {box(1390, 140, 260, "Dashboard", "seguimiento", "#438BFF", 1.3)}
-        <text x="760" y="380" fill="#A4B0C2" fontSize="24" fontFamily="var(--font-geist-sans)">Los cambios pendientes se envían, se validan</text>
-        <text x="760" y="418" fill="#A4B0C2" fontSize="24" fontFamily="var(--font-geist-sans)">y aparecen en el panel para el equipo.</text>
-      </svg>
     </Frame>
   );
 }
 
 function S8(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   const tech = ["Desarrollo", "Infraestructura", "Cableado"];
   const human = ["Comunicación", "Puntualidad", "Disciplina"];
   return (
-    <Frame n={8}>
-      <div className="grid h-full grid-cols-[1fr_620px] gap-[90px] px-[120px] pb-[110px] pt-[190px]">
-        <div className="flex flex-col">
-          <H className="text-[130px]">
-            <span {...r(0.1, "block")}>No todo es</span>
-            <span {...r(0.2, "block")}>programar.</span>
-          </H>
-          <p {...r(0.35, "mt-8 text-[36px] text-muted")}>Voluntariado en el Poder Judicial.</p>
-          <div className="mt-auto grid grid-cols-2 gap-x-16">
-            <div>
-              <p className="font-mono text-[24px] text-cyan">Lo técnico</p>
-              {tech.map((t, i) => (
-                <p key={t} {...r(0.5 + i * 0.1, "border-b border-line py-5 text-[44px] font-display")}>{t}</p>
-              ))}
-            </div>
-            <div>
-              <p className="font-mono text-[24px] text-gold">Lo que nadie te enseña en clase</p>
-              {human.map((t, i) => (
-                <p key={t} {...r(0.8 + i * 0.1, "border-b border-line py-5 text-[44px] font-display")}>{t}</p>
-              ))}
-            </div>
+    <Frame n={8} concept bleed={<Bg src="rack" ctx={ctx} overlay="left" position="right center" />}>
+      <div className="flex h-full flex-col justify-center px-[120px]">
+        <Kicker color="text-gold">VOLUNTARIADO · PODER JUDICIAL</Kicker>
+        <H className="mt-8 text-[140px]">
+          <span {...r(0.1, "block")}>No todo es</span>
+          <span {...r(0.25, "block text-gradient")}>programar.</span>
+        </H>
+        <div className="mt-16 grid max-w-[1050px] grid-cols-2 gap-8">
+          <div {...r(0.45, "glass rounded-3xl p-9")}>
+            <p className={`text-[22px] text-cyan ${mono}`}>LO TÉCNICO</p>
+            {tech.map((t) => (
+              <p key={t} className="mt-4 font-display text-[44px]">
+                {t}
+              </p>
+            ))}
           </div>
-        </div>
-        <div {...r(0.3, "overflow-hidden rounded-3xl border border-line bg-navy/60 text-[22px]")}>
-          {ctx.photos["poder-judicial"] ? <PhotoSlot k="poder-judicial" photos={ctx.photos} caption /> : <RackIllustration animate={ctx.animate} />}
+          <div {...r(0.65, "glass rounded-3xl p-9")}>
+            <p className={`text-[22px] text-gold ${mono}`}>LO QUE NO TE ENSEÑAN EN CLASE</p>
+            {human.map((t) => (
+              <p key={t} className="mt-4 font-display text-[44px]">
+                {t}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </Frame>
@@ -463,32 +543,31 @@ function S8(ctx: DeckContext) {
 }
 
 function S9(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame n={9}>
-      <div className="flex h-full flex-col px-[120px] pb-[110px] pt-[180px]">
-        <H className="text-[120px]">
-          <span {...r(0.1)}>Un buen proyecto no basta.</span>
+    <Frame n={9} concept bleed={<Bg src="escenario" ctx={ctx} overlay="bottom" dim={0.55} />}>
+      <div className="flex h-full flex-col px-[120px] pb-[130px] pt-[150px]">
+        <H className="text-[124px]">
+          <span {...r(0.1)}>Un buen proyecto </span>
+          <span {...r(0.2, "text-gradient-gold")}>no basta.</span>
         </H>
-        <div {...r(0.25, "mt-10 flex gap-5 font-mono text-[26px] text-muted")}>
-          <span className="rounded-full border border-line px-5 py-2">Reconocimiento facial</span>
-          <span className="rounded-full border border-line px-5 py-2">Concursos perdidos</span>
-          <span className="rounded-full border border-gold/60 px-5 py-2 text-gold">DermaApp</span>
+        <div {...r(0.3, `mt-8 flex gap-4 text-[24px] ${mono}`)}>
+          {["Reconocimiento facial", "Concursos perdidos", "DermaApp"].map((t, i) => (
+            <span key={t} className={`glass rounded-full px-6 py-2 ${i === 2 ? "text-gold" : "text-white/75"}`}>
+              {t}
+            </span>
+          ))}
         </div>
-        <div className="mt-auto grid grid-cols-[560px_1fr] gap-20">
-          <div {...r(0.45, "rounded-3xl border border-line bg-navy/60 p-10")}>
-            <p className="font-mono text-[24px] text-faint">Enumerar tecnologías</p>
-            <p className="mt-6 text-[34px] leading-snug text-muted line-through decoration-[#ff8f8f]/70">
-              “Usamos inteligencia artificial, una app móvil y una base de datos en la nube.”
-            </p>
+        <div className="mt-auto grid grid-cols-[480px_1fr] items-end gap-12">
+          <div {...r(0.5, "glass rounded-3xl p-9 opacity-80")}>
+            <p className={`text-[22px] text-white/50 ${mono}`}>✕ ENUMERAR TECNOLOGÍAS</p>
+            <p className="mt-5 text-[30px] leading-snug text-white/50 line-through decoration-[#ff8f8f]/80">“Usamos IA, una app móvil y una base de datos en la nube.”</p>
           </div>
-          <div {...r(0.65, "")}>
-            <p className="font-mono text-[24px] text-gold">Comunicar valor</p>
-            <div className="mt-8">
-              <Chain items={["Problema", "Solución", "Evidencia", "Impacto"]} accent="#F1B86A" size={42} gap={64} />
-            </div>
-            <p className="mt-10 max-w-[900px] text-[32px] leading-snug text-muted">
-              El jurado no evalúa cuántas tecnologías usaste. Evalúa si entendiste el problema y si puedes demostrar que tu solución sirve.
+          <div {...r(0.7, "")}>
+            <p className={`mb-6 text-[22px] text-gold ${mono}`}>✓ COMUNICAR VALOR</p>
+            <Flow items={["Problema", "Solución", "Evidencia", "Impacto"]} color="#F1B86A" size={32} />
+            <p className="mt-8 max-w-[1000px] text-[30px] leading-snug text-white/80">
+              El jurado no evalúa cuántas tecnologías usaste: evalúa si entendiste el problema y si puedes demostrar que tu solución sirve.
             </p>
           </div>
         </div>
@@ -498,88 +577,86 @@ function S9(ctx: DeckContext) {
 }
 
 function S10(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
     <Frame n={10}>
-      <div className="flex h-full flex-col px-[120px] pb-[100px] pt-[180px]">
-        <H className="text-[110px]">
+      <div className="flex h-full flex-col px-[120px] pb-[130px] pt-[150px]">
+        <H className="text-[108px]">
           <span {...r(0.1, "block")}>Perdimos una hackathon.</span>
-          <span {...r(0.3, "block text-gold")}>Ganamos una comunidad.</span>
+          <span {...r(0.3, "block text-gradient-gold")}>Ganamos una comunidad.</span>
         </H>
-        <div {...r(0.5, "mt-14")}>
-          <Chain items={["HackAru", "SpinOut", "IRF26"]} size={52} />
+        <div {...r(0.5, "mt-10")}>
+          <Flow items={["HackAru", "SpinOut", "IRF26"]} size={34} />
         </div>
-        <div className="mt-auto grid grid-cols-4 gap-6">
-          {(["irf26-huaraz", "flit-2026", "sep", "irf26-utec"] as const).map((k, i) => (
-            <div key={k} {...r(0.7 + i * 0.1, "h-[330px] overflow-hidden rounded-2xl text-[20px]")}>
-              <PhotoSlot k={k} photos={ctx.photos} caption />
-            </div>
-          ))}
+        <div className="mt-auto grid grid-cols-[1.4fr_1fr_1fr] grid-rows-2 gap-5" style={{ height: 440 }}>
+          <div {...r(0.6, "row-span-2")}>
+            <Photo k="irf26-utec" ctx={ctx} className="h-full" />
+          </div>
+          <div {...r(0.7, "")}>
+            <Photo k="irf26-huaraz" ctx={ctx} className="h-full" />
+          </div>
+          <div {...r(0.8, "")}>
+            <Photo k="flit-2026" ctx={ctx} className="h-full" />
+          </div>
+          <div {...r(0.9, "col-span-2")}>
+            <Photo k="sep" ctx={ctx} className="h-full" position="center 40%" />
+          </div>
         </div>
-        <p {...r(1.1, "mt-8 text-[30px] text-muted")}>
-          El networking no es pedir favores. Es construir relaciones con personas que quieren hacer cosas.
-        </p>
       </div>
     </Frame>
   );
 }
 
 function S11(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame n={11}>
-      <div className="flex h-full flex-col px-[120px] pb-[110px] pt-[180px]">
-        <H className="text-[112px]">
-          <span {...r(0.1)}>No existe una sola</span>
-          <br />
-          <span {...r(0.2)}>ruta profesional.</span>
+    <Frame n={11} concept bleed={<Bg src="senderos" ctx={ctx} overlay="bottom" dim={0.5} />}>
+      <div className="flex h-full flex-col px-[120px] pb-[130px] pt-[150px]">
+        <H className="text-[120px]">
+          <span {...r(0.1, "block")}>No existe una sola</span>
+          <span {...r(0.2, "block text-gradient")}>ruta profesional.</span>
         </H>
-        <div className="mt-auto grid grid-cols-6 border-t border-line">
+        <div className="mt-auto grid grid-cols-6 gap-5">
           {ctx.routeCounts.map((route, i) => (
-            <div key={route.label} {...r(0.35 + i * 0.1, "border-r border-line px-6 pt-8 last:border-r-0")}>
-              <p className="font-display text-[110px] font-semibold leading-none text-ink tabular">{route.count}</p>
-              <p className="mt-6 text-[32px] leading-tight">{route.label}</p>
+            <div key={route.label} {...r(0.35 + i * 0.1, "glass rounded-3xl px-7 pb-7 pt-6")}>
+              <p className="font-display text-[100px] font-semibold leading-none tabular text-gradient">{route.count}</p>
+              <p className="mt-4 text-[28px] leading-tight">{route.label}</p>
             </div>
           ))}
         </div>
-        <p {...r(1, "mt-8 font-mono text-[22px] text-faint")}>
-          Entradas en el directorio por ruta. Todas enlazan a su fuente oficial.
-        </p>
+        <p {...r(1, `mt-6 text-[20px] text-white/55 ${mono}`)}>ENTRADAS EN EL DIRECTORIO · TODAS CON FUENTE OFICIAL</p>
       </div>
     </Frame>
   );
 }
 
 function S12(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
     <Frame n={12}>
-      <div className="grid h-full grid-cols-[640px_1fr]">
-        <div className="relative h-full">
-          <PhotoSlot k="angie" photos={ctx.photos} position="center 30%" />
-          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-r from-transparent to-obsidian" />
-          <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-obsidian/90 to-transparent" />
-        </div>
-        <div className="flex flex-col justify-center px-[100px]">
-          <p {...r(0.1, "font-mono text-[26px] text-gold")}>Historia de una compañera</p>
-          <H className="mt-6 text-[120px]">
-            <span {...r(0.2, "block")}>Angie:</span>
-            <span {...r(0.3, "block")}>de un PEU a</span>
-            <span {...r(0.4, "block")}>una práctica.</span>
-          </H>
-          <div className="mt-16 space-y-0">
-            {[
-              ["Postulación", "a un Programa de Extensión Universitaria"],
-              ["≈ 3 meses", "de formación en Lima"],
-              ["Oportunidad profesional", "a partir del programa"],
-            ].map(([a, b], i) => (
-              <div key={a} {...r(0.6 + i * 0.15, "flex items-baseline gap-10 border-t border-line py-6")}>
-                <span className="font-mono text-[24px] text-cyan tabular">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-[42px] font-display font-semibold">{a}</span>
-                <span className="text-[30px] text-muted">{b}</span>
-              </div>
-            ))}
-          </div>
+      <div className="absolute inset-y-0 left-0 w-[820px]">
+        <PhotoSlot k="angie" photos={ctx.photos} position="center 30%" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_50%,#05080e),linear-gradient(180deg,rgba(5,8,14,0.85),transparent_22%,transparent_78%,rgba(5,8,14,0.9))]" />
+      </div>
+      <div className="relative ml-[860px] flex h-full flex-col justify-center pr-[120px]">
+        <Kicker color="text-gold">HISTORIA DE UNA COMPAÑERA</Kicker>
+        <H className="mt-8 text-[120px]">
+          <span {...r(0.2, "block")}>Angie:</span>
+          <span {...r(0.3, "block")}>de un PEU a</span>
+          <span {...r(0.4, "block text-gradient")}>una práctica.</span>
+        </H>
+        <div className="mt-14 space-y-4">
+          {[
+            ["Postulación", "a un PEU"],
+            ["≈ 3 meses", "de formación en Lima"],
+            ["Oportunidad", "profesional"],
+          ].map(([a, b], i) => (
+            <div key={a} {...r(0.6 + i * 0.15, "glass flex items-baseline gap-8 rounded-2xl px-8 py-5")}>
+              <span className={`text-[24px] text-cyan ${mono}`}>{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-display text-[40px] font-semibold">{a}</span>
+              <span className="text-[28px] text-white/60">{b}</span>
+            </div>
+          ))}
         </div>
       </div>
     </Frame>
@@ -587,33 +664,27 @@ function S12(ctx: DeckContext) {
 }
 
 function S13(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame n={13}>
-      <div className="grid h-full grid-cols-[1fr_380px] gap-[80px] px-[120px] pb-[110px] pt-[180px]">
+    <Frame n={13} concept bleed={<Bg src="estado" ctx={ctx} overlay="left" dim={0.6} />}>
+      <div className="grid h-full grid-cols-[1fr_380px] gap-[80px] px-[120px] pb-[130px] pt-[150px]">
         <div className="flex flex-col">
-          <H className="text-[112px]">
-            <span {...r(0.1)}>El Estado también</span>
-            <br />
-            <span {...r(0.2)}>busca talento.</span>
+          <H className="text-[120px]">
+            <span {...r(0.1, "block")}>El Estado también</span>
+            <span {...r(0.2, "block text-gradient")}>busca talento.</span>
           </H>
-          <div className="mt-auto flex flex-wrap gap-x-12 gap-y-6">
+          <div className="mt-auto flex flex-wrap gap-4">
             {ctx.stateOrgs.map((o, i) => (
-              <span
-                key={o.name}
-                {...r(0.35 + i * 0.05, `font-display text-[56px] font-semibold ${o.listed ? "text-ink" : "text-faint"}`)}
-              >
+              <span key={o.name} {...r(0.35 + i * 0.04, `glass rounded-2xl px-6 py-3 font-display text-[38px] font-semibold ${o.listed ? "text-ink" : "text-white/35"}`)}>
                 {o.name}
               </span>
             ))}
           </div>
-          <p {...r(1, "mt-10 text-[30px] text-muted")}>
-            PEU, cursos de extensión, prácticas preprofesionales y profesionales. Cada uno con carreras y requisitos distintos.
-          </p>
+          <p {...r(1, "mt-8 text-[28px] text-white/70")}>PEU, cursos de extensión y prácticas. Cada programa tiene carreras y requisitos distintos.</p>
         </div>
         <div {...r(0.6, "flex flex-col items-center justify-end")}>
           <Qr qr={ctx.qr?.oportunidades} size={340} />
-          <p className="mt-5 text-center font-mono text-[22px] text-muted">Filtra por “Sector público” y “PEU”</p>
+          <p className={`mt-6 text-center text-[21px] text-white/70 ${mono}`}>FILTRA “SECTOR PÚBLICO” Y “PEU”</p>
         </div>
       </div>
     </Frame>
@@ -621,43 +692,42 @@ function S13(ctx: DeckContext) {
 }
 
 function S14(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   const steps = ["Universidad", "Regional", "Nacional", "Latinoamérica"];
   return (
-    <Frame n={14}>
-      <div className="flex h-full flex-col px-[120px] pb-[110px] pt-[180px]">
-        <div {...r(0.2, "absolute right-[120px] top-[140px] h-[330px] w-[290px] overflow-hidden rounded-3xl text-[20px]")}>
-          <PhotoSlot k="diego" photos={ctx.photos} caption position="center 20%" />
-        </div>
-        <p {...r(0.05, "font-mono text-[26px] text-gold")}>Huawei ICT Competition</p>
-        <H className="mt-6 text-[112px]">
-          <span {...r(0.1)}>Juan Diego: competir</span>
-          <br />
-          <span {...r(0.2)}>internacionalmente.</span>
-        </H>
-        <div className="relative mt-auto">
-          <svg viewBox="0 0 1680 360" className="w-full" aria-label="Etapas: universidad, regional, nacional, Latinoamérica; China como siguiente meta" style={{ marginTop: 40 }}>
+    <Frame n={14} concept bleed={<Bg src="noche-estrellas" ctx={ctx} overlay="left" dim={0.65} />}>
+      <div className="grid h-full grid-cols-[1fr_460px] gap-[80px] px-[120px] pb-[130px] pt-[150px]">
+        <div className="flex flex-col">
+          <Kicker color="text-gold">HUAWEI ICT COMPETITION</Kicker>
+          <H className="mt-8 text-[112px]">
+            <span {...r(0.1, "block")}>Juan Diego:</span>
+            <span {...r(0.2, "block text-gradient")}>competir afuera.</span>
+          </H>
+          <svg viewBox="0 -60 1100 420" className="mt-auto w-full" aria-label="Etapas: universidad, regional, nacional, Latinoamérica; China como siguiente meta">
             {steps.map((s, i) => {
-              const x = 120 + i * 350;
-              const y = 300 - i * 70;
+              const x = 110 + i * 245;
+              const y = 270 - i * 55;
               return (
                 <g key={s}>
-                  {i > 0 && <line x1={x - 350} y1={y + 70} x2={x} y2={y} stroke="#53D8F5" strokeWidth="3" />}
-                  <circle cx={x} cy={y} r="14" fill="#53D8F5" />
-                  <text x={x} y={y + 56} textAnchor="middle" fill="#F4F7FB" fontSize="32" fontFamily="var(--font-display)">{s}</text>
+                  {i > 0 && <line x1={x - 245} y1={y + 55} x2={x} y2={y} stroke="#53D8F5" strokeWidth="4" />}
+                  <circle cx={x} cy={y} r="16" fill="#53D8F5" />
+                  <circle cx={x} cy={y} r="30" fill="none" stroke="#53D8F5" strokeOpacity="0.35" />
+                  <text x={x} y={y + 62} textAnchor="middle" fill="#F4F7FB" fontSize="28" fontFamily="var(--font-display)">
+                    {s}
+                  </text>
                 </g>
               );
             })}
-            <line x1={120 + 3 * 350} y1={300 - 3 * 70} x2={1560} y2={20} stroke="#F1B86A" strokeWidth="3" strokeDasharray="8 12" />
-            <circle cx={1560} cy={20} r="14" fill="none" stroke="#F1B86A" strokeWidth="3" strokeDasharray="4 5" />
-            <text x={1540} y={78} textAnchor="end" fill="#F1B86A" fontSize="30" fontFamily="var(--font-display)">China</text>
-            <text x={1540} y={112} textAnchor="end" fill="#A4B0C2" fontSize="22" fontFamily="var(--font-geist-mono)">siguiente meta</text>
+            <line x1={110 + 3 * 245} y1={270 - 3 * 55} x2={1040} y2={30} stroke="#F1B86A" strokeWidth="4" strokeDasharray="10 12" />
+            <circle cx={1040} cy={30} r="16" fill="none" stroke="#F1B86A" strokeWidth="4" strokeDasharray="5 5" />
+            <text x={1010} y={-18} textAnchor="end" fill="#F1B86A" fontSize="30" fontFamily="var(--font-display)">
+              China · siguiente meta
+            </text>
           </svg>
+          <p {...r(0.8, "mt-6 text-[30px] leading-snug text-white/75")}>Llegar a la etapa latinoamericana desde Puno demuestra que se puede.</p>
         </div>
-        <div className="mt-8 flex items-end justify-between">
-          <p {...r(0.8, "max-w-[1100px] text-[30px] text-muted")}>
-            Llegar a la etapa latinoamericana desde Puno ya demuestra que se puede. La final global sigue siendo una meta pendiente.
-          </p>
+        <div {...r(0.3, "flex items-center")}>
+          <Photo k="diego" ctx={ctx} className="h-[700px] w-full" position="center 15%" />
         </div>
       </div>
     </Frame>
@@ -665,29 +735,29 @@ function S14(ctx: DeckContext) {
 }
 
 function S15(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
     <Frame n={15}>
-      <div className="grid h-full grid-cols-[1fr_600px] gap-[90px] px-[120px] pb-[110px] pt-[160px]">
+      <div className="grid h-full grid-cols-[1fr_620px] gap-[90px] px-[120px] pb-[130px] pt-[150px]">
         <div className="flex min-h-0 flex-col">
-          <p {...r(0.05, "font-mono text-[26px] text-gold")}>Un fellow de nuestra universidad</p>
-          <H className="mt-6 text-[110px]">
+          <Kicker color="text-gold">UN FELLOW DE NUESTRA UNIVERSIDAD</Kicker>
+          <H className="mt-8 text-[116px]">
             <span {...r(0.15, "block")}>Paolo Boris</span>
-            <span {...r(0.25, "block")}>Luna Luque</span>
+            <span {...r(0.25, "block text-gradient")}>Luna Luque</span>
           </H>
-          <p {...r(0.4, "mt-10 max-w-[900px] text-[36px] leading-snug text-muted")}>
-            Estudiante de Ingeniería de Sistemas y representante regional del Impact Regional Fellowship 2026 (IRF26).
+          <p {...r(0.4, "mt-10 max-w-[900px] text-[34px] leading-snug text-white/75")}>
+            Estudiante de Ingeniería de Sistemas y representante regional del Impact Regional Fellowship 2026.
           </p>
-          <div {...r(0.6, "mt-auto rounded-3xl border border-line bg-navy/60 p-10")}>
-            <p className="font-mono text-[24px] text-cyan">¿Qué es un fellowship?</p>
-            <p className="mt-4 text-[32px] leading-snug">
-              Un programa de duración definida que selecciona a un grupo de personas para formarse, conectarse y desarrollar un proyecto con mentoría.
+          <div {...r(0.6, "glass mt-auto rounded-3xl p-9")}>
+            <p className={`text-[22px] text-cyan ${mono}`}>¿QUÉ ES UN FELLOWSHIP?</p>
+            <p className="mt-4 text-[30px] leading-snug">
+              Un programa de duración definida que selecciona a un grupo para formarse, conectarse y desarrollar un proyecto con mentoría.
             </p>
           </div>
         </div>
         <div className="flex min-h-0 flex-col gap-6">
-          <div className="min-h-0 flex-1 overflow-hidden rounded-3xl"><PhotoSlot k="paolo" photos={ctx.photos} position="center 35%" /></div>
-          <p {...r(0.8, "font-display text-[40px] font-semibold leading-tight")}>Las oportunidades existen antes de egresar.</p>
+          <Photo k="paolo" ctx={ctx} className="min-h-0 flex-1" position="center 35%" caption={false} />
+          <p {...r(0.8, "font-display text-[40px] font-semibold leading-tight text-gradient-gold")}>Las oportunidades existen antes de egresar.</p>
         </div>
       </div>
     </Frame>
@@ -695,49 +765,43 @@ function S15(ctx: DeckContext) {
 }
 
 function S16(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   const skills = ["Git", "Colaboración", "Revisiones de código", "Postulaciones"];
   return (
-    <Frame n={16}>
-      <div className="grid h-full grid-cols-[1fr_780px] gap-[80px] px-[120px] pb-[110px] pt-[170px]">
-        <div className="flex min-h-0 flex-col">
-          <H className="text-[100px]">
-            <span {...r(0.1, "block")}>Trabajar desde</span>
-            <span {...r(0.2, "block")}>Puno para</span>
-            <span {...r(0.3, "block")}>otros países.</span>
-          </H>
-          <p {...r(0.35, "mt-10 text-[34px] leading-snug text-muted")}>
-            Práctica remota con <span className="text-ink">Allprocar</span>, una empresa de Argentina. El idioma de trabajo fue Git: ramas, pull requests y revisiones.
-          </p>
-          <div {...r(0.6, "mt-auto rounded-3xl border border-line bg-navy/60 p-9")}>
-            <p className="font-mono text-[24px] text-gold">Ojo</p>
-            <p className="mt-3 text-[30px] leading-snug">“Remoto” no siempre significa “disponible desde cualquier país”. Revisa siempre la restricción geográfica.</p>
-          </div>
+    <Frame n={16} concept bleed={<Bg src="trabajo-remoto" ctx={ctx} overlay="left" position="right center" />}>
+      <svg viewBox="0 0 1920 1080" className="absolute inset-0 h-full w-full" aria-hidden>
+        <defs>
+          <linearGradient id="s16" x1="0" x2="1">
+            <stop offset="0" stopColor="#F1B86A" />
+            <stop offset="1" stopColor="#53D8F5" />
+          </linearGradient>
+        </defs>
+        <path d="M1220 800 Q 1500 280 1760 500" fill="none" stroke="url(#s16)" strokeWidth="3" className={ctx.animate ? "animate-draw" : undefined} style={{ ["--len" as string]: 1000 } as CSSProperties} />
+        <circle cx="1220" cy="800" r="12" fill="#F1B86A" />
+        <circle cx="1760" cy="500" r="12" fill="#53D8F5" />
+        <text x="1220" y="860" textAnchor="middle" fill="#fff" fontSize="26" fontFamily="var(--font-geist-mono)">
+          PUNO
+        </text>
+        <text x="1760" y="560" textAnchor="middle" fill="#fff" fontSize="26" fontFamily="var(--font-geist-mono)">
+          ARGENTINA
+        </text>
+      </svg>
+      <div className="relative flex h-full flex-col justify-center px-[120px]">
+        <Kicker color="text-gold">PRÁCTICA REMOTA · ALLPROCAR</Kicker>
+        <H className="mt-8 text-[116px]">
+          <span {...r(0.1, "block")}>Trabajar desde Puno</span>
+          <span {...r(0.2, "block text-gradient")}>para otros países.</span>
+        </H>
+        <div {...r(0.4, "mt-12 flex max-w-[1000px] flex-wrap gap-4")}>
+          {skills.map((k) => (
+            <span key={k} className="glass rounded-full px-7 py-3 text-[30px]">
+              {k}
+            </span>
+          ))}
         </div>
-        <div className="flex min-h-0 flex-col gap-6">
-          <div {...r(0.25, "relative min-h-0 flex-1 overflow-hidden rounded-3xl text-[20px]")}>
-            {ctx.photos.allprocar ? <PhotoSlot k="allprocar" photos={ctx.photos} caption /> : <ConceptImage k="trabajo-remoto" />}
-            <svg viewBox="0 0 780 200" className="absolute inset-x-0 top-0 w-full" aria-hidden>
-              <defs>
-                <linearGradient id="g16" x1="0" x2="1">
-                  <stop offset="0" stopColor="#F1B86A" />
-                  <stop offset="1" stopColor="#53D8F5" />
-                </linearGradient>
-              </defs>
-              <path d="M90 160 Q 390 -40 690 120" fill="none" stroke="url(#g16)" strokeWidth="4" className={ctx.animate ? "animate-draw" : undefined} style={{ ["--len" as string]: 800 } as CSSProperties} />
-              <circle cx="90" cy="160" r="10" fill="#F1B86A" />
-              <circle cx="690" cy="120" r="10" fill="#53D8F5" />
-              <text x="90" y="194" textAnchor="middle" fill="#fff" fontSize="24" fontFamily="var(--font-geist-mono)">Puno</text>
-              <text x="690" y="160" textAnchor="middle" fill="#fff" fontSize="24" fontFamily="var(--font-geist-mono)">Argentina</text>
-            </svg>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {skills.map((k, i) => (
-              <span key={k} {...r(0.6 + i * 0.1, "rounded-full border border-cyan/40 bg-cyan/5 px-6 py-2.5 text-[26px] text-ink")}>
-                {k}
-              </span>
-            ))}
-          </div>
+        <div {...r(0.6, "glass mt-12 max-w-[900px] rounded-3xl p-8")}>
+          <p className={`text-[22px] text-gold ${mono}`}>OJO</p>
+          <p className="mt-3 text-[30px] leading-snug">“Remoto” no siempre significa “disponible desde cualquier país”. Revisa la restricción geográfica.</p>
         </div>
       </div>
     </Frame>
@@ -745,38 +809,30 @@ function S16(ctx: DeckContext) {
 }
 
 function S17(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame
-      n={17}
-      bleed={
-        <div className="absolute inset-y-0 right-0 w-[1100px] opacity-45">
-          <ConceptImage k="laboratorio" tag={false} />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,#080D15,rgba(8,13,21,0.55)_45%,rgba(8,13,21,0.75))]" />
-        </div>
-      }
-    >
-      <div className="grid h-full grid-cols-[1fr_360px] gap-[80px] px-[120px] pb-[110px] pt-[180px]">
+    <Frame n={17} concept bleed={<Bg src="laboratorio" ctx={ctx} overlay="left" dim={0.55} />}>
+      <div className="grid h-full grid-cols-[1fr_380px] gap-[80px] px-[120px] pb-[130px] pt-[150px]">
         <div className="flex flex-col">
-          <H className="text-[100px]">
+          <H className="text-[104px]">
             <span {...r(0.1, "block")}>Investigación y</span>
-            <span {...r(0.2, "block")}>oportunidades internacionales.</span>
+            <span {...r(0.2, "block text-gradient")}>oportunidades globales.</span>
           </H>
-          <div className="mt-auto">
+          <div className="mt-auto space-y-4">
             {ctx.research.slice(0, 4).map((o, i) => (
-              <div key={o.title} {...r(0.35 + i * 0.08, "grid grid-cols-[1fr_auto] items-baseline gap-8 border-t border-line py-5")}>
+              <div key={o.title} {...r(0.35 + i * 0.08, "glass grid grid-cols-[1fr_auto] items-center gap-8 rounded-2xl px-8 py-5")}>
                 <div>
-                  <span className="block font-display text-[36px] font-semibold leading-tight">{o.title}</span>
-                  <span className="text-[24px] text-muted">{o.organization}</span>
+                  <span className="block font-display text-[32px] font-semibold leading-tight">{o.title}</span>
+                  <span className="text-[22px] text-white/60">{o.organization}</span>
                 </div>
-                <span className="font-mono text-[24px] text-cyan">{o.when}</span>
+                <span className={`rounded-full px-5 py-2 text-[22px] ${o.status === "open" ? "bg-mint/15 text-mint" : "bg-white/10 text-cyan"} ${mono}`}>{o.when}</span>
               </div>
             ))}
           </div>
         </div>
         <div {...r(0.6, "flex flex-col items-center justify-end")}>
-          <Qr qr={ctx.qr?.oportunidades} size={320} />
-          <p className="mt-5 text-center font-mono text-[22px] text-muted">Requisitos completos y fechas en el directorio</p>
+          <Qr qr={ctx.qr?.oportunidades} size={330} />
+          <p className={`mt-6 text-center text-[21px] text-white/70 ${mono}`}>REQUISITOS Y FECHAS EN EL DIRECTORIO</p>
         </div>
       </div>
     </Frame>
@@ -784,61 +840,52 @@ function S17(ctx: DeckContext) {
 }
 
 function S18(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame n={18}>
-      <div className="flex h-full flex-col px-[120px] pb-[110px] pt-[180px]">
-        <H className="text-[112px]">
+    <Frame n={18} concept bleed={<Bg src="startup" ctx={ctx} overlay="bottom" dim={0.55} />}>
+      <div className="flex h-full flex-col px-[120px] pb-[130px] pt-[150px]">
+        <H className="text-[120px]">
           <span {...r(0.1, "block")}>De una idea a una</span>
-          <span {...r(0.2, "block")}>solución real.</span>
+          <span {...r(0.2, "block text-gradient-gold")}>solución real.</span>
         </H>
-        <div {...r(0.35, "mt-12")}>
-          <Chain items={["Problema", "Prototipo", "Validación", "Crecimiento"]} accent="#66E3B4" size={48} />
+        <div {...r(0.35, "mt-10")}>
+          <Flow items={["Problema", "Prototipo", "Validación", "Crecimiento"]} color="#66E3B4" size={32} />
         </div>
-        <div className="mt-auto grid grid-cols-3 gap-8">
+        <div className="mt-auto grid grid-cols-3 gap-6">
           {[
-            { k: "jayu" as const, name: "JAYU", note: "Emprendimiento en desarrollo" },
-            { k: "agendia" as const, name: "Agendia", note: "Emprendimiento en desarrollo" },
-            { k: null, name: "ROWAN", note: "Aprendizajes" },
-          ].map((p, i) => (
-            <div key={p.name} {...r(0.55 + i * 0.12, "overflow-hidden rounded-3xl border border-line bg-navy/50")}>
-              <div className="h-[190px]">
-                {p.k ? <PhotoSlot k={p.k} photos={ctx.photos} /> : <div className="h-full bg-[linear-gradient(135deg,#172233,#0d1522)]" />}
-              </div>
-              <div className="p-7">
-                <p className="font-display text-[44px] font-semibold">{p.name}</p>
-                <p className="mt-1 text-[26px] text-muted">{p.note}</p>
-              </div>
+            ["JAYU", "Emprendimiento en desarrollo"],
+            ["Agendia", "Emprendimiento en desarrollo"],
+            ["ROWAN", "Aprendizajes"],
+          ].map(([n, d], i) => (
+            <div key={n} {...r(0.55 + i * 0.12, "glass rounded-3xl p-8")}>
+              <p className="font-display text-[52px] font-semibold">{n}</p>
+              <p className="mt-1 text-[26px] text-white/65">{d}</p>
             </div>
           ))}
         </div>
-        <p {...r(0.95, "mt-8 font-mono text-[22px] text-faint")}>
-          Ecosistema: incubación · aceleración · concursos · capital semilla · mentorías
-        </p>
+        <p {...r(0.95, `mt-6 text-[20px] text-white/55 ${mono}`)}>INCUBACIÓN · ACELERACIÓN · CONCURSOS · CAPITAL SEMILLA · MENTORÍAS</p>
       </div>
     </Frame>
   );
 }
 
 function S19(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame n={19}>
-      <div className="flex h-full flex-col px-[120px] pb-[110px] pt-[180px]">
-        <H className="text-[100px]">
-          <span {...r(0.1, "block text-muted")}>No me digas qué sabes.</span>
-          <span {...r(0.25, "block")}>Muéstrame qué construyes.</span>
+    <Frame n={19} concept bleed={<Bg src="codigo" ctx={ctx} overlay="left" dim={0.6} position="right center" />}>
+      <div className="flex h-full flex-col px-[120px] pb-[130px] pt-[150px]">
+        <H className="text-[104px]">
+          <span {...r(0.1, "block text-white/50")}>No me digas qué sabes.</span>
+          <span {...r(0.25, "block text-gradient")}>Muéstrame qué construyes.</span>
         </H>
-        <div className="mt-auto grid grid-cols-[1fr_1.3fr] gap-14">
-          <div {...r(0.45, "rounded-3xl border border-line p-10")}>
-            <p className="font-mono text-[24px] text-faint">CV con lista de tecnologías</p>
-            <p className="mt-6 text-[38px] leading-relaxed text-faint">
-              Java, Python, JavaScript, React, Flutter, SQL, Docker, Git, Linux, Figma…
-            </p>
-            <p className="mt-6 text-[28px] text-muted">¿Qué construiste con eso?</p>
+        <div className="mt-auto grid grid-cols-[1fr_1.25fr] gap-10">
+          <div {...r(0.45, "glass rounded-3xl p-10 opacity-75")}>
+            <p className={`text-[22px] text-white/50 ${mono}`}>CV CON LISTA DE TECNOLOGÍAS</p>
+            <p className="mt-6 text-[36px] leading-relaxed text-white/45">Java, Python, React, Flutter, SQL, Docker, Git, Linux…</p>
+            <p className="mt-6 text-[28px] text-white/70">¿Qué construiste con eso?</p>
           </div>
-          <div {...r(0.65, "rounded-3xl border border-gold/50 bg-navy p-10 font-mono")}>
-            <p className="text-[24px] text-gold">README.md</p>
+          <div {...r(0.65, `glass rounded-3xl p-10 ${mono}`)}>
+            <p className="text-[22px] text-gold">README.md</p>
             <div className="mt-6 space-y-4 text-[30px]">
               {[
                 ["#", "Problema que resuelve"],
@@ -849,7 +896,7 @@ function S19(ctx: DeckContext) {
               ].map(([icon, t]) => (
                 <p key={t} className="flex gap-6">
                   <span className="w-8 text-cyan">{icon}</span>
-                  <span className="text-ink">{t}</span>
+                  <span>{t}</span>
                 </p>
               ))}
             </div>
@@ -861,108 +908,83 @@ function S19(ctx: DeckContext) {
 }
 
 function S20(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   const loop = ["Planificar", "Implementar", "Revisar", "Probar", "Entregar"];
   return (
-    <Frame n={20}>
-      <div className="grid h-full grid-cols-[1fr_760px] px-[120px] pb-[110px] pt-[180px]">
-        <div className="flex flex-col">
-          <H className="text-[112px]">
-            <span {...r(0.1, "block")}>El ingeniero en</span>
-            <span {...r(0.2, "block")}>la era de la IA.</span>
-          </H>
-          <p {...r(0.35, "mt-8 text-[34px] text-muted")}>Claude Code, Codex y agentes que trabajan contigo.</p>
-          <p {...r(0.55, "mt-auto font-display text-[72px] font-semibold leading-[1] text-gold")}>
-            Generar código no significa entenderlo.
-          </p>
-          <p {...r(0.75, "mt-8 max-w-[900px] text-[28px] leading-snug text-muted")}>
-            Esta misma plataforma se planificó, construyó y desplegó con agentes de IA. Cada dato del directorio se verificó contra su fuente oficial.
-          </p>
+    <Frame n={20} concept bleed={<Bg src="agentes-ia" ctx={ctx} overlay="left" dim={0.5} position="right center" />}>
+      <div className="flex h-full flex-col px-[120px] pb-[130px] pt-[150px]">
+        <Kicker>CLAUDE CODE · CODEX · AGENTES</Kicker>
+        <H className="mt-8 text-[120px]">
+          <span {...r(0.1, "block")}>El ingeniero en</span>
+          <span {...r(0.2, "block text-gradient")}>la era de la IA.</span>
+        </H>
+        <div {...r(0.4, "mt-12 flex flex-wrap items-center gap-3")}>
+          {loop.map((l, i) => (
+            <span key={l} className="flex items-center gap-3">
+              <span className={`glass rounded-full px-6 py-3 text-[30px] ${i === 2 ? "text-gold" : ""}`}>{l}</span>
+              {i < loop.length - 1 && <span className="text-[28px] text-cyan">→</span>}
+            </span>
+          ))}
         </div>
-        <svg viewBox="0 0 760 760" className="h-[760px] w-[760px] self-center" aria-label="Ciclo: planificar, implementar, revisar, probar, entregar">
-          <circle cx="380" cy="380" r="220" fill="none" stroke="#243247" strokeWidth="2" />
-          <circle
-            cx="380"
-            cy="380"
-            r="220"
-            fill="none"
-            stroke="#53D8F5"
-            strokeWidth="3"
-            strokeDasharray="1383"
-            className={ctx.animate ? "animate-draw" : undefined}
-            style={{ ["--len" as string]: 1383 } as CSSProperties}
-            transform="rotate(-90 380 380)"
-          />
-          {loop.map((l, i) => {
-            const a = (i / loop.length) * Math.PI * 2 - Math.PI / 2;
-            const x = 380 + Math.cos(a) * 220;
-            const y = 380 + Math.sin(a) * 220;
-            const lx = 380 + Math.cos(a) * 300;
-            const ly = 380 + Math.sin(a) * 300 + (Math.sin(a) > 0.5 ? 18 : 0);
-            return (
-              <g key={l}>
-                <circle cx={x} cy={y} r="14" fill={i === 2 ? "#F1B86A" : "#53D8F5"} />
-                <text x={lx} y={ly + 10} textAnchor="middle" fill="#F4F7FB" fontSize="30" fontFamily="var(--font-display)">{l}</text>
-              </g>
-            );
-          })}
-          <text x="380" y="372" textAnchor="middle" fill="#A4B0C2" fontSize="24" fontFamily="var(--font-geist-mono)">tú sigues siendo</text>
-          <text x="380" y="408" textAnchor="middle" fill="#A4B0C2" fontSize="24" fontFamily="var(--font-geist-mono)">responsable</text>
-        </svg>
+        <p {...r(0.6, "mt-auto max-w-[1300px] font-display text-[84px] font-semibold leading-[0.98] tracking-[-0.03em] text-gradient-gold")}>
+          Generar código no significa entenderlo.
+        </p>
+        <p {...r(0.8, "mt-8 max-w-[1100px] text-[28px] leading-snug text-white/70")}>
+          Esta plataforma se planificó, construyó y desplegó con agentes de IA, y cada dato del directorio se verificó contra su fuente oficial.
+        </p>
       </div>
     </Frame>
   );
 }
 
 function S21(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   const weeks = [
-    ["Semana 1", "Preparar perfil", "LinkedIn, GitHub y un CV de una página con enlaces."],
-    ["Semana 2", "Construir un proyecto", "Pequeño, real y con README, demo y pruebas."],
-    ["Semana 3", "Conectar con comunidades", "Un evento, una comunidad, tres conversaciones."],
-    ["Semana 4", "Postular", "Al menos tres convocatorias del directorio."],
+    ["Semana 1", "Prepara tu perfil", "LinkedIn, GitHub y un CV de una página con enlaces."],
+    ["Semana 2", "Construye un proyecto", "Pequeño, real, con README, demo y pruebas."],
+    ["Semana 3", "Conecta", "Un evento, una comunidad, tres conversaciones."],
+    ["Semana 4", "Postula", "Al menos a tres convocatorias del directorio."],
   ];
   return (
-    <Frame n={21}>
-      <div className="flex h-full flex-col px-[120px] pb-[110px] pt-[180px]">
-        <H className="text-[112px]">
+    <Frame n={21} concept bleed={<Bg src="amanecer" ctx={ctx} overlay="bottom" dim={0.5} />}>
+      <div className="flex h-full flex-col px-[120px] pb-[130px] pt-[150px]">
+        <H className="text-[120px]">
           <span {...r(0.1, "block")}>Tu próximo mes</span>
-          <span {...r(0.2, "block")}>puede verse así.</span>
+          <span {...r(0.2, "block text-gradient-gold")}>puede verse así.</span>
         </H>
-        <div className="relative mt-auto grid grid-cols-4 gap-10">
-          <div className="absolute left-0 right-0 top-[11px] h-[2px] bg-[linear-gradient(90deg,#F1B86A,#53D8F5)]" />
+        <div className="mt-auto grid grid-cols-4 gap-6">
           {weeks.map(([w, t, d], i) => (
-            <div key={w} {...r(0.35 + i * 0.15, "relative")}>
-              <span className="block h-6 w-6 rounded-full border-4 border-obsidian bg-gold" />
-              <p className="mt-8 font-mono text-[24px] text-gold">{w}</p>
-              <p className="mt-3 font-display text-[46px] font-semibold leading-tight">{t}</p>
-              <p className="mt-4 text-[28px] leading-snug text-muted">{d}</p>
+            <div key={w} {...r(0.35 + i * 0.15, "glass relative rounded-3xl p-8")}>
+              <span className="absolute -top-3 left-8 h-6 w-6 rounded-full border-4 border-[#05080e] bg-gold" />
+              <p className={`text-[22px] text-gold ${mono}`}>{w.toUpperCase()}</p>
+              <p className="mt-3 font-display text-[42px] font-semibold leading-tight">{t}</p>
+              <p className="mt-3 text-[26px] leading-snug text-white/70">{d}</p>
             </div>
           ))}
         </div>
-        <p {...r(1, "mt-12 font-mono text-[24px] text-faint")}>Checklist con progreso guardado en /ruta-profesional</p>
       </div>
     </Frame>
   );
 }
 
 function S22(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame n={22}>
-      <div className="grid h-full grid-cols-[1fr_auto] items-center gap-[120px] px-[120px] pt-[60px]">
+    <Frame n={22} concept bleed={<Bg src="noche-estrellas" ctx={ctx} overlay="left" dim={0.55} />}>
+      <div className="grid h-full grid-cols-[1fr_auto] items-center gap-[100px] px-[120px] pt-[20px]">
         <div>
-          <H className="text-[150px]">
+          <Kicker color="text-gold">SIN REGISTRO · DESDE TU CELULAR</Kicker>
+          <H className="mt-8 text-[156px]">
             <span {...r(0.1, "block")}>Escanea.</span>
             <span {...r(0.25, "block")}>Explora.</span>
-            <span {...r(0.4, "block text-gold")}>Comparte.</span>
+            <span {...r(0.4, "block text-gradient-gold")}>Comparte.</span>
           </H>
-          <p {...r(0.6, "mt-12 max-w-[820px] text-[36px] leading-snug text-muted")}>
-            {ctx.totalOpportunities} oportunidades verificadas con fuente oficial: prácticas, PEU, becas, investigación, competencias y emprendimiento. Sin registro.
+          <p {...r(0.6, "mt-10 max-w-[800px] text-[34px] leading-snug text-white/80")}>
+            {ctx.totalOpportunities} oportunidades con fuente oficial: prácticas, PEU, becas, investigación, competencias y emprendimiento.
           </p>
         </div>
         <div {...r(0.3)}>
-          <Qr qr={ctx.qr?.oportunidades} size={600} caption />
+          <Qr qr={ctx.qr?.oportunidades} size={580} caption />
         </div>
       </div>
     </Frame>
@@ -970,59 +992,65 @@ function S22(ctx: DeckContext) {
 }
 
 function S23(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   const items = [
-    { name: "SpinOut", note: "Impact Regional Fellowship" },
-    { name: "Comunitarios", note: "Comunidad" },
-    { name: "Agendia", note: "Emprendimiento" },
-    { name: "SEP", note: "Semillero de Emprendedores Perú" },
-    { name: "IEEE", note: "Rama estudiantil" },
+    ["SpinOut", "Impact Regional Fellowship"],
+    ["Comunitarios", "Comunidad"],
+    ["Agendia", "Emprendimiento"],
+    ["SEP", "Semillero de Emprendedores Perú"],
+    ["IEEE", "Rama estudiantil"],
   ];
   return (
-    <Frame n={23} bleed={<AltiplanoScene className="absolute inset-x-0 bottom-0 h-[55%] w-full opacity-70" connections={false} tone="dawn" animate={false} />}>
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,#080D15_35%,rgba(8,13,21,0.4))]" />
-      <div className="relative flex h-full flex-col px-[120px] pb-[110px] pt-[180px]">
-        <H className="text-[112px]">
-          <span {...r(0.1, "block")}>Puno no solo</span>
-          <span {...r(0.2, "block")}>exporta talento.</span>
-        </H>
-        <p {...r(0.35, "mt-8 text-[44px] text-gold")}>También puede crear oportunidades.</p>
-        <div className="absolute right-[120px] top-[150px] flex gap-6 text-[20px]">
-          <div {...r(0.45, "h-[300px] w-[400px] overflow-hidden rounded-3xl")}><PhotoSlot k="sep" photos={ctx.photos} caption /></div>
-          <div {...r(0.55, "h-[300px] w-[400px] overflow-hidden rounded-3xl")}><PhotoSlot k="irf26-huaraz" photos={ctx.photos} caption /></div>
+    <Frame n={23} concept bleed={<Bg src="hero-titicaca" ctx={ctx} overlay="bottom" dim={0.55} />}>
+      <div className="flex h-full flex-col px-[120px] pb-[130px] pt-[150px]">
+        <div className="grid grid-cols-[1fr_800px] gap-10">
+          <div>
+            <H className="text-[112px]">
+              <span {...r(0.1, "block")}>Puno no solo</span>
+              <span {...r(0.2, "block")}>exporta talento.</span>
+            </H>
+            <p {...r(0.35, "mt-8 text-[44px] text-gradient-gold")}>También puede crear oportunidades.</p>
+          </div>
+          <div className="grid grid-cols-2 gap-5" style={{ height: 360 }}>
+            <div {...r(0.45, "")}>
+              <Photo k="sep" ctx={ctx} className="h-full" />
+            </div>
+            <div {...r(0.55, "")}>
+              <Photo k="irf26-huaraz" ctx={ctx} className="h-full" />
+            </div>
+          </div>
         </div>
-        <div className="mt-auto grid grid-cols-5 gap-6">
-          {items.map((it, i) => (
-            <div key={it.name} {...r(0.5 + i * 0.1, "border-t-2 border-gold/70 pt-6")}>
-              <p className="font-display text-[46px] font-semibold">{it.name}</p>
-              <p className="mt-2 text-[24px] text-muted">{it.note}</p>
+        <div className="mt-auto grid grid-cols-5 gap-5">
+          {items.map(([n, d], i) => (
+            <div key={n} {...r(0.6 + i * 0.1, "glass rounded-3xl p-7")}>
+              <p className="font-display text-[42px] font-semibold">{n}</p>
+              <p className="mt-1 text-[22px] text-white/65">{d}</p>
             </div>
           ))}
         </div>
-        <p {...r(1.1, "mt-10 font-mono text-[22px] text-faint")}>
-          IRF27 y nuevas iniciativas: proyecciones, sujetas a confirmación oficial.
-        </p>
+        <p {...r(1.1, `mt-6 text-[20px] text-white/55 ${mono}`)}>IRF27 Y NUEVAS INICIATIVAS: PROYECCIONES SUJETAS A CONFIRMACIÓN OFICIAL</p>
       </div>
     </Frame>
   );
 }
 
 function S24(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame n={24}>
-      <div className="grid h-full grid-cols-[1fr_820px] gap-[90px] px-[120px] pb-[110px] pt-[180px]">
+    <Frame n={24} concept bleed={<Bg src="amanecer" ctx={ctx} overlay="left" dim={0.6} />}>
+      <div className="grid h-full grid-cols-[1fr_880px] gap-[80px] px-[120px] pb-[130px] pt-[150px]">
         <div className="flex flex-col justify-center">
           <H className="text-[130px]">
-            <span {...r(0.1, "block")}>Recién estamos</span>
-            <span {...r(0.25, "block")}>comenzando.</span>
+            <span {...r(0.1, "block")}>Recién</span>
+            <span {...r(0.2, "block")}>estamos</span>
+            <span {...r(0.3, "block text-gradient-gold")}>comenzando.</span>
           </H>
-          <p {...r(0.45, "mt-12 max-w-[820px] text-[38px] leading-snug text-muted")}>
+          <p {...r(0.5, "mt-12 max-w-[760px] text-[34px] leading-snug text-white/80")}>
             Todavía tengo muchísimo por aprender. Gracias a cada persona, comunidad y compañero que compartió una oportunidad conmigo.
           </p>
         </div>
-        <div {...r(0.3, "overflow-hidden rounded-3xl text-[22px]")}>
-          <PhotoSlot k={ctx.photos["coinsi-2026"] ? "coinsi-2026" : "irf26-utec"} photos={ctx.photos} caption />
+        <div {...r(0.3, "flex items-center")}>
+          <Photo k={ctx.photos["coinsi-2026"] ? "coinsi-2026" : "irf26-utec"} ctx={ctx} className="h-[620px] w-full" />
         </div>
       </div>
     </Frame>
@@ -1030,61 +1058,29 @@ function S24(ctx: DeckContext) {
 }
 
 function S25(ctx: DeckContext) {
-  const r = useRise(ctx);
+  const r = rise(ctx);
   return (
-    <Frame
-      n={25}
-      chrome={false}
-      bleed={<AltiplanoScene className="absolute inset-x-0 bottom-0 h-[900px] w-full opacity-60" tone="dawn" labels={false} animate={ctx.animate} />}
-    >
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,13,21,0.95)_40%,rgba(8,13,21,0.5))]" />
-      <div className="relative grid h-full grid-cols-[1fr_auto] items-center gap-[100px] px-[120px]">
+    <Frame n={25} concept bleed={<Bg src="puno-noche" ctx={ctx} overlay="left" dim={0.6} position="right center" />}>
+      <div className="grid h-full grid-cols-[1fr_auto] items-center gap-[100px] px-[120px]">
         <div>
-          <h2 {...r(0.1, "font-display text-[150px] font-bold leading-[0.88] tracking-[-0.045em]")}>
+          <h2 {...r(0.1, "font-display text-[150px] font-bold leading-[0.86] tracking-[-0.05em]")}>
             ¿Qué vas a
             <br />
             empezar esta
             <br />
-            semana?
+            <span className="text-gradient-gold">semana?</span>
           </h2>
-          <p {...r(0.4, "mt-12 text-[44px] text-gold")}>No esperes a egresar para comenzar.</p>
-          <div {...r(0.6, "mt-16 font-mono text-[26px] text-muted")}>
-            <p className="text-ink">{ctx.speakerName}</p>
-            <p className="mt-2">{ctx.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}</p>
+          <p {...r(0.4, "mt-12 text-[46px] text-white/90")}>No esperes a egresar para comenzar.</p>
+          <div {...r(0.6, "glass mt-14 inline-flex flex-col rounded-3xl px-9 py-6")}>
+            <span className="font-display text-[34px] font-semibold">{ctx.speakerName}</span>
+            <span className={`mt-1 text-[24px] text-cyan ${mono}`}>{ctx.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}</span>
           </div>
         </div>
         <div {...r(0.4)}>
-          <Qr qr={ctx.qr?.oportunidades} size={440} caption />
+          <Qr qr={ctx.qr?.oportunidades} size={460} caption />
         </div>
       </div>
     </Frame>
-  );
-}
-
-function RackIllustration({ animate }: { animate: boolean }) {
-  const ports = Array.from({ length: 24 }, (_, i) => i);
-  const colors = ["#438BFF", "#53D8F5", "#F1B86A", "#66E3B4"];
-  return (
-    <svg viewBox="0 0 620 700" className="h-full w-full" role="img" aria-label="Ilustración de un gabinete de red con cableado estructurado">
-      <rect width="620" height="700" fill="#101827" />
-      <rect x="90" y="60" width="440" height="580" rx="18" fill="#0b121e" stroke="#243247" strokeWidth="3" />
-      {[0, 1, 2, 3].map((row) => (
-        <g key={row} transform={`translate(120 ${110 + row * 130})`}>
-          <rect width="380" height="70" rx="8" fill="#172233" stroke="#2c3d57" />
-          {ports.slice(0, 12).map((p) => (
-            <rect key={p} x={16 + p * 29.5} y="22" width="20" height="16" rx="3" fill="#080D15" stroke="#3a4c69" />
-          ))}
-          {ports.slice(0, 12).map((p) => (
-            <circle key={`l${p}`} cx={26 + p * 29.5} cy="52" r="3" fill={p % 3 === 0 ? "#66E3B4" : "#2c3d57"} className={animate && p % 3 === 0 ? "animate-shimmer" : undefined} style={{ animationDelay: `${(p + row) * 0.3}s` }} />
-          ))}
-          {row < 3 &&
-            [1, 4, 7, 10].map((p, ci) => (
-              <path key={`c${p}`} d={`M${26 + p * 29.5} 38 C ${26 + p * 29.5} 90, ${60 + ci * 70} 80, ${60 + ci * 70} 130`} fill="none" stroke={colors[(ci + row) % 4]} strokeWidth="4" strokeLinecap="round" opacity="0.85" />
-            ))}
-        </g>
-      ))}
-      <text x="310" y="680" textAnchor="middle" fill="#6B788C" fontSize="18" fontFamily="var(--font-geist-mono)">ilustración conceptual</text>
-    </svg>
   );
 }
 

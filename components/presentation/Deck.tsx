@@ -214,7 +214,7 @@ export function Deck({ ctx, initial }: { ctx: Omit<DeckContext, "animate">; init
 
   return (
     <div
-      className="fixed inset-0 select-none bg-black"
+      className="fixed inset-0 select-none bg-[#020306]"
       onMouseMove={poke}
       onTouchStart={(e) => {
         touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
@@ -240,7 +240,9 @@ export function Deck({ ctx, initial }: { ctx: Omit<DeckContext, "animate">; init
         aria-label={`${index + 1} de ${TOTAL_SLIDES}: ${meta.title}`}
         className="absolute inset-0"
       >
-        <ScaledSlide key={index} index={index} ctx={fullCtx} />
+        <div key={index} className="animate-slide-in absolute inset-0">
+          <ScaledSlide index={index} ctx={fullCtx} />
+        </div>
       </section>
 
       {/* zonas de clic para avanzar/retroceder */}

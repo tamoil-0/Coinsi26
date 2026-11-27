@@ -4,6 +4,10 @@ export const concepts = {
   "trabajo-remoto": "Espacio de trabajo remoto frente al lago",
   "infraestructura-electrica": "Infraestructura eléctrica en el altiplano",
   laboratorio: "Laboratorio de computación científica",
+  "puno-noche": "Puno y el lago Titicaca de noche",
+  amanecer: "Amanecer en el lago Titicaca",
+  senderos: "Senderos en los Andes",
+  startup: "Espacio de trabajo de una startup",
 } as const;
 
 export type ConceptKey = keyof typeof concepts;

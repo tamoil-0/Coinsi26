@@ -2,8 +2,8 @@
 const PUNO = { x: 1500, y: 880 };
 const dests = [
   { label: "Lima", x: 1180, y: 470 },
-  { label: "Buenos Aires", x: 1330, y: 300 },
-  { label: "Ginebra", x: 1560, y: 170 },
+  { label: "Buenos Aires", x: 1330, y: 340 },
+  { label: "Ginebra", x: 1560, y: 250 },
   { label: "Okinawa", x: 1800, y: 280 },
   { label: "Shenzhen", x: 1760, y: 480, dashed: true },
 ];

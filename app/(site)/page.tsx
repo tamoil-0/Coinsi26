@@ -71,7 +71,7 @@ export default function Home() {
       <section className="relative -mt-14 overflow-hidden md:-mt-16">
         <div className="relative h-[92svh] min-h-[600px] w-full">
           <div className="absolute inset-0">
-            <ConceptImage k="hero-titicaca" tag={false} position="right bottom" className="scale-[1.02]" />
+            <ConceptImage k="puno-noche" tag={false} position="right center" className="scale-[1.02]" />
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,13,21,0.7),rgba(8,13,21,0.15)_35%,rgba(8,13,21,0.35)_65%,#080D15)] md:bg-[linear-gradient(90deg,rgba(8,13,21,0.92),rgba(8,13,21,0.45)_50%,rgba(8,13,21,0.1)),linear-gradient(180deg,rgba(8,13,21,0.4),transparent_30%,transparent_70%,#080D15)]" />
           <HeroConnections className="absolute inset-0 h-full w-full" />
