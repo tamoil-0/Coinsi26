@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #080d15;
+  --color-navy: #101827;
+  --color-surface: #172233;
+  --color-line: #243247;
+  --color-blue: #438bff;
+  --color-cyan: #53d8f5;
+  --color-gold: #f1b86a;
+  --color-mint: #66e3b4;
+  --color-ink: #f4f7fb;
+  --color-muted: #a4b0c2;
+  --color-faint: #6b788c;
+
+  --font-display: "Space Grotesk Variable", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-obsidian);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-obsidian);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-gold) 40%, transparent);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Horizonte: el recurso estructural de la identidad.
+   Una línea dorada fina que marca el nivel del lago (3812 m s. n. m.). */
+.horizon {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold) 12%, var(--color-gold) 88%, transparent);
+  opacity: 0.55;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: var(--len, 1200);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-draw {
+  stroke-dasharray: var(--len, 1200);
+  animation: draw 2.4s var(--ease-out-expo) both;
+}
+
+.animate-rise {
+  animation: rise 0.9s var(--ease-out-expo) both;
+}
+
+.animate-shimmer {
+  animation: shimmer 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ocultar scrollbar en filtros horizontales sin perder scroll */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
