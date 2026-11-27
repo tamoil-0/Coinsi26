@@ -256,7 +256,7 @@ export function Deck({ ctx, initial }: { ctx: Omit<DeckContext, "animate">; init
       {timer && (
         <div className="absolute right-4 top-4 z-30 rounded-lg border border-line bg-obsidian/90 px-4 py-2 font-mono text-sm text-ink tabular">
           {Math.floor(elapsed / 60)}:{String(elapsed % 60).padStart(2, "0")}
-          <span className="ml-3 text-faint">plan {planned.toFixed(1)} / 45 min</span>
+          <span className="ml-3 text-faint">plan {planned.toFixed(1)} / 37 min</span>
         </div>
       )}
 
