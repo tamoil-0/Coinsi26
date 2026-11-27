@@ -108,10 +108,11 @@ export function OpportunityCard({
         <div className="flex min-w-0 items-center gap-1.5 text-muted">
           <CalendarClock size={14} className="shrink-0 text-faint" aria-hidden />
           <dt className="sr-only">Cierre</dt>
-          <dd className="truncate font-mono text-[12.5px]">
+          <dd className="truncate font-mono text-[12px]">
             {o.applicationDeadline ? (
               <>
-                Cierra {formatDate(o.applicationDeadline)}
+                <span className="hidden text-faint sm:inline">Cierre </span>
+                {formatDate(o.applicationDeadline)}
                 {days !== null && days >= 0 && days <= 30 && <span className="ml-1 text-gold">({days === 0 ? "hoy" : `${days} d`})</span>}
               </>
             ) : status === "permanent" ? (

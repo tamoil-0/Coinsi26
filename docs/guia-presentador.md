@@ -2,7 +2,7 @@
 
 ## Antes de salir
 
-1. Abre la URL de producción en `/presentacion/1` y pulsa **F** para pantalla completa.
+1. Abre https://coinsi26.vercel.app/presentacion/1 y pulsa **F** para pantalla completa.
 2. Ten listo el **respaldo offline** (ver abajo) por si falla el internet del auditorio.
 3. Comprueba que la diapositiva 22 muestra el QR (solo aparece en el sitio desplegado con su URL real).
 
@@ -43,7 +43,7 @@ Opción B, sitio local completo:
 
 ```bash
 npm install
-NEXT_PUBLIC_SITE_URL=https://TU-URL.vercel.app npm run offline   # sirve en http://localhost:4000
+NEXT_PUBLIC_SITE_URL=https://coinsi26.vercel.app npm run offline   # sirve en http://localhost:4000
 ```
 
 Definir `NEXT_PUBLIC_SITE_URL` hace que los QR del respaldo apunten al sitio público real. Todas las imágenes y fuentes son locales: no se carga nada externo durante la presentación.

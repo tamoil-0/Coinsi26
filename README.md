@@ -3,6 +3,8 @@
 **Cómo construir experiencia real antes de egresar.**
 Ponencia magistral de Jhon Marco Aracayo Mamani en el VI Congreso Internacional de Ingeniería de Sistemas (COINSI 2026), Universidad Nacional del Altiplano, Puno, 27 de noviembre de 2026.
 
+**Sitio en producción:** https://coinsi26.vercel.app · Directorio: https://coinsi26.vercel.app/oportunidades · Ponencia: https://coinsi26.vercel.app/presentacion
+
 La plataforma tiene dos experiencias:
 
 - **Ponencia interactiva** (`/presentacion`): 25 diapositivas web 16:9 para proyectar en el auditorio.
