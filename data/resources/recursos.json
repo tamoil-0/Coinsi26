@@ -1,1 +1,222 @@
-[]
+[
+  {
+    "id": "santander-open-academy",
+    "name": "Santander Open Academy",
+    "provider": "Banco Santander",
+    "description": "Plataforma de formación de Santander con cursos subvencionados, contenido gratuito y becas con universidades e instituciones. Programas como Skills for Work dan un año de acceso gratuito a más de 80 cursos de IA, datos, liderazgo e idiomas.",
+    "category": "cursos",
+    "cost": "gratuito",
+    "url": "https://www.santanderopenacademy.com/",
+    "notes": "Cada convocatoria fija sus requisitos y países (la de 2026 era para mayores de 18 en 12 países, sin confirmar si incluía a Perú). Revisa las bases antes de postular.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "microsoft-learn",
+    "name": "Microsoft Learn",
+    "provider": "Microsoft",
+    "description": "Rutas y módulos de aprendizaje gratuitos sobre Azure, IA, datos y desarrollo. Incluye un Student Hub con orientación sobre certificaciones.",
+    "category": "cursos",
+    "cost": "gratis-con-certificado-de-pago",
+    "url": "https://learn.microsoft.com/en-us/training/student-hub/certifications",
+    "notes": "El entrenamiento es gratuito y los exámenes de certificación son de pago. Hay precio académico si verificas tu estatus de estudiante en tu perfil (disponible en la mayoría de países, excepto India y China).",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "aws-educate",
+    "name": "AWS Educate",
+    "provider": "Amazon Web Services",
+    "description": "Formación gratuita y autodirigida en cloud con laboratorios prácticos, insignias digitales y bolsa de trabajo. No pide tarjeta de crédito.",
+    "category": "cursos",
+    "cost": "gratuito",
+    "url": "https://aws.amazon.com/education/awseducate/",
+    "notes": "Registro solo con correo, desde los 13 años. La bolsa de trabajo es para mayores de 18. No incluye vouchers de certificación.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "aws-skill-builder",
+    "name": "AWS Skill Builder + AWS Student Rewards",
+    "provider": "Amazon Web Services",
+    "description": "Más de 1000 cursos gratuitos de AWS, como Cloud Practitioner Essentials, y preparación para certificaciones. Con Student Rewards, los estudiantes verificados ganan beneficios por su actividad en AWS Builder Center.",
+    "category": "certificaciones",
+    "cost": "freemium",
+    "url": "https://skillbuilder.aws/",
+    "notes": "Student Rewards (builder.aws.com/student-rewards) verifica tu estatus con SheerID usando correo institucional. Ofrece suscripción de Skill Builder por 1 año al completar el perfil y créditos o un voucher de certificación de USD 100 al acumular insignias. Sin voucher, el examen es de pago.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "cisco-networking-academy",
+    "name": "Cisco Networking Academy",
+    "provider": "Cisco",
+    "description": "Cursos gratuitos y autodirigidos de redes, ciberseguridad, IA, ciencia de datos, IoT, Python y Packet Tracer, con rutas profesionales hacia técnico de redes y analista de ciberseguridad junior.",
+    "category": "cursos",
+    "cost": "gratuito",
+    "url": "https://www.netacad.com/",
+    "notes": "Los cursos son gratuitos. Los exámenes de certificación de industria, como CCNA, se pagan aparte.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "ibm-skillsbuild",
+    "name": "IBM SkillsBuild",
+    "provider": "IBM",
+    "description": "Aprendizaje digital gratuito sobre tecnología y habilidades laborales, con credenciales digitales verificables en Credly que puedes compartir en LinkedIn.",
+    "category": "cursos",
+    "cost": "gratuito",
+    "url": "https://skillsbuild.org/",
+    "notes": "Hay rutas para universitarios y educadores. Las descargas de software académico requieren correo institucional.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "freecodecamp",
+    "name": "freeCodeCamp",
+    "provider": "freeCodeCamp.org",
+    "description": "Organización sin fines de lucro para aprender a programar gratis con currículos interactivos y proyectos. Tiene un portal en español.",
+    "category": "cursos",
+    "cost": "gratuito",
+    "url": "https://www.freecodecamp.org/espanol/",
+    "notes": null,
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "cs50x-harvard",
+    "name": "CS50x: Introducción a las Ciencias de la Computación",
+    "provider": "Harvard University (vía edX)",
+    "description": "Curso introductorio de Harvard a tu propio ritmo. Cubre C, Python, SQL y desarrollo web, y puedes obtener un certificado CS50 gratuito.",
+    "category": "cursos",
+    "cost": "gratuito",
+    "url": "https://cs50.harvard.edu/x/",
+    "notes": "El certificado CS50 es gratuito. El certificado verificado de edX es opcional y de pago. El periodo actual vence el 30 de junio de 2027 (UTC).",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "kaggle-learn",
+    "name": "Kaggle Learn",
+    "provider": "Kaggle (Google)",
+    "description": "Microcursos prácticos y gratuitos de Python, Pandas, SQL, Machine Learning, Deep Learning, NLP y Computer Vision. Al completarlos obtienes un certificado.",
+    "category": "ia",
+    "cost": "gratuito",
+    "url": "https://www.kaggle.com/learn",
+    "notes": "Necesitas una cuenta gratuita de Kaggle.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "github-student-developer-pack",
+    "name": "GitHub Student Developer Pack",
+    "provider": "GitHub Education",
+    "description": "Paquete de herramientas y beneficios gratuitos de desarrollo para estudiantes verificados. Incluye el plan GitHub Copilot Student.",
+    "category": "herramientas",
+    "cost": "gratuito",
+    "url": "https://education.github.com/pack",
+    "notes": "Requiere verificar tu estatus de estudiante, idealmente con correo institucional o carné. GitHub revisa la elegibilidad cada mes. Desde 2026 Copilot Student usa selección automática de modelo.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "anthropic-academy",
+    "name": "Anthropic Academy",
+    "provider": "Anthropic",
+    "description": "Cursos gratuitos sobre Claude, Claude Code, la API de Claude, Model Context Protocol y AI Fluency, incluida una versión para estudiantes.",
+    "category": "ia",
+    "cost": "gratuito",
+    "url": "https://anthropic.skilljar.com/",
+    "notes": "Solo requiere registrarse con correo. El hub oficial anthropic.com/learn redirige a academy.claude.com. Los cursos están en inglés.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "google-skills",
+    "name": "Google Skills (incluye Google Cloud Skills Boost)",
+    "provider": "Google",
+    "description": "Plataforma de Google con casi 3000 cursos, laboratorios y credenciales de IA y cloud, que integra Google Cloud Skills Boost. Tiene muchas rutas gratuitas e insignias de habilidad.",
+    "category": "cursos",
+    "cost": "freemium",
+    "url": "https://www.skills.google/",
+    "notes": "Incluye 35 créditos mensuales gratis para laboratorios. Los estudiantes pueden solicitar 200 créditos (válidos un año) desde cloud.google.com/edu/students y participar en Google Skills Arcade. Las certificaciones de Google Cloud son de pago.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "oracle-next-education",
+    "name": "Oracle Next Education (ONE)",
+    "provider": "Oracle + Alura Latam",
+    "description": "Programa gratuito y 100 % online de formación en tecnología e IA para Latinoamérica, con comunidad en Discord, desafíos prácticos, certificados y conexión con empresas.",
+    "category": "cursos",
+    "cost": "gratuito",
+    "url": "https://www.oracle.com/br/education/oracle-next-education/",
+    "notes": "Requisitos: 18 años o más y unas 4 horas diarias de estudio. Las próximas cohortes anunciadas son para 2027. No se confirmó explícitamente que Perú sea elegible en la próxima convocatoria.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "platzi",
+    "name": "Platzi",
+    "provider": "Platzi",
+    "description": "Plataforma latinoamericana de cursos en español de programación, datos, IA, inglés y negocios, con rutas profesionales y certificados digitales.",
+    "category": "cursos",
+    "cost": "pago",
+    "url": "https://platzi.com/precios/",
+    "notes": "Precios en USD: Basic USD 49 al mes y Expert USD 189 al año. Hay algunos cursos gratuitos y las primeras 3 clases de cada curso son abiertas.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "ef-set",
+    "name": "EF SET",
+    "provider": "EF Education First",
+    "description": "Test de inglés online y gratuito alineado al MCER (CEFR). La versión de 4 habilidades evalúa lectura, comprensión auditiva, expresión oral y escritura.",
+    "category": "ingles",
+    "cost": "gratuito",
+    "url": "https://www.efset.org/",
+    "notes": "Los tests de 2 y 4 habilidades emiten un certificado EF SET gratuito. El test de práctica no da certificado.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "duolingo-english-test",
+    "name": "Duolingo English Test",
+    "provider": "Duolingo",
+    "description": "Examen de inglés certificado y adaptativo de unos 60 minutos, que se rinde desde casa y es aceptado por instituciones de todo el mundo. Los resultados llegan en unos 2 días.",
+    "category": "ingles",
+    "cost": "pago",
+    "url": "https://englishtest.duolingo.com/",
+    "notes": "Cuesta unos USD 70 por intento según fuentes de terceros de 2026; confirma el precio en la web oficial. El resultado vale 2 años.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "coursera-ayuda-financiera",
+    "name": "Coursera (Ayuda financiera)",
+    "provider": "Coursera",
+    "description": "Cursos de universidades y empresas que puedes auditar gratis. Con la ayuda financiera, si te aprueban, obtienes acceso completo a evaluaciones y certificado sin costo.",
+    "category": "cursos",
+    "cost": "gratis-con-certificado-de-pago",
+    "url": "https://www.coursera.org/",
+    "notes": "Solicítala con el enlace \"Ayuda financiera disponible\" junto al botón de inscripción. La revisión tarda hasta 2 semanas y luego tienes 180 días para terminar el curso.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "edx",
+    "name": "edX",
+    "provider": "edX (2U)",
+    "description": "Cursos de universidades como Harvard o MIT, con modalidad de auditoría gratuita y temporal. El certificado verificado es de pago.",
+    "category": "cursos",
+    "cost": "gratis-con-certificado-de-pago",
+    "url": "https://www.edx.org/",
+    "notes": "En modo auditoría el acceso al material es temporal. El certificado verificado cuesta desde unos USD 50 por curso.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "google-career-certificates",
+    "name": "Certificados Profesionales de Google",
+    "provider": "Google (vía Coursera)",
+    "description": "Programas de 3 a 6 meses para empleabilidad en análisis de datos, ciberseguridad, soporte TI, diseño UX, gestión de proyectos, marketing digital e IA.",
+    "category": "certificaciones",
+    "cost": "pago",
+    "url": "https://grow.google/intl/es/google-career-certificates/",
+    "notes": "Se paga con la suscripción mensual de Coursera, pero puedes pedir ayuda financiera en cada curso. La página enlazada es la versión para España; las becas que menciona no aplican necesariamente en Perú.",
+    "lastVerifiedAt": "2026-11-27"
+  },
+  {
+    "id": "hugging-face-learn",
+    "name": "Hugging Face Learn",
+    "provider": "Hugging Face",
+    "description": "Cursos gratuitos de IA open source: LLM, agentes, Deep RL, visión, audio, difusión y robótica. El Agents Course otorga certificados gratuitos.",
+    "category": "ia",
+    "cost": "gratuito",
+    "url": "https://huggingface.co/learn",
+    "notes": "Necesitas una cuenta gratuita de Hugging Face. Los cursos están mayormente en inglés.",
+    "lastVerifiedAt": "2026-11-27"
+  }
+]

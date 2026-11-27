@@ -1,1 +1,1244 @@
-[]
+[
+  {
+    "id": "startup-peru-emprendimientos-innovadores",
+    "slug": "startup-peru-emprendimientos-innovadores",
+    "title": "Startup Perú – Concurso Emprendimientos Innovadores",
+    "organization": "ProInnóvate – Ministerio de la Producción (PRODUCE)",
+    "category": "startups",
+    "description": "Capital semilla no reembolsable del Estado peruano para equipos con un producto mínimo viable (MVP) con tracción y potencial de alto crecimiento. En la generación 13G se cofinanciaba hasta S/ 67,000 (hasta S/ 60,000 de capital semilla más S/ 7,000 para la incubadora). El financiamiento es concursable y no está garantizado.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "remoto",
+    "status": "recurring",
+    "applicationStart": "2025-12-29",
+    "applicationDeadline": "2026-01-20",
+    "deadlineTimezone": "America/Lima",
+    "programStart": null,
+    "programEnd": null,
+    "duration": "Hasta 8 meses de ejecución",
+    "eligibility": "Tipo: capital semilla. Equipos de 2 a 4 personas naturales (con compromiso de constituir empresa) o empresas jóvenes de hasta 18 meses con ventas 2025 de hasta S/ 120,000; el líder y al menos la mitad del equipo deben ser peruanos o residentes.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Producto mínimo viable con tracción demostrable e innovación a nivel nacional",
+      "Equipo de 2 a 4 integrantes, al menos uno a tiempo completo",
+      "Video de hasta 3 minutos (problema, solución, innovación, plan de crecimiento y equipo)",
+      "Declaración jurada (Formato I)",
+      "Contrapartida mínima del 30% del presupuesto (al menos 10% monetario)",
+      "Respaldo de una incubadora o aceleradora financiada por ProInnóvate para recibir los fondos si resulta seleccionado"
+    ],
+    "benefits": [
+      "Hasta S/ 60,000 de capital semilla no reembolsable (13G)",
+      "S/ 7,000 para la incubadora o aceleradora que acompaña al proyecto",
+      "Cofinanciamiento de hasta el 70% del presupuesto del proyecto"
+    ],
+    "fundingType": "subvencion",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Revisar las bases de la nueva generación en el portal de Startup Perú",
+      "Crear el formulario de postulación en el sistema en línea",
+      "Subir el video pitch y la documentación requerida antes del cierre",
+      "Superar la evaluación externa, el Comité Técnico y la evaluación legal"
+    ],
+    "officialUrl": "https://startup.proinnovate.gob.pe/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://startup.proinnovate.gob.pe/wp-content/uploads/2025/12/1.-Bases-FINALES-EIN-Startup-Peru%CC%81-13G.pdf"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "La generación 13G cerró el 20 de enero de 2026; no se encontró una nueva generación anunciada a la fecha de verificación.",
+    "featured": true,
+    "tags": ["capital-semilla", "startups", "mvp", "fondos-publicos", "proinnovate"]
+  },
+  {
+    "id": "startup-peru-emprendimientos-dinamicos",
+    "slug": "startup-peru-emprendimientos-dinamicos",
+    "title": "Startup Perú – Concurso Emprendimientos Dinámicos",
+    "organization": "ProInnóvate – Ministerio de la Producción (PRODUCE)",
+    "category": "startups",
+    "description": "Línea de cofinanciamiento no reembolsable para startups ya constituidas y con ventas que buscan escalar. En la generación 13G otorgaba hasta S/ 150,000 (hasta S/ 140,000 de capital semilla más S/ 10,000 para la incubadora o aceleradora). El financiamiento es concursable y no está garantizado.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "remoto",
+    "status": "recurring",
+    "applicationStart": "2025-12-29",
+    "applicationDeadline": "2026-01-20",
+    "deadlineTimezone": "America/Lima",
+    "programStart": null,
+    "programEnd": null,
+    "duration": "Hasta 8 meses de ejecución",
+    "eligibility": "Tipo: capital semilla/escalamiento. Empresas con entre 1 y 5 años de operación y ventas 2025 entre S/ 120,000 y S/ 1,200,000 (sin IGV) vinculadas al proyecto.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Empresa constituida con entre 1 y 5 años de operación",
+      "Ventas 2025 entre S/ 120,000 y S/ 1,200,000 sin IGV",
+      "Contrapartida mínima del 30% del presupuesto (al menos 10% monetario)"
+    ],
+    "benefits": [
+      "Hasta S/ 140,000 de capital semilla no reembolsable (13G)",
+      "S/ 10,000 para la incubadora o aceleradora que acompaña al proyecto"
+    ],
+    "fundingType": "subvencion",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Revisar las bases de la nueva generación en el portal de Startup Perú",
+      "Crear y enviar el formulario de postulación en línea antes del cierre"
+    ],
+    "officialUrl": "https://startup.proinnovate.gob.pe/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://startup.proinnovate.gob.pe/wp-content/uploads/2025/12/4.-Bases-FINALES-EDI-Startup-Peru%CC%81-13G.pdf"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "La generación 13G cerró el 20 de enero de 2026; no se encontró una nueva generación anunciada a la fecha de verificación.",
+    "featured": false,
+    "tags": ["capital-semilla", "startups", "escalamiento", "fondos-publicos", "proinnovate"]
+  },
+  {
+    "id": "prociencia-emprendimiento-academico",
+    "slug": "prociencia-emprendimiento-academico",
+    "title": "Emprendimiento Académico – Fase 2 (spin-offs universitarias)",
+    "organization": "PROCIENCIA – CONCYTEC",
+    "category": "startups",
+    "description": "Concurso que financia la transferencia, licenciamiento o creación de empresas de base tecnológica (spin-offs) a partir de tecnologías con TRL 7 u 8, con subvenciones de hasta S/ 350,000. Postula la institución (universidad licenciada, IPI o CITE), no el estudiante de forma individual; el financiamiento es concursable y no está garantizado.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "closed",
+    "applicationStart": "2026-07-31",
+    "applicationDeadline": "2026-10-05",
+    "deadlineTimezone": "America/Lima",
+    "programStart": null,
+    "programEnd": null,
+    "duration": "Hasta 10 meses de ejecución",
+    "eligibility": "Tipo: capital semilla para spin-offs. Entidad solicitante: universidad licenciada por SUNEDU, Instituto Público de Investigación o CITE con RUC activo, más al menos una entidad asociada. Estudiantes de posgrado o tesistas pueden participar como parte del equipo.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Tecnología con nivel de madurez TRL 7 u 8",
+      "Postulación a través de una entidad solicitante elegible (p. ej., la universidad)",
+      "Al menos una entidad asociada",
+      "Responsable Técnico con título profesional o grado de maestro",
+      "Contrapartida mínima de 20% no monetaria"
+    ],
+    "benefits": [
+      "Subvención no reembolsable de hasta S/ 350,000 por proyecto",
+      "Al menos 29 subvenciones previstas, sujetas a disponibilidad presupuestal"
+    ],
+    "fundingType": "subvencion",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Coordinar con la oficina de investigación o innovación de la universidad",
+      "Preparar la propuesta según las bases y postular por la entidad solicitante"
+    ],
+    "officialUrl": "https://prociencia.gob.pe/wp-content/uploads/2026/Emprendimiento%20Acad%C3%A9mico%20Fase%202/UD4_20260709_Emp%20Acad_Fase%202_Bases%5BF%5D%5BF%5D.pdf",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://prociencia.gob.pe/wp-content/uploads/2026/Emprendimiento%20Acad%C3%A9mico%20Fase%202/UD4_20260709_Emp%20Acad_Fase%202_Bases%5BF%5D%5BF%5D.pdf"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["spin-off", "base-tecnologica", "concytec", "investigacion", "capital-semilla"]
+  },
+  {
+    "id": "desafio-kunan",
+    "slug": "desafio-kunan",
+    "title": "Desafío Kunan",
+    "organization": "Kunan",
+    "category": "startups",
+    "description": "Competencia nacional que reconoce y premia emprendimientos sociales e innovadores en marcha en todo el Perú, con premio económico y acompañamiento para los ganadores. La convocatoria 2026 cerró el 14 de julio de 2026.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": "2026-07-14",
+    "deadlineTimezone": "America/Lima",
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Tipo: competencia y aceleración para emprendimientos sociales. Emprendimientos sociales de cualquier región del Perú que ya estén en ejecución, con componente de innovación e impacto demostrable.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Emprendimiento social en ejecución (no solo idea)",
+      "Componente de innovación e impacto social medible"
+    ],
+    "benefits": [
+      "Premios económicos y acompañamiento para los ganadores (montos según edición)",
+      "Visibilidad ante el ecosistema de emprendimiento social"
+    ],
+    "fundingType": "premio",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Seguir los canales oficiales de Kunan para la próxima convocatoria",
+      "Completar el formulario de postulación en línea"
+    ],
+    "officialUrl": "https://kunan.org/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://form.jotform.com/260740717672662",
+      "https://proactivo.com.pe/?p=101443"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Convocatoria anual; la edición 2027 aún no está anunciada.",
+    "featured": false,
+    "tags": ["emprendimiento-social", "impacto", "competencia", "premio"]
+  },
+  {
+    "id": "protagonistas-del-cambio-upc",
+    "slug": "protagonistas-del-cambio-upc",
+    "title": "Premio Protagonistas del Cambio UPC por los ODS",
+    "organization": "Universidad Peruana de Ciencias Aplicadas (UPC)",
+    "category": "startups",
+    "description": "Premio que reconoce a jóvenes líderes de iniciativas sociales con impacto en sus comunidades, alineadas a los Objetivos de Desarrollo Sostenible, con ganadores de diversas regiones del Perú. La edición 2025 premió a 10 jóvenes en septiembre de 2025.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Tipo: competencia/reconocimiento para emprendimiento social. Jóvenes de 18 a 29 años que sean directores, fundadores o cofundadores de iniciativas sociales con impacto en su comunidad.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Tener entre 18 y 29 años",
+      "Ser fundador(a), cofundador(a) o director(a) de una iniciativa social en marcha"
+    ],
+    "benefits": [],
+    "fundingType": null,
+    "applicationCost": null,
+    "applicationSteps": [
+      "Revisar la página oficial del premio para la próxima convocatoria"
+    ],
+    "officialUrl": "https://upc.edu.pe/en/nosotros/eventos-institucionales/premio-protagonistas-del-cambio-upc",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://upc.edu.pe/en/nosotros/eventos-institucionales/premio-protagonistas-del-cambio-upc",
+      "https://rpp.pe/campanas/publirreportaje/10-jovenes-que-estan-cambiando-el-peru-conoce-a-los-ganadores-de-protagonistas-del-cambio-upc-por-los-ods-2025-noticia-1659217"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Premio anual; fechas de la próxima convocatoria no publicadas.",
+    "featured": false,
+    "tags": ["emprendimiento-social", "ods", "jovenes", "liderazgo"]
+  },
+  {
+    "id": "impact-regional-fellowship-spinout",
+    "slug": "impact-regional-fellowship-spinout",
+    "title": "Impact Regional Fellowship (IRF)",
+    "organization": "SpinOut (con AI Playgrounds, STEM Futuras, 404 Tech Found, WIIE Ventures y Vocaciónate)",
+    "category": "startups",
+    "description": "Fellowship intensivo de seis semanas para estudiantes de educación superior de las regiones del Perú que quieren construir soluciones tecnológicas en sus territorios, con mentoría y jurado especializado. La primera edición (IRF26) se realizó del 14 de agosto (Huaraz) al 19 de septiembre de 2026 (Lima), con sesiones virtuales intermedias.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "hibrido",
+    "status": "unconfirmed",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": "2026-08-14",
+    "programEnd": "2026-09-19",
+    "duration": "6 semanas",
+    "eligibility": "Tipo: mentoría y preincubación. Estudiantes de educación superior de las regiones del Perú que quieran innovar con tecnología desde su región.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [],
+    "benefits": [
+      "En IRF26: cobertura de pasajes, hospedaje y alimentación para 30 becarios",
+      "Mentoría personalizada y jurado especializado",
+      "Acceso a la red de instituciones aliadas"
+    ],
+    "fundingType": "beca-completa",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Revisar el sitio oficial del IRF para confirmar si habrá edición 2027 (IRF27)"
+    ],
+    "officialUrl": "https://irf.spinoutworld.org/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://infomercado.pe/impact-regional-fellowship-abre-convocatoria-nacional-para-jovenes-que-quieran-innovar-desde-sus-regiones/",
+      "https://luma.com/84s2xufd"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "No se pudo verificar información sobre una edición IRF27.",
+    "featured": false,
+    "tags": ["fellowship", "regiones", "tecnologia", "mentoria", "impacto"]
+  },
+  {
+    "id": "hult-prize-2026-2027",
+    "slug": "hult-prize-2026-2027",
+    "title": "Hult Prize 2026–2027",
+    "organization": "Hult Prize Foundation",
+    "category": "startups",
+    "description": "Competencia global de startups de impacto para estudiantes universitarios, cuyo equipo ganador recibe US$ 1 millón en financiamiento semilla. Las etapas son clasificatorias en campus u Open Application (septiembre–febrero), nacionales (abril–mayo), incubadora digital, aceleradora global en Londres y final global en septiembre.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "hibrido",
+    "status": "open",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Tipo: competencia. Equipos de 2 a 4 integrantes, todos matriculados en un programa conducente a grado universitario y con al menos 18 años al 28 de febrero de 2027.",
+    "eligibleCareers": [],
+    "academicCycles": "Estudiantes matriculados en pregrado o posgrado",
+    "languageRequirements": null,
+    "requirements": [
+      "Equipo de 2 a 4 estudiantes universitarios matriculados",
+      "Todos los integrantes con 18 años o más al 28 de febrero de 2027",
+      "Startup alineada a un Objetivo de Desarrollo Sostenible"
+    ],
+    "benefits": [
+      "US$ 1 millón en financiamiento semilla para el equipo ganador (premio competitivo, no garantizado)",
+      "Mentoría en la incubadora digital y en la aceleradora global"
+    ],
+    "fundingType": "premio",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Formar un equipo de 2 a 4 personas",
+      "Registrar el equipo en el formulario oficial (nombre, país y ODS)",
+      "Competir en un evento clasificatorio en campus o vía Open Application"
+    ],
+    "officialUrl": "https://www.hultprize.org/",
+    "applicationUrl": "https://www.hultprize.org/register",
+    "sourceUrls": [
+      "https://www.hultprize.org/register",
+      "https://www.hultprize.org/",
+      "https://www.hultprize.org/competition"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": true,
+    "tags": ["impacto-social", "ods", "competencia", "startups", "universitarios"]
+  },
+  {
+    "id": "santander-x-global-challenge",
+    "slug": "santander-x-global-challenge",
+    "title": "Santander X Global Challenge",
+    "organization": "Banco Santander – Santander X",
+    "category": "startups",
+    "description": "Reto global temático de Santander X para startups y scaleups; la edición 2026 'The Quantum AI Leap' buscó soluciones con computación cuántica e inteligencia artificial y repartió €120,000 en premios. Cerró el 30 de junio de 2026.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "remoto",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": "2026-06-30",
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Tipo: competencia para startups y scaleups con soluciones alineadas al tema de cada edición.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Startup o scaleup con solución alineada al reto temático de la edición"
+    ],
+    "benefits": [
+      "Edición 2026: €10,000 para cada una de 3 startups y €30,000 para cada una de 3 scaleups",
+      "Acceso a la comunidad global de Santander X y mentoría (en 2026, con apoyo de IBM)"
+    ],
+    "fundingType": "premio",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Esperar el próximo reto temático de Santander X",
+      "Postular en línea con la startup"
+    ],
+    "officialUrl": "https://www.santander.com/en/press-room/press-releases/2026/05/santander-seeks-companies-with-the-best-solutions-in-quantum-computing-and-artificial-intelligence",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://enspire.ox.ac.uk/event/santander-x-global-challenge-the-quantum-ai-leap"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Santander lanza retos temáticos periódicamente; el siguiente no está anunciado.",
+    "featured": false,
+    "tags": ["ia", "computacion-cuantica", "startups", "competencia"]
+  },
+  {
+    "id": "founder-institute-colombia-2027",
+    "slug": "founder-institute-colombia-2027",
+    "title": "Founder Institute – Cohorte Colombia 2027 (virtual)",
+    "organization": "Founder Institute",
+    "category": "startups",
+    "description": "Programa de preaceleración para fundadores en etapa de idea o temprana, 100% en línea. El enlace de aplicación de Lima redirige actualmente a la cohorte Colombia 2027, del 25 de mayo al 25 de agosto de 2027; no se encontró un capítulo activo de Perú.",
+    "country": "Colombia",
+    "region": "latam",
+    "modality": "remoto",
+    "status": "open",
+    "applicationStart": null,
+    "applicationDeadline": "2027-03-16",
+    "deadlineTimezone": null,
+    "programStart": "2027-05-25",
+    "programEnd": "2027-08-25",
+    "duration": "3 meses",
+    "eligibility": "Tipo: preaceleración y mentoría. Emprendedores desde la etapa de idea; el formulario permite elegir la etapa de la startup.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Completar la aplicación en línea",
+      "El programa tiene una tarifa publicada de US$ 349 (precio regular US$ 499)"
+    ],
+    "benefits": [
+      "Programa estructurado de preaceleración en línea",
+      "Oportunidades de networking presencial antes y durante el programa"
+    ],
+    "fundingType": null,
+    "applicationCost": null,
+    "applicationSteps": [
+      "Completar la aplicación en fi.co antes de la fecha límite anticipada (16 de marzo de 2027)"
+    ],
+    "officialUrl": "https://fi.co/apply/lima",
+    "applicationUrl": "https://fi.co/apply/lima",
+    "sourceUrls": [
+      "https://fi.co/apply/lima"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["preaceleracion", "mentoria", "startups", "remoto"]
+  },
+  {
+    "id": "y-combinator",
+    "slug": "y-combinator",
+    "title": "Y Combinator (incluye Early Decision para estudiantes)",
+    "organization": "Y Combinator",
+    "category": "startups",
+    "description": "Aceleradora de startups con lotes presenciales en San Francisco; el lote Winter 2027 se realiza de enero a marzo de 2027. Su modalidad Early Decision permite a estudiantes postular antes de graduarse, recibir fondos al ser aceptados y reservar un lote posterior. La inversión depende de ser seleccionado y no está garantizada.",
+    "country": "Estados Unidos",
+    "region": "internacional",
+    "modality": "presencial",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": "2026-11-02",
+    "deadlineTimezone": "America/Los_Angeles",
+    "programStart": null,
+    "programEnd": null,
+    "duration": "Aprox. 3 meses por lote",
+    "eligibility": "Tipo: aceleración con inversión. Fundadores de startups de cualquier país; Early Decision para estudiantes que desean terminar su carrera antes de emprender.",
+    "eligibleCareers": [],
+    "academicCycles": "Early Decision: estudiantes, incluso si no están en el último año",
+    "languageRequirements": "Inglés (proceso y entrevistas en inglés)",
+    "requirements": [
+      "Completar la aplicación en línea",
+      "Entrevista (generalmente por video) si la aplicación es preseleccionada"
+    ],
+    "benefits": [
+      "Inversión y programa de aceleración en San Francisco (términos en el sitio de YC)"
+    ],
+    "fundingType": null,
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Completar la aplicación en ycombinator.com/apply",
+      "Estudiantes: elegir un lote futuro mediante Early Decision",
+      "Entrevista si es invitado"
+    ],
+    "officialUrl": "https://ycombinator.com/apply",
+    "applicationUrl": "https://ycombinator.com/apply",
+    "sourceUrls": [
+      "https://ycombinator.com/apply",
+      "https://ycombinator.com/early-decision"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "El plazo a tiempo de Winter 2027 venció el 2 de noviembre de 2026; YC indica que todavía considera postulaciones tardías, sin plazo de respuesta garantizado.",
+    "featured": false,
+    "tags": ["aceleradora", "inversion", "silicon-valley", "startups"]
+  },
+  {
+    "id": "start-up-chile-big",
+    "slug": "start-up-chile-big",
+    "title": "Start-Up Chile – Convocatoria BIG (Build, Ignite, Growth)",
+    "organization": "Start-Up Chile – CORFO",
+    "category": "startups",
+    "description": "Aceleradora pública de Chile abierta a emprendedores de cualquier país, con subsidio sin ceder participación (equity-free). En BIG13 los montos fueron de aprox. CLP 15 millones (Build), CLP 30 millones (Ignite) y CLP 75 millones (Growth). El subsidio es concursable y no está garantizado.",
+    "country": "Chile",
+    "region": "latam",
+    "modality": "presencial",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": "2026-11-24",
+    "deadlineTimezone": "America/Santiago",
+    "programStart": null,
+    "programEnd": null,
+    "duration": "4 meses (Build e Ignite) o 6 meses (Growth)",
+    "eligibility": "Tipo: aceleración con subsidio. Build: etapas tempranas hasta prototipo; Ignite: startups con MVP que buscan product-market fit; Growth: empresas en expansión. El líder debe residir en Chile durante la ejecución.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Proyecto global de base tecnológica que use Chile como plataforma",
+      "El líder extranjero debe tramitar la visa de residencia temporal y permanecer en Chile durante la ejecución",
+      "Seguro de salud para líderes extranjeros sin Fonasa o Isapre"
+    ],
+    "benefits": [
+      "Subsidio sin ceder participación (montos aproximados según línea en BIG13)",
+      "Apoyo para visa de trabajo e instalación en Chile para proyectos extranjeros seleccionados"
+    ],
+    "fundingType": "subvencion",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Esperar la próxima convocatoria BIG en startupchile.org",
+      "Postular en línea en la línea correspondiente a la etapa de la startup"
+    ],
+    "officialUrl": "https://startupchile.org/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://www.emol.com/noticias/Economia/2026/11/04/1216042/startup-chile-convocatoria.html",
+      "https://www.diariooficial.interior.gob.cl/publicaciones/2026/11/03/44589/01/2893766.pdf"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "BIG13 cerró el 24 de noviembre de 2026; la aceleración de BIG13 inicia en el primer semestre de 2027. La siguiente convocatoria no está anunciada.",
+    "featured": false,
+    "tags": ["aceleradora", "subsidio", "equity-free", "chile", "startups"]
+  },
+  {
+    "id": "microsoft-for-startups",
+    "slug": "microsoft-for-startups",
+    "title": "Microsoft for Startups (ex Founders Hub)",
+    "organization": "Microsoft",
+    "category": "startups",
+    "description": "Programa de beneficios para startups con créditos de Azure. La oferta abierta da hasta US$ 5,000 en créditos sin requerir financiamiento externo; la vía con inversionista (código de referido de la red de Microsoft) parte de US$ 100,000 en créditos.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "remoto",
+    "status": "permanent",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Tipo: créditos/beneficios. Oferta abierta: startups nuevas en Azure en un país elegible; vía de inversionista: startups con código de referido de una aceleradora, incubadora, fondo o universidad de la red de Microsoft.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Ser cliente nuevo de Azure (para la oferta abierta)",
+      "Verificación del negocio para acceder a los US$ 4,000 adicionales"
+    ],
+    "benefits": [
+      "US$ 1,000 en créditos de Azure por 90 días más US$ 4,000 por 180 días tras verificación (oferta abierta)",
+      "Desde US$ 100,000 en créditos, soporte dedicado y acceso prioritario a GPU (vía de inversionista)"
+    ],
+    "fundingType": "gratuito",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Ingresar a microsoft.com/startups",
+      "Elegir la oferta abierta o postular con código de referido"
+    ],
+    "officialUrl": "https://www.microsoft.com/startups",
+    "applicationUrl": "https://www.microsoft.com/startups",
+    "sourceUrls": [
+      "https://learn.microsoft.com/en-us/startups/changes-microsoft-for-startups"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["azure", "cloud", "creditos", "startups"]
+  },
+  {
+    "id": "aws-activate",
+    "slug": "aws-activate",
+    "title": "AWS Activate",
+    "organization": "Amazon Web Services (AWS)",
+    "category": "startups",
+    "description": "Programa de créditos de AWS para startups. Activate Founders (autofinanciadas) da hasta US$ 5,000 en créditos (se inicia con US$ 1,000) y Activate Portfolio hasta US$ 200,000 con un Org ID de una aceleradora, fondo o inversionista proveedor de Activate.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "remoto",
+    "status": "permanent",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Tipo: créditos/beneficios. Startups pre-Serie B, fundadas en los últimos 10 años, con cuenta de AWS en plan de pago.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Startup pre-Serie B fundada hace 10 años o menos",
+      "Cuenta de AWS en plan de pago (Paid Tier)",
+      "AWS Builder ID con correo profesional",
+      "Org ID de un proveedor de Activate (solo para Portfolio)"
+    ],
+    "benefits": [
+      "Founders: hasta US$ 5,000 en créditos",
+      "Portfolio: hasta US$ 200,000 en créditos"
+    ],
+    "fundingType": "gratuito",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Crear un AWS Builder ID",
+      "Elegir el nivel (Founders o Portfolio)",
+      "Completar datos del producto y la startup y vincular la cuenta de AWS",
+      "Esperar respuesta (AWS indica 5 a 10 días hábiles)"
+    ],
+    "officialUrl": "https://aws.amazon.com/startups/credits",
+    "applicationUrl": "https://aws.amazon.com/startups/credits",
+    "sourceUrls": [
+      "https://aws.amazon.com/startups/credits"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["aws", "cloud", "creditos", "startups"]
+  },
+  {
+    "id": "google-for-startups-accelerator-latam",
+    "slug": "google-for-startups-accelerator-latam",
+    "title": "Google for Startups Accelerator: Latinoamérica hispanohablante",
+    "organization": "Google for Startups",
+    "category": "startups",
+    "description": "Aceleradora de 10 semanas, híbrida y sin toma de participación, para startups tecnológicas (preferentemente con IA/ML) de Latinoamérica hispanohablante, con mentoría de Google y créditos de productos para startups elegibles. Las postulaciones están cerradas actualmente.",
+    "country": "Global",
+    "region": "latam",
+    "modality": "hibrido",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": "10 semanas",
+    "eligibility": "Tipo: aceleración. Startups de etapa Seed a Serie A con tracción, base u operación significativa en Latinoamérica hispanohablante y un CTO o líder técnico comprometido.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Etapa Seed a Serie A, idealmente con tracción",
+      "Producto escalable y técnicamente sólido, preferentemente con ML o IA",
+      "Participación del CEO y CTO en todas las sesiones"
+    ],
+    "benefits": [
+      "Mentoría de equipos y expertos de Google",
+      "Créditos de productos de Google y acceso a Cloud TPU para startups elegibles",
+      "Sin toma de participación ni cobro"
+    ],
+    "fundingType": "gratuito",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Registrar interés en la página oficial para futuras convocatorias"
+    ],
+    "officialUrl": "https://startup.google.com/programs/accelerator/spanish-speaking-latin-america/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://startup.google.com/programs/accelerator/spanish-speaking-latin-america/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Próxima cohorte no anunciada; se puede registrar interés.",
+    "featured": false,
+    "tags": ["aceleradora", "ia", "google", "startups", "equity-free"]
+  },
+  {
+    "id": "utec-ventures-aceleradora",
+    "slug": "utec-ventures-aceleradora",
+    "title": "UTEC Ventures – Programa de Aceleración",
+    "organization": "UTEC Ventures – Universidad de Ingeniería y Tecnología (UTEC)",
+    "category": "startups",
+    "description": "Aceleradora de UTEC de 12 semanas para fundadores primerizos de Latinoamérica que construyen compañías tecnológicas globales, con contactos de inversión, mentores y acceso al ecosistema UTEC. En la convocatoria 2025 ofreció US$ 25,000 de inversión en efectivo; la inversión depende de la selección y no está garantizada.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "unconfirmed",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": "12 semanas",
+    "eligibility": "Tipo: aceleración con inversión. Fundadores primerizos de Latinoamérica con startups tecnológicas; se valora un fundador técnico a tiempo completo y crecimiento reciente.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Startup tecnológica con fundador técnico a tiempo completo",
+      "Crecimiento o tracción reciente"
+    ],
+    "benefits": [
+      "Contactos de inversión, mentores y expertos",
+      "Acceso a talento de ingeniería, laboratorios y espacios de UTEC"
+    ],
+    "fundingType": null,
+    "applicationCost": null,
+    "applicationSteps": [
+      "Revisar la página de la aceleradora o escribir a ventures@utec.edu.pe para conocer la convocatoria vigente"
+    ],
+    "officialUrl": "https://utecventures.com/startups/aceleradora-uv",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://utecventures.com/startups/aceleradora-uv",
+      "https://proactivo.com.pe/utec-lanza-programa-para-startups-peruanas-con-inversion-de-hasta-25000/",
+      "https://forbes.pe/tecnologia/2026-10-28/de-acelerar-startups-a-crearlas-este-es-el-nuevo-plan-de-utec-ventures/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["aceleradora", "deep-tech", "inversion", "startups"]
+  },
+  {
+    "id": "programa-incubacion-kaman",
+    "slug": "programa-incubacion-kaman",
+    "title": "Programa de Incubación Kaman",
+    "organization": "Universidad Católica San Pablo (UCSP), Arequipa – proyecto cofinanciado por ProInnóvate",
+    "category": "startups",
+    "description": "Programa de incubación de alcance nacional publicado por la UCSP de Arequipa, con capacitaciones (validación, MVP, finanzas, aspectos legales, pitch), mentorías y un Demo Day final con premios de capital semilla. La Generación 2026 se desarrolló del 6 de julio al 6 de noviembre de 2026; es una opción cercana para emprendedores de la macrorregión sur.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": "2026-07-06",
+    "programEnd": "2026-11-06",
+    "duration": "4 meses",
+    "eligibility": "Tipo: incubación con premios de capital semilla. Personas mayores de edad de cualquier departamento del Perú con emprendimiento en etapa temprana, modelo en validación o primeras ventas.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Ser mayor de edad",
+      "Emprendimiento en etapa temprana, en validación o con primeras ventas"
+    ],
+    "benefits": [
+      "Capacitaciones y mentorías personalizadas",
+      "Premios de capital semilla en la Generación 2026: S/ 5,000 (1.er puesto) y S/ 3,000 (2.º puesto)"
+    ],
+    "fundingType": "premio",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Revisar las bases de la siguiente generación en el sitio de la UCSP"
+    ],
+    "officialUrl": "https://ucsp.edu.pe/wp-content/uploads/2026/05/BASES-P.-INCUBACION-2026-1.pdf",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://ucsp.edu.pe/wp-content/uploads/2026/05/BASES-P.-INCUBACION-2026-1.pdf"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Generación 2027 no anunciada.",
+    "featured": false,
+    "tags": ["incubadora", "macrorregion-sur", "arequipa", "capital-semilla", "mentoria"]
+  },
+  {
+    "id": "huawei-ict-competition-2026-2027",
+    "slug": "huawei-ict-competition-2026-2027",
+    "title": "Huawei ICT Competition 2026–2027",
+    "organization": "Huawei",
+    "category": "competencias",
+    "description": "Competencia global de TIC para estudiantes de educación superior, con categorías Práctica (Network, Cloud, Computing) e Innovación (soluciones con IA de Huawei), con fases nacional, regional y final global en China. El sitio global de Huawei indica que la edición 2026–2027 está en curso; según prensa chilena, en Chile la inscripción va hasta el 31 de diciembre de 2026, con examen individual en enero, etapa nacional en febrero, etapa regional (Latinoamérica y el Caribe) en marzo y final global en mayo de 2027. Las fechas para Perú no se pudieron verificar.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "hibrido",
+    "status": "unconfirmed",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Estudiantes de universidades e institutos de educación superior (la categoría Teaching es para docentes).",
+    "eligibleCareers": ["Ingeniería de Sistemas", "Ingeniería Electrónica", "Ingeniería de Telecomunicaciones"],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Inscripción individual en la plataforma de Huawei ICT Academy",
+      "Aprobar el examen preliminar individual para pasar a la etapa nacional"
+    ],
+    "benefits": [
+      "Los ganadores regionales viajan a la final global en Shenzhen, China",
+      "Preparación con cursos de Huawei ICT Academy"
+    ],
+    "fundingType": "premio",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Registrarse en la página de Huawei ICT Competition",
+      "Prepararse con los cursos de Huawei ICT Academy",
+      "Rendir el examen preliminar y, si clasifica, la etapa nacional"
+    ],
+    "officialUrl": "https://www.huawei.com/minisite/ict-competition-2025-2026-global/en/",
+    "applicationUrl": "https://e.huawei.com/en/talent/ict-academy/#/ict-contest",
+    "sourceUrls": [
+      "https://www.huawei.com/minisite/ict-competition-2025-2026-global/en/",
+      "https://www.mediabanco.com/viaja-a-china-gracias-a-tus-conocimientos-en-tecnologia-con-huawei/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Confirmar con la ICT Academy de Huawei de la universidad o con Huawei Perú las fechas de la fase Perú 2026–2027.",
+    "featured": true,
+    "tags": ["redes", "cloud", "ia", "huawei", "certificacion", "competencia"]
+  },
+  {
+    "id": "nasa-space-apps-challenge",
+    "slug": "nasa-space-apps-challenge",
+    "title": "NASA International Space Apps Challenge",
+    "organization": "NASA",
+    "category": "competencias",
+    "description": "Hackatón internacional de NASA en el que equipos resuelven retos con datos espaciales y de observación de la Tierra, en eventos locales o en el Universal Event virtual. La edición 2026 se realizó el 14 y 15 de noviembre de 2026.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "hibrido",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": "2026-11-15",
+    "deadlineTimezone": null,
+    "programStart": "2026-11-14",
+    "programEnd": "2026-11-15",
+    "duration": "2 días",
+    "eligibility": "Abierto a participantes que se registren en la plataforma de Space Apps; equipos de hasta 6 personas.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Crear una cuenta en NASA Space Apps y registrarse en el hackatón",
+      "Equipos de máximo 6 integrantes",
+      "Registro obligatorio para ser elegible al Global Judging"
+    ],
+    "benefits": [
+      "Juzgamiento global y reconocimiento internacional",
+      "Acceso a herramientas y recursos gratuitos de colaboradores (Global Offers)"
+    ],
+    "fundingType": null,
+    "applicationCost": null,
+    "applicationSteps": [
+      "Crear cuenta en spaceappschallenge.org",
+      "Elegir un evento local o el Universal Event virtual",
+      "Formar equipo y entregar el proyecto dentro de la ventana del hackatón"
+    ],
+    "officialUrl": "https://www.spaceappschallenge.org/2026/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://www.spaceappschallenge.org/2026/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Edición anual; la de 2027 no está anunciada.",
+    "featured": true,
+    "tags": ["hackaton", "datos", "espacio", "nasa", "equipos"]
+  },
+  {
+    "id": "icpc-latinoamerica",
+    "slug": "icpc-latinoamerica",
+    "title": "ICPC – Competencia Regional Latinoamericana de Programación",
+    "organization": "ICPC (International Collegiate Programming Contest)",
+    "category": "competencias",
+    "description": "Competencia universitaria de programación competitiva por equipos; la Regional Latinoamericana clasifica equipos al Latin America Championship y a la Final Mundial. En la regional 2025 (noviembre de 2025) hubo sedes en Perú (Arequipa y Lima), y el Latin America Championship 2026 se realizó en Chile el 7 de marzo de 2026.",
+    "country": "Global",
+    "region": "latam",
+    "modality": "presencial",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Equipos universitarios de programación inscritos a través de su universidad con un coach.",
+    "eligibleCareers": ["Ingeniería de Sistemas", "Ciencia de la Computación", "Ingeniería de Software"],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Equipo universitario de programación competitiva",
+      "Registro a través de la universidad con un coach"
+    ],
+    "benefits": [
+      "Clasificación al Latin America Championship y posible acceso a la Final Mundial ICPC"
+    ],
+    "fundingType": null,
+    "applicationCost": null,
+    "applicationSteps": [
+      "Formar un equipo y conseguir un coach de la universidad",
+      "Entrenar con problemas de jueces en línea y campamentos",
+      "Registrar el equipo para la sede regional más cercana (en 2025: Arequipa o Lima)"
+    ],
+    "officialUrl": "https://icpc.global/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://maratona.sbc.org.br/latam-2025/relatorio-editores-maquinas.html",
+      "https://mirror.codeforces.com/topic/148947/en1",
+      "https://mirror.codeforces.com/topic/152606/en1?locale=en",
+      "https://u.icpc.global/camps/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "No se verificaron las fechas de la regional de la temporada 2026–2027.",
+    "featured": true,
+    "tags": ["programacion-competitiva", "algoritmos", "equipos", "icpc"]
+  },
+  {
+    "id": "imagine-cup-2027",
+    "slug": "imagine-cup-2027",
+    "title": "Microsoft Imagine Cup 2027",
+    "organization": "Microsoft",
+    "category": "competencias",
+    "description": "Competencia global de startups con IA de Microsoft; la edición 2027 está abierta a startups en etapa temprana en siete categorías, incluida una categoría Student Startup para fundadores estudiantes. El campeón recibe US$ 250,000 en efectivo y US$ 1 millón en créditos, y el Top Student Startup US$ 25,000 y US$ 250,000 en créditos (premios competitivos).",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "remoto",
+    "status": "open",
+    "applicationStart": "2026-11-02",
+    "applicationDeadline": "2027-02-28",
+    "deadlineTimezone": "America/Chicago",
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Startups constituidas legalmente a partir del 2 de noviembre de 2024, sin ronda Serie C o posterior, con producto de software; integrantes de al menos 18 años; equipos de hasta 4 personas.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": "Inglés (presentaciones y entrevistas)",
+    "requirements": [
+      "Startup registrada como entidad legal fundada el 2 de noviembre de 2024 o después",
+      "Producto o servicio basado en software con potencial comercial",
+      "Uso de al menos 10 servicios elegibles de Azure (mínimo US$ 1 cada uno) hasta el 28 de febrero de 2027",
+      "Equipo de hasta 4 integrantes mayores de 18 años"
+    ],
+    "benefits": [
+      "Campeón: US$ 250,000 en efectivo y US$ 1,000,000 en créditos",
+      "2.º y 3.º lugar: US$ 50,000 y US$ 25,000 en efectivo más créditos",
+      "Top Student Startup: US$ 25,000 en efectivo y US$ 250,000 en créditos",
+      "Mentoría y acceso a empresas para ganadores de categoría y Top 20"
+    ],
+    "fundingType": "premio",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Postular en Award Force desde el sitio oficial",
+      "Revisión experta (1–12 de marzo de 2027)",
+      "Entrevistas grabadas (16–31 de marzo de 2027)",
+      "Selección final en abril de 2027 y World Championship en mayo–junio de 2027"
+    ],
+    "officialUrl": "https://imaginecup.microsoft.com/",
+    "applicationUrl": "https://imaginecup.microsoft.com/",
+    "sourceUrls": [
+      "https://imaginecup.microsoft.com/",
+      "https://imaginecup.microsoft.com/Support/faq"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": true,
+    "tags": ["ia", "azure", "startups", "microsoft", "competencia"]
+  },
+  {
+    "id": "ieeextreme",
+    "slug": "ieeextreme",
+    "title": "IEEEXtreme – Competencia Global de Programación",
+    "organization": "IEEE",
+    "category": "competencias",
+    "description": "Competencia de programación de 24 horas para equipos de miembros estudiantes de IEEE, en línea y con supervisión de un proctor. La edición 20.0 se realizó el 31 de octubre de 2026.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "remoto",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": "2026-10-31",
+    "programEnd": null,
+    "duration": "24 horas",
+    "eligibility": "Equipos de miembros estudiantes de IEEE, asesorados y supervisados por un miembro IEEE (a menudo vía una rama estudiantil).",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": "Inglés (enunciados de los problemas)",
+    "requirements": [
+      "Membresía estudiantil IEEE vigente",
+      "Proctor miembro de IEEE"
+    ],
+    "benefits": [
+      "1.er lugar: viaje a una conferencia IEEE (pasajes, inscripción y 3 noches de hotel por integrante)",
+      "2.º lugar: US$ 400 por integrante; 3.er lugar: US$ 300 por integrante",
+      "Certificado de participación para equipos con al menos 1 punto"
+    ],
+    "fundingType": "premio",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Obtener la membresía estudiantil IEEE",
+      "Formar equipo con apoyo de una rama estudiantil IEEE",
+      "Registrarse como participante en ieeextreme.org"
+    ],
+    "officialUrl": "https://ieeextreme.org/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://ieeextreme.org/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Edición anual; la 21.0 aún no está anunciada.",
+    "featured": false,
+    "tags": ["programacion-competitiva", "ieee", "algoritmos", "24-horas"]
+  },
+  {
+    "id": "hackaton-transformagob-pcm",
+    "slug": "hackaton-transformagob-pcm",
+    "title": "Hackatón TransformaGob",
+    "organization": "Presidencia del Consejo de Ministros (PCM)",
+    "category": "competencias",
+    "description": "Hackatón de innovación pública promovido por la PCM, con desafíos planteados junto a universidades (p. ej., UNSA y UNMSM) para resolver problemas reales mediante soluciones digitales. La PCM publicó los resultados de finalistas de la edición 2026.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "unconfirmed",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": null,
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [],
+    "benefits": [],
+    "fundingType": null,
+    "applicationCost": null,
+    "applicationSteps": [
+      "Seguir las publicaciones de la PCM en gob.pe sobre próximas ediciones"
+    ],
+    "officialUrl": "https://www.gob.pe/institucion/pcm/informes-publicaciones/8294757-resultados-finalistas-hackaton-transformagob-2026",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://proactivo.com.pe/?p=763863"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "No se confirmó si habrá una edición 2027.",
+    "featured": false,
+    "tags": ["hackaton", "gobierno-digital", "innovacion-publica", "peru"]
+  },
+  {
+    "id": "kaggle-competitions",
+    "slug": "kaggle-competitions",
+    "title": "Kaggle Competitions",
+    "organization": "Kaggle (Google)",
+    "category": "competencias",
+    "description": "Plataforma permanente de competencias de ciencia de datos y machine learning, con categorías Featured (premios en efectivo), Research, Playground, Getting Started (educativas), Analytics y Simulations. Sirve para construir portafolio y ganar medallas.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "remoto",
+    "status": "permanent",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Cualquier persona con cuenta de Kaggle, sujeto a las reglas de cada competencia.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": "Inglés (recomendado)",
+    "requirements": [
+      "Cuenta de Kaggle",
+      "Aceptar las reglas de cada competencia"
+    ],
+    "benefits": [
+      "Premios en efectivo en competencias Featured",
+      "Medallas y ranking público para el portafolio"
+    ],
+    "fundingType": "premio",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Crear una cuenta en kaggle.com",
+      "Empezar con competencias Getting Started o Playground",
+      "Unirse a competencias Featured y enviar predicciones"
+    ],
+    "officialUrl": "https://www.kaggle.com/competitions",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://www.datacamp.com/blog/kaggle-competitions-the-complete-guide"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["ia", "machine-learning", "datos", "python", "portafolio"]
+  },
+  {
+    "id": "devpost-hackathons",
+    "slug": "devpost-hackathons",
+    "title": "Devpost – Hackatones en línea y presenciales",
+    "organization": "Devpost",
+    "category": "competencias",
+    "description": "Plataforma que concentra gran parte de los hackatones en línea y presenciales del mundo, organizados por empresas como Google, Amazon y Microsoft. Permite filtrar hackatones en línea abiertos a participantes de cualquier país.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "remoto",
+    "status": "permanent",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Depende de las reglas de cada hackatón (revisar restricciones de país y edad).",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": "Inglés (mayoría de hackatones)",
+    "requirements": [
+      "Cuenta en Devpost",
+      "Cumplir las reglas de elegibilidad de cada hackatón"
+    ],
+    "benefits": [
+      "Premios según cada hackatón",
+      "Portafolio público de proyectos"
+    ],
+    "fundingType": null,
+    "applicationCost": null,
+    "applicationSteps": [
+      "Crear una cuenta en Devpost",
+      "Filtrar hackatones en línea y registrarse",
+      "Enviar el proyecto antes del plazo de cada hackatón"
+    ],
+    "officialUrl": "https://devpost.com/hackathons",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://en.wikipedia.org/wiki/Devpost"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["hackaton", "desarrollo-web", "ia", "portafolio"]
+  },
+  {
+    "id": "devfolio-hackathons",
+    "slug": "devfolio-hackathons",
+    "title": "Devfolio – Hackatones",
+    "organization": "Devfolio",
+    "category": "competencias",
+    "description": "Plataforma de hackatones en línea y presenciales; en los hackatones en línea se postula directamente y se puede participar en solitario o en equipo desde un panel con cronograma, anuncios y premios.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "remoto",
+    "status": "permanent",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Depende de cada hackatón; muchos eventos presenciales se realizan en India.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": "Inglés",
+    "requirements": [
+      "Cuenta en Devfolio",
+      "Completar la postulación al 100% en el hackatón elegido"
+    ],
+    "benefits": [
+      "Premios según cada hackatón"
+    ],
+    "fundingType": null,
+    "applicationCost": null,
+    "applicationSteps": [
+      "Crear perfil en Devfolio",
+      "Postular a un hackatón en línea",
+      "Formar o unirse a un equipo con código de invitación y enviar el proyecto"
+    ],
+    "officialUrl": "https://devfolio.co/hackathons",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://guide.devfolio.co/docs/guide/participating-in-hackathons/online-hackathons"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["hackaton", "web3", "desarrollo", "remoto"]
+  },
+  {
+    "id": "zindi-competencias-ia",
+    "slug": "zindi-competencias-ia",
+    "title": "Zindi – Retos de IA y ciencia de datos",
+    "organization": "Zindi",
+    "category": "competencias",
+    "description": "Red profesional y plataforma de retos de IA con problemas reales planteados por empresas, ONG y gobiernos, enfocada en mercados emergentes. Su comunidad abarca más de 185 países y los retos ofrecen premios económicos.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "remoto",
+    "status": "permanent",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Depende de cada reto (algunos se limitan a ciertos países).",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": "Inglés",
+    "requirements": [
+      "Cuenta en Zindi",
+      "Revisar la elegibilidad por país de cada reto"
+    ],
+    "benefits": [
+      "Premios económicos según el reto",
+      "Experiencia con problemas reales de IA"
+    ],
+    "fundingType": "premio",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Crear una cuenta en Zindi",
+      "Unirse a un reto y enviar soluciones"
+    ],
+    "officialUrl": "https://www.zindi.africa/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://www.zindi.africa/about"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["ia", "machine-learning", "datos", "impacto"]
+  },
+  {
+    "id": "aicrowd-challenges",
+    "slug": "aicrowd-challenges",
+    "title": "AIcrowd – Retos de IA y machine learning",
+    "organization": "AIcrowd",
+    "category": "competencias",
+    "description": "Plataforma que aloja retos de IA, machine learning y ciencia de datos organizados por empresas e instituciones de investigación. Las reglas y premios se definen en cada reto.",
+    "country": "Global",
+    "region": "internacional",
+    "modality": "remoto",
+    "status": "permanent",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Depende de cada reto y de los términos de participación.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": "Inglés",
+    "requirements": [
+      "Cuenta en AIcrowd",
+      "Aceptar los términos de participación de cada reto"
+    ],
+    "benefits": [
+      "Premios según cada reto"
+    ],
+    "fundingType": null,
+    "applicationCost": null,
+    "applicationSteps": [
+      "Crear una cuenta en AIcrowd",
+      "Elegir un reto activo y enviar soluciones"
+    ],
+    "officialUrl": "https://www.aicrowd.com/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://aicrowd.com/faq"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["ia", "machine-learning", "investigacion", "datos"]
+  }
+]

@@ -23,7 +23,7 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-[1320px] items-center gap-6 px-5 md:h-16 md:px-8">
         <Link href="/" className="flex items-center gap-2.5 text-ink" onClick={() => setOpen(false)}>
           <Mark className="h-6 w-6" />
-          <span className="font-display text-[15px] font-semibold tracking-tight">De Puno al mundo</span>
+          <span className="whitespace-nowrap font-display text-[15px] font-semibold tracking-tight">De Puno al mundo</span>
         </Link>
 
         <nav aria-label="Principal" className="ml-auto hidden items-center gap-1 lg:flex">
@@ -47,10 +47,11 @@ export function Header() {
 
         <Link
           href="/oportunidades"
-          className="ml-auto rounded-full bg-gold px-4 py-1.5 text-sm font-semibold text-obsidian transition hover:bg-[#f6c988] lg:ml-2"
+          className="ml-auto whitespace-nowrap rounded-full bg-gold px-4 py-1.5 text-sm font-semibold text-obsidian transition hover:bg-[#f6c988] lg:ml-2"
           onClick={() => setOpen(false)}
         >
-          Explorar oportunidades
+          <span className="sm:hidden">Oportunidades</span>
+          <span className="hidden sm:inline">Explorar oportunidades</span>
         </Link>
 
         <button

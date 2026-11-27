@@ -1,1 +1,729 @@
-[]
+[
+  {
+    "id": "spinout",
+    "slug": "spinout",
+    "name": "SpinOut",
+    "type": "emprendimiento",
+    "description": "Organización que impulsa a universitarios y profesionales de todo el Perú a desarrollar innovación y tecnología desde sus propias regiones. Reúne a estudiantes de más de veinte universidades y organiza el Impact Regional Fellowship.",
+    "whatOffers": [
+      "Programas de innovación regional (Impact Regional Fellowship)",
+      "Paneles y charlas virtuales sobre retos regionales, incluida la Macrorregión Sur",
+      "Red de universitarios interesados en emprendimiento e innovación"
+    ],
+    "howToJoin": "Sigue su calendario en Luma e inscríbete a sus eventos; postula a sus convocatorias desde su web.",
+    "scope": "peru",
+    "links": {
+      "web": "https://spinoutworld.org",
+      "linkedin": "https://www.linkedin.com/in/spinoutworld",
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": "https://luma.com/user/spinout",
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://luma.com/user/spinout",
+      "https://esan.edu.pe/conexion-esan/esan-fue-sede-de-la-hora-spinout",
+      "https://infomercado.pe/impact-regional-fellowship-abre-convocatoria-nacional-para-jovenes-que-quieran-innovar-desde-sus-regiones/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": true
+  },
+  {
+    "id": "impact-regional-fellowship",
+    "slug": "impact-regional-fellowship",
+    "name": "Impact Regional Fellowship (IRF)",
+    "type": "emprendimiento",
+    "description": "Programa nacional de SpinOut para estudiantes de educación superior de cualquier región del Perú que quieran crear soluciones tecnológicas para su territorio. La edición 2026 duró seis semanas, de Huaraz (14 de agosto) a Lima (19 de septiembre); la próxima convocatoria está por confirmar.",
+    "whatOffers": [
+      "Proceso intensivo de 6 semanas con IA, diseño de producto y metodologías ágiles",
+      "Mentoría personalizada y jurado especializado",
+      "Viaje, alojamiento y alimentación cubiertos para 30 fellows (edición 2026)",
+      "Red de aliados como AI PlayGrounds, 404 Tech Found, WIIE Ventures y STEM Futuras"
+    ],
+    "howToJoin": "Postula en irf.spinoutworld.org cuando abra la convocatoria. La de 2026 abrió en abril.",
+    "scope": "peru",
+    "links": {
+      "web": "https://irf.spinoutworld.org",
+      "linkedin": "https://www.linkedin.com/in/spinoutworld",
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": "https://luma.com/user/spinout",
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://infomercado.pe/impact-regional-fellowship-abre-convocatoria-nacional-para-jovenes-que-quieran-innovar-desde-sus-regiones/",
+      "https://luma.com/84s2xufd"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": true
+  },
+  {
+    "id": "comunitarios",
+    "slug": "comunitarios",
+    "name": "Comunitarios – Fundación Territorial de Puno",
+    "type": "emprendimiento",
+    "description": "Se presenta como la primera fundación territorial del Perú. Con sede en Puno, articula recursos, talento y filantropía para impulsar iniciativas de impacto en el sur del país.",
+    "whatOffers": [
+      "Fondos y colectas para iniciativas comunitarias (p. ej., Puno Colecta, Fondo Antonia)",
+      "Voluntariado",
+      "Eventos de innovación e impacto en Puno, como la Cumbre Tejiendo Lazos"
+    ],
+    "howToJoin": "Sigue su perfil en Luma para ver sus eventos o escribe a comunitarios.ft@gmail.com para voluntariado.",
+    "scope": "puno",
+    "links": {
+      "web": null,
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": "https://luma.com/user/usr-0xpj0SHlm80j0Ik",
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://rpp.pe/peru/puno/presentan-la-primera-fundacion-territorial-del-peru-que-busca-generar-oportunidades-para-la-comunidad-de-puno-noticia-1490825",
+      "https://luma.com/z5fmh23r",
+      "https://luma.com/user/usr-0xpj0SHlm80j0Ik"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": true
+  },
+  {
+    "id": "ieee",
+    "slug": "ieee",
+    "name": "IEEE (membresía estudiantil)",
+    "type": "comunidad-tech",
+    "description": "La mayor asociación profesional de ingeniería y tecnología del mundo. Su membresía estudiantil da acceso a una red global, a mentoría y a una gran biblioteca técnica.",
+    "whatOffers": [
+      "Red de más de 420 000 profesionales",
+      "Mentoría con ingenieros y tecnólogos",
+      "Acceso a literatura técnica, noticias y eventos",
+      "Participación en ramas estudiantiles y sociedades técnicas"
+    ],
+    "howToJoin": "Pueden afiliarse los estudiantes con al menos 50 % de carga académica en un campo afín. La inscripción se hace desde students.ieee.org.",
+    "scope": "global",
+    "links": {
+      "web": "https://students.ieee.org/",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://students.ieee.org/become-a-member/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "ieee-seccion-peru",
+    "slug": "ieee-seccion-peru",
+    "name": "IEEE Sección Perú",
+    "type": "comunidad-tech",
+    "description": "Sección nacional del IEEE (Región 9). Agrupa ramas estudiantiles, capítulos técnicos y Young Professionals, y organiza reuniones nacionales de ramas y congresos como ANDESCON e INTERCON. Web oficial por confirmar.",
+    "whatOffers": [
+      "Reuniones nacionales de ramas estudiantiles",
+      "Capítulos técnicos (PES, RAS, ComSoc, YP)",
+      "Congresos y webinars"
+    ],
+    "howToJoin": "Hazte miembro estudiantil del IEEE y únete a la rama de tu universidad. Para consultas, escribe a informes@ieee.org.pe (correo publicado en sitios del IEEE Perú).",
+    "scope": "peru",
+    "links": {
+      "web": null,
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://site.ieee.org/peru-pes/",
+      "https://www.udep.edu.pe/hoy/2024/03/la-udep-sera-sede-de-la-reunion-nacional-de-ramas-de-la-ieee/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "ieee-una-puno",
+    "slug": "ieee-una-puno",
+    "name": "Rama Estudiantil IEEE UNA Puno",
+    "type": "estudiantil",
+    "description": "Rama estudiantil del IEEE en la Universidad Nacional del Altiplano. Canales oficiales por confirmar: no se encontró sitio ni redes públicas verificables.",
+    "whatOffers": [
+      "Actividades técnicas y de liderazgo propias de una rama IEEE (por confirmar)"
+    ],
+    "howToJoin": "Consulta en tu escuela profesional o con la Sección Perú del IEEE. Si no hay una rama activa, el IEEE R9 publica los requisitos para crear una.",
+    "scope": "puno",
+    "links": {
+      "web": null,
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://r9.ieee.org/sac/wp-content/uploads/sites/105/2024/06/ES-Requirements-for-the-creation-of-a-Student-Branch.-.pdf"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "google-developer-groups",
+    "slug": "google-developer-groups",
+    "name": "Google Developer Groups (GDG)",
+    "type": "comunidad-tech",
+    "description": "Red global de más de 2000 comunidades de desarrolladores que aprenden y comparten sobre tecnologías de Google. Organizan meetups, I/O Extended y DevFest.",
+    "whatOffers": [
+      "Meetups, talleres y DevFest",
+      "Contacto con expertos (Google Developer Experts)",
+      "Discord global de la Google Developer Community"
+    ],
+    "howToJoin": "Busca tu capítulo en el mapa de comunidades de developers.google.com/community/gdg y únete en gdg.community.dev.",
+    "scope": "global",
+    "links": {
+      "web": "https://developers.google.com/community/gdg",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://developers.google.com/community/gdg?hl=en"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "gdg-on-campus",
+    "slug": "gdg-on-campus",
+    "name": "GDG on Campus",
+    "type": "estudiantil",
+    "description": "Versión universitaria de los GDG, antes llamada Google Developer Student Clubs. No se encontró un capítulo verificado en la UNA Puno; los estudiantes pueden postular para liderar uno.",
+    "whatOffers": [
+      "Experiencia práctica en proyectos con tecnologías de Google",
+      "Talleres y eventos en el campus",
+      "Formación de liderazgo para organizadores"
+    ],
+    "howToJoin": "Busca un capítulo en gdg.community.dev o postula como líder desde el enlace \"Lead a GDG on Campus\" en developers.google.com/community/gdg.",
+    "scope": "global",
+    "links": {
+      "web": "https://developers.google.com/community/gdg",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://developers.google.com/community/gdg?hl=en",
+      "https://cloud.google.com/edu/students"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": true
+  },
+  {
+    "id": "gdg-lima",
+    "slug": "gdg-lima",
+    "name": "GDG Lima",
+    "type": "comunidad-tech",
+    "description": "Capítulo de Google Developer Groups en Lima. Organiza eventos como Google I/O Extended Lima y DevFest Lima.",
+    "whatOffers": [
+      "DevFest Lima e I/O Extended",
+      "Charlas y talleres sobre Android, Cloud, IA y web"
+    ],
+    "howToJoin": "Únete al capítulo en gdg.community.dev/gdg-lima e inscríbete a sus eventos.",
+    "scope": "peru",
+    "links": {
+      "web": "https://gdg.community.dev/gdg-lima/",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://gdg.community.dev/events/details/google-gdg-lima-presents-google-io-extended-lima-2023"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "gdg-tacna",
+    "slug": "gdg-tacna",
+    "name": "GDG Tacna",
+    "type": "comunidad-tech",
+    "description": "Capítulo GDG del sur del Perú, el más cercano a Puno que se encontró. Organizó DevFest Tacna 2026 el 21 de noviembre de 2026 en la UTP sede Tacna.",
+    "whatOffers": [
+      "DevFest Tacna",
+      "Llamado a ponentes (call for speakers) para sus eventos"
+    ],
+    "howToJoin": "Sigue @gdgtacna en Instagram y su web del DevFest.",
+    "scope": "peru",
+    "links": {
+      "web": "https://devfest.gdgtacna.com/",
+      "linkedin": null,
+      "instagram": "https://www.instagram.com/gdgtacna",
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://sessionize.com/devfest-tacna-2026"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "flit",
+    "slug": "flit",
+    "name": "FLIT Festival",
+    "type": "eventos",
+    "description": "Festival de innovación y tecnología en Arequipa que se presenta como el principal evento descentralizador del país. Incluye un congreso con más de 50 ponentes, una expo, una zona de robots y un demo day de startups.",
+    "whatOffers": [
+      "Congreso con ponentes internacionales",
+      "Expo con más de 40 stands y zona de robótica",
+      "Demo day de startups regionales",
+      "FLIT Mujer y FLIT Educación"
+    ],
+    "howToJoin": "Regístrate en su página de Luma o en su web y sigue @flitarequipa para las fechas de la próxima edición.",
+    "scope": "peru",
+    "links": {
+      "web": "https://flit.com.pe/",
+      "linkedin": null,
+      "instagram": "https://instagram.com/flitarequipa",
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": "https://luma.com/FLIT2026",
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://luma.com/FLIT2026"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "ai-playgrounds",
+    "slug": "ai-playgrounds",
+    "name": "AI PlayGrounds",
+    "type": "comunidad-tech",
+    "description": "Comunidad que busca democratizar el desarrollo y conectar personas y conocimiento de IA en Perú y Latinoamérica. Organiza talleres prácticos, como uno de Claude Code, y es aliada del Impact Regional Fellowship.",
+    "whatOffers": [
+      "Talleres prácticos de IA",
+      "Eventos y sesiones comunitarias",
+      "Contenido en YouTube (@AIPlayGroundsCommunity)"
+    ],
+    "howToJoin": "Sigue su perfil de Luma para inscribirte a talleres y su página de LinkedIn.",
+    "scope": "latam",
+    "links": {
+      "web": null,
+      "linkedin": "https://linkedin.com/company/ai-playgrounds-tech",
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": "https://luma.com/user/usr-tnI7C4r7KT5go4S",
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://luma.com/gjk5qy7b",
+      "https://luma.com/user/usr-tnI7C4r7KT5go4S",
+      "https://infomercado.pe/impact-regional-fellowship-abre-convocatoria-nacional-para-jovenes-que-quieran-innovar-desde-sus-regiones/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "404-tech-found",
+    "slug": "404-tech-found",
+    "name": "404 Tech Found",
+    "type": "comunidad-tech",
+    "description": "Organización aliada del Impact Regional Fellowship que coorganiza eventos de tecnología y biotecnología en Luma. Otros canales oficiales por confirmar.",
+    "whatOffers": [
+      "Eventos y difusión de resultados en biotecnología y tecnología",
+      "Alianzas con programas de innovación regional"
+    ],
+    "howToJoin": "Sigue su perfil de Luma para ver sus próximos eventos.",
+    "scope": "peru",
+    "links": {
+      "web": null,
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": "https://luma.com/user/usr-JoVgIdeEd4tMorL",
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://luma.com/cmgw711l",
+      "https://infomercado.pe/impact-regional-fellowship-abre-convocatoria-nacional-para-jovenes-que-quieran-innovar-desde-sus-regiones/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "wiie-ventures",
+    "slug": "wiie-ventures",
+    "name": "WIIE Ventures",
+    "type": "emprendimiento",
+    "description": "Organización aliada del Impact Regional Fellowship 2026 según la prensa. Canales oficiales por confirmar.",
+    "whatOffers": [
+      "Participación como aliada en programas de innovación regional (por confirmar)"
+    ],
+    "howToJoin": "Canales oficiales por confirmar.",
+    "scope": "peru",
+    "links": {
+      "web": null,
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://infomercado.pe/impact-regional-fellowship-abre-convocatoria-nacional-para-jovenes-que-quieran-innovar-desde-sus-regiones/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "aws-user-group-peru",
+    "slug": "aws-user-group-peru",
+    "name": "AWS User Group Perú",
+    "type": "comunidad-tech",
+    "description": "Grupo de usuarios de Amazon Web Services en Perú, con meetups sobre cloud y serverless. Actividad reciente por confirmar.",
+    "whatOffers": [
+      "Meetups y charlas técnicas sobre AWS",
+      "Contacto con AWS Heroes y Community Builders"
+    ],
+    "howToJoin": "Únete al grupo en Meetup y activa las notificaciones de eventos.",
+    "scope": "peru",
+    "links": {
+      "web": null,
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": "https://www.meetup.com/awsperu/"
+    },
+    "sourceUrls": [
+      "https://www.meetup.com/awsperu/events/271119647"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "aws-student-builder-groups",
+    "slug": "aws-student-builder-groups",
+    "name": "AWS Student Builder Groups (antes AWS Cloud Clubs)",
+    "type": "estudiantil",
+    "description": "Comunidades universitarias dirigidas por estudiantes para aprender cloud con AWS. No se encontró un grupo en Puno; el más cercano encontrado es el de la UNSA en Arequipa.",
+    "whatOffers": [
+      "Talleres y proyectos prácticos en la nube",
+      "Para líderes: créditos AWS, vouchers de certificación y contacto con profesionales de AWS"
+    ],
+    "howToJoin": "Requisitos: ser estudiante de educación superior y mayor de 18 años. Si tu campus no tiene grupo, puedes postular para fundarlo desde builder.aws.com.",
+    "scope": "global",
+    "links": {
+      "web": "https://builder.aws.com/community/student-builder-groups",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://builder.aws.com/community/student-builder-groups",
+      "https://www.meetup.com/aws-sbg-at-unsa-peru/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": true
+  },
+  {
+    "id": "python-peru",
+    "slug": "python-peru",
+    "name": "Python Perú",
+    "type": "comunidad-tech",
+    "description": "Comunidad peruana de usuarios de Python, con web, blog y repositorios públicos en GitHub.",
+    "whatOffers": [
+      "Grupo de Telegram para preguntas y networking",
+      "Blog y proyectos comunitarios en GitHub"
+    ],
+    "howToJoin": "Únete a su grupo de Telegram (t.me/pythonperu), publicado en su perfil oficial de GitHub.",
+    "scope": "peru",
+    "links": {
+      "web": "https://python.pe",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": "https://t.me/pythonperu",
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://github.com/pythonpe"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "python-lima",
+    "slug": "python-lima",
+    "name": "Python Lima (PyDay Lima)",
+    "type": "eventos",
+    "description": "Comunidad que organiza el PyDay Lima. La edición 2026 será el viernes 11 de diciembre de 2026 en UTEC (Barranco, Lima).",
+    "whatOffers": [
+      "PyDay Lima: charlas y talleres de Python",
+      "Convocatoria a ponentes"
+    ],
+    "howToJoin": "Regístrate desde la web del PyDay.",
+    "scope": "peru",
+    "links": {
+      "web": "https://www.pylimaperu.org/pyday",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://sessionize.com/pyday-lima-2026"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "flutter-peru",
+    "slug": "flutter-peru",
+    "name": "Flutter Perú",
+    "type": "comunidad-tech",
+    "description": "Comunidad peruana de Flutter que publica en GitHub el material de sus meetups (meetup-3 a meetup-12). Redes sociales y actividad reciente por confirmar.",
+    "whatOffers": [
+      "Repositorios con código de sus meetups",
+      "Meetups sobre desarrollo móvil con Flutter (por confirmar)"
+    ],
+    "howToJoin": "Revisa su organización en GitHub. Sus canales sociales están por confirmar.",
+    "scope": "peru",
+    "links": {
+      "web": "https://github.com/FlutterPeru",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://github.com/FlutterPeru"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "github-campus-experts",
+    "slug": "github-campus-experts",
+    "name": "GitHub Campus Experts",
+    "type": "estudiantil",
+    "description": "Programa de GitHub Education para líderes estudiantiles que crean comunidades técnicas en su campus. Ofrece seis semanas de formación en oratoria, escritura técnica y desarrollo de software. No se verificó si las postulaciones están abiertas.",
+    "whatOffers": [
+      "Formación de 6 semanas y mentoría de GitHub",
+      "Apoyo para organizar meetups, hackathons y proyectos open source"
+    ],
+    "howToJoin": "Revisa la documentación de GitHub Education y postula cuando abra la convocatoria.",
+    "scope": "global",
+    "links": {
+      "web": "https://docs.github.com/en/education/about-github-education/use-github-at-your-educational-institution/about-github-campus-experts",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://docs.github.com/en/education/about-github-education/use-github-at-your-educational-institution/about-github-campus-experts"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "global-ai-lima",
+    "slug": "global-ai-lima",
+    "name": "Global AI Lima",
+    "type": "comunidad-tech",
+    "description": "Capítulo oficial en Lima de la Global AI Community, con más de 870 miembros. Organiza AgentCon, Global AI Bootcamp y Global AI Nights; tiene un evento virtual anunciado para diciembre de 2026.",
+    "whatOffers": [
+      "Eventos de IA presenciales y virtuales",
+      "Discord de la comunidad global",
+      "Contacto con organizadores y expertos en IA"
+    ],
+    "howToJoin": "Crea una cuenta en globalai.community y pulsa \"Join this chapter\" en la página del capítulo.",
+    "scope": "peru",
+    "links": {
+      "web": "https://globalai.community/chapters/lima",
+      "linkedin": "https://www.linkedin.com/showcase/global-ai-lima",
+      "instagram": null,
+      "discord": "https://gaic.io/discord",
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://globalai.community/chapters/lima/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "hugging-face",
+    "slug": "hugging-face",
+    "name": "Hugging Face (comunidad open source de IA)",
+    "type": "comunidad-tech",
+    "description": "Plataforma y comunidad global de IA abierta con cursos gratuitos de LLM, agentes, visión y audio. Algunos cursos tienen grupos de estudio en Discord.",
+    "whatOffers": [
+      "Cursos gratuitos (LLM, Agents, Deep RL, Audio, Computer Vision, entre otros)",
+      "Certificados gratuitos en algunos cursos, como el Agents Course",
+      "Comunidad en Discord con grupos de estudio"
+    ],
+    "howToJoin": "Crea una cuenta gratuita en huggingface.co y empieza un curso desde huggingface.co/learn.",
+    "scope": "global",
+    "links": {
+      "web": "https://huggingface.co/learn",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://huggingface.co/learn",
+      "https://huggingface.co/learn/agents-course"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "luma",
+    "slug": "luma",
+    "name": "Luma (plataforma de eventos)",
+    "type": "eventos",
+    "description": "Plataforma donde muchas comunidades peruanas publican sus eventos, como SpinOut, AI PlayGrounds, Comunitarios y FLIT.",
+    "whatOffers": [
+      "Calendarios de comunidades que puedes seguir",
+      "Inscripción gratuita a la mayoría de eventos"
+    ],
+    "howToJoin": "Crea una cuenta gratuita y sigue los perfiles de las comunidades de este directorio.",
+    "scope": "global",
+    "links": {
+      "web": "https://luma.com",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": "https://luma.com",
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://luma.com/user/spinout",
+      "https://luma.com/z5fmh23r"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "meetup",
+    "slug": "meetup",
+    "name": "Meetup (plataforma de grupos)",
+    "type": "eventos",
+    "description": "Plataforma de grupos locales donde están AWS User Group Perú, los AWS Student Builder Groups y comunidades de IA en Lima.",
+    "whatOffers": [
+      "Grupos temáticos de tecnología",
+      "Notificaciones de eventos presenciales y online"
+    ],
+    "howToJoin": "Crea una cuenta gratuita y únete a los grupos de tu interés.",
+    "scope": "global",
+    "links": {
+      "web": "https://www.meetup.com",
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": "https://www.meetup.com"
+    },
+    "sourceUrls": [
+      "https://www.meetup.com/awsperu/events/271119647",
+      "https://www.meetup.com/aws-sbg-at-unsa-peru/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": false
+  },
+  {
+    "id": "semilleros-investigacion-una-puno",
+    "slug": "semilleros-investigacion-una-puno",
+    "name": "Semilleros de Investigación UNA Puno",
+    "type": "investigacion",
+    "description": "Grupos de iniciación científica de la UNA Puno, apoyados por el Vicerrectorado de Investigación y el Instituto de Investigación. En el II Congreso de Iniciación Científica (2024) expusieron 24 semilleros, con premios en ingeniería, biomédicas y sociales.",
+    "whatOffers": [
+      "Iniciación en investigación con docentes asesores",
+      "Congreso de Iniciación Científica con premiación del VRI",
+      "Plataformas del VRI para tesis y eventos (vriunap.pe)"
+    ],
+    "howToJoin": "Consulta en la Unidad de Investigación de tu facultad o con un docente investigador cómo formar o unirte a un semillero. Los canales específicos de Ingeniería de Sistemas están por confirmar.",
+    "scope": "puno",
+    "links": {
+      "web": null,
+      "linkedin": null,
+      "instagram": null,
+      "discord": null,
+      "telegram": null,
+      "whatsapp": null,
+      "luma": null,
+      "meetup": null
+    },
+    "sourceUrls": [
+      "https://derecho.unap.edu.pe/2024/12/04/ii-congreso-de-iniciacion-cientifica-en-la-una/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "featured": true
+  }
+]

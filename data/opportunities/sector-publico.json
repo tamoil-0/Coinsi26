@@ -1,1 +1,874 @@
-[]
+[
+  {
+    "id": "osiptel-peu-2027",
+    "slug": "osiptel-peu-2027",
+    "title": "XXXI Programa de Extensión Universitaria en Regulación con Especialización en Telecomunicaciones (PEU Osiptel 2027)",
+    "organization": "Organismo Supervisor de Inversión Privada en Telecomunicaciones (OSIPTEL)",
+    "category": "peu",
+    "description": "Programa intensivo y becado de 320 horas en regulación de telecomunicaciones, gestión pública, innovación e inteligencia artificial. Tiene 60 vacantes: 20 para Derecho, 20 para Economía y 20 para Ingeniería. El 50 % de las plazas se reserva para universidades fuera de Lima y Callao.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "presencial",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": "2026-10-31",
+    "deadlineTimezone": "America/Lima",
+    "programStart": "2027-01-11",
+    "programEnd": "2027-03-19",
+    "duration": "320 horas (clases presenciales en Lima)",
+    "eligibility": "Estudiantes de último año, egresados y bachilleres no titulados (hasta el semestre 2026-1) de Derecho, Economía e Ingeniería. La convocatoria de la edición 2027 cerró el 31/10/2026.",
+    "eligibleCareers": ["Ingeniería de Sistemas", "Ingeniería Informática", "Ingeniería de Software", "Ingeniería Electrónica", "Ingeniería de Telecomunicaciones", "Ingeniería de Redes y Comunicaciones", "Ingeniería de la Información", "Ingeniería Industrial", "Economía", "Ingeniería Económica", "Derecho"],
+    "academicCycles": "Último año de estudios, egresados o bachilleres no titulados",
+    "languageRequirements": null,
+    "requirements": [
+      "Aprobar el examen virtual de admisión (conocimientos de la especialidad y razonamiento lógico-analítico) y la entrevista",
+      "Existe además una modalidad por rendimiento académico destacado (1.er o 2.º puesto en los últimos tres ciclos consecutivos), según las bases de ediciones anteriores",
+      "Si resultas seleccionado: copia del DNI, constancia de la universidad y declaraciones juradas"
+    ],
+    "benefits": [
+      "Cubre el 100 % de los costos académicos y materiales",
+      "Alimentación, movilidad local y seguro contra accidentes",
+      "Pasajes y alojamiento en Lima para becarios de regiones",
+      "Los tres primeros de cada especialidad pueden acceder a prácticas preprofesionales o profesionales en OSIPTEL, con un incentivo económico adicional (monto no publicado)"
+    ],
+    "fundingType": "beca-completa",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Registrar la ficha de postulación en beca.osiptel.gob.pe",
+      "Rendir el examen virtual de admisión",
+      "Pasar la entrevista final",
+      "Si resultas seleccionado, enviar los documentos a beca@osiptel.gob.pe"
+    ],
+    "officialUrl": "https://beca.osiptel.gob.pe/",
+    "applicationUrl": "https://beca.osiptel.gob.pe/",
+    "sourceUrls": [
+      "https://elperuano.pe/noticia/305803-buscas-una-beca-osiptel-ofrece-60-vacantes-para-especializarse-en-telecomunicaciones-y-gestion-publica",
+      "https://elperuano.pe/noticia/307829-hasta-el-31-de-octubre-estudiantes-pueden-postular-a-una-las-60-becas-del-peu-osiptel",
+      "https://beca.osiptel.gob.pe:443/assets/pdf/bases-proceso-admision-XXVIII-PEU.pdf"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "XXXII PEU (2028). En ediciones anteriores la convocatoria se abrió entre setiembre y noviembre; la fecha no está anunciada.",
+    "featured": true,
+    "tags": ["telecomunicaciones", "regulacion", "beca-integral", "ia", "cuota-regional", "practicas"]
+  },
+  {
+    "id": "osinergmin-peu-2027",
+    "slug": "osinergmin-peu-2027",
+    "title": "Programa de Extensión Universitaria de Osinergmin (PEU 2027) – Regulación y Supervisión de la Industria Energética y Minera",
+    "organization": "Organismo Supervisor de la Inversión en Energía y Minería (Osinergmin)",
+    "category": "peu",
+    "description": "Programa becado y virtual de especialización en regulación y fiscalización de energía y minería. Ofrece 270 becas en seis especialidades, entre ellas Gestión Pública de la Energía y Minería. Otorga doble certificación de Osinergmin y ENAP-SERVIR.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "remoto",
+    "status": "unconfirmed",
+    "applicationStart": "2026-10-01",
+    "applicationDeadline": "2026-11-30",
+    "deadlineTimezone": "America/Lima",
+    "programStart": "2027-01-14",
+    "programEnd": "2027-03-15",
+    "duration": "Aprox. 8 semanas, 100 % virtual",
+    "eligibility": "Egresados universitarios de 2026 o estudiantes del último ciclo de 2026. Las fechas de la edición 2027 (inscripción hasta el 30/11/2026, examen el 12 y 13/12/2026) vienen de portales no oficiales, porque no se pudo leer el sitio oficial. Verificar en becas.osinergmin.gob.pe antes de postular.",
+    "eligibleCareers": ["Ingeniería de Sistemas", "Ingeniería Eléctrica", "Ingeniería Mecánica", "Ingeniería Civil", "Ingeniería de Minas", "Ingeniería Geológica", "Ingeniería Industrial", "Ingeniería Química", "Derecho", "Economía", "Administración", "Contabilidad", "Ciencias de la Comunicación"],
+    "academicCycles": "Egresados del año en curso o estudiantes del último ciclo (en el PEU 2026 se exigió egreso entre el 01/01/2025 y el 31/12/2025)",
+    "languageRequirements": null,
+    "requirements": [
+      "No haber participado en un CEU o PEU anterior de Osinergmin (según portales no oficiales)",
+      "Aprobar el examen virtual de admisión"
+    ],
+    "benefits": [
+      "Cobertura total de los costos académicos",
+      "Doble certificación de Osinergmin y ENAP (SERVIR)",
+      "Los mejores promedios pueden postular a prácticas profesionales remuneradas en Osinergmin"
+    ],
+    "fundingType": "beca-completa",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Inscribirse en becas.osinergmin.gob.pe (sección Requisitos e Inscripción)",
+      "Rendir el examen virtual de admisión",
+      "Revisar los resultados y presentar los documentos si eres seleccionado"
+    ],
+    "officialUrl": "https://becas.osinergmin.gob.pe/requisitos-e-inscripcion/",
+    "applicationUrl": "https://becas.osinergmin.gob.pe/requisitos-e-inscripcion/",
+    "sourceUrls": [
+      "https://andina.pe/agencia/noticia-impulsa-tu-carrera-osinergmin-lanza-270-becas-especializacion-el-sector-energetico-1052290.aspx",
+      "https://proactivo.com.pe/osinergmin-lanza-270-becas-de-especializacion-en-el-sector-energetico-y-minero/",
+      "https://www.formate.pe/convocatoria-becas-osinergmin-programa-especializacion-fiscalizacion-sector-hidrocarburos-requisitos-beneficios-51.html",
+      "https://grupoceuperu.com/noticias/peu-osinergmin-2027-postula-a-una-de-las-270-becas-gratuitas-y-conoce-los-requisitos-y-fechas-del-examen"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Según portales no oficiales, la edición 2027 está con inscripciones hasta el 30/11/2026. Hay que confirmarlo en la fuente oficial.",
+    "featured": true,
+    "tags": ["energia", "mineria", "regulacion", "beca-integral", "virtual", "enap", "practicas"]
+  },
+  {
+    "id": "sbs-programa-extension",
+    "slug": "sbs-programa-extension",
+    "title": "Programa de Extensión Universitaria de la SBS (PEXT) – Supervisión Financiera",
+    "organization": "Superintendencia de Banca, Seguros y AFP (SBS)",
+    "category": "peu",
+    "description": "Programa de especialización en supervisión financiera para estudiantes de últimos ciclos y egresados recientes. Lleva 27 ediciones, dura unas 12 semanas y es becado en su totalidad.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": "2026-09-01",
+    "deadlineTimezone": "America/Lima",
+    "programStart": null,
+    "programEnd": null,
+    "duration": "Aprox. 12 semanas",
+    "eligibility": "Estudiantes del último ciclo o egresados recientes con buen rendimiento académico e interés en la supervisión financiera. La convocatoria 2026 cerró el 01/09/2026.",
+    "eligibleCareers": ["Ingeniería de Sistemas", "Economía", "Contabilidad", "Administración", "Ingeniería Industrial"],
+    "academicCycles": "Último ciclo o egresados recientes",
+    "languageRequirements": null,
+    "requirements": [
+      "Buen rendimiento académico",
+      "Cumplir las bases y el cronograma publicados en el portal de la SBS"
+    ],
+    "benefits": [
+      "Beca integral que cubre todo el costo de la formación",
+      "Seguro contra accidentes",
+      "Apoyo económico para manutención y movilidad (monto no publicado en las fuentes revisadas)"
+    ],
+    "fundingType": "beca-completa",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Revisar las bases y el cronograma en sbs.gob.pe/programa-de-extension",
+      "Completar el formulario de inscripción",
+      "Pasar las evaluaciones de selección"
+    ],
+    "officialUrl": "https://www.sbs.gob.pe/programa-de-extension",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://gestion.pe/peru/convocatoria-a-estudiantes-universitarios-para-programa-de-especializacion-en-supervision-financiera-como-postular-noticia/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Programa anual. La convocatoria 2026 estuvo abierta hasta setiembre; la siguiente no está anunciada.",
+    "featured": true,
+    "tags": ["finanzas", "supervision-financiera", "beca-integral", "datos", "riesgos"]
+  },
+  {
+    "id": "minem-peu-2027",
+    "slug": "minem-peu-2027",
+    "title": "I Programa de Extensión Universitaria del Ministerio de Energía y Minas (PEU MINEM 2027)",
+    "organization": "Ministerio de Energía y Minas (MINEM)",
+    "category": "peu",
+    "description": "Primera edición del PEU del MINEM: 265 horas académicas en formato híbrido sobre el sector energético y minero, con visitas técnicas y certificado oficial.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "hibrido",
+    "status": "closed",
+    "applicationStart": null,
+    "applicationDeadline": "2026-11-13",
+    "deadlineTimezone": "America/Lima",
+    "programStart": "2027-01-18",
+    "programEnd": "2027-03-12",
+    "duration": "8 semanas (265 horas académicas)",
+    "eligibility": "Estudiantes de los dos últimos semestres o egresados del ciclo 2026-I, sin título profesional. Las fuentes revisadas no detallan las carreras elegibles por programa (están en las bases).",
+    "eligibleCareers": [],
+    "academicCycles": "Dos últimos semestres o egresados 2026-I (sin título)",
+    "languageRequirements": null,
+    "requirements": [
+      "Pertenecer a una carrera elegible para el programa al que se postula (según las bases)",
+      "Modalidad por excelencia académica (cerró el 30/10/2026) o por examen de admisión (cerró el 13/11/2026)"
+    ],
+    "benefits": [
+      "Beca del 100 % de los costos académicos y materiales",
+      "Pasajes, alojamiento y estadía en Lima para alumnos de regiones",
+      "Movilidad y alimentación en los días presenciales",
+      "Visitas técnicas y certificado oficial del MINEM",
+      "Posibilidad de prácticas, según disponibilidad de plazas"
+    ],
+    "fundingType": "beca-completa",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Revisar las bases en peu.minem.gob.pe",
+      "Inscribirse en peu.minem.gob.pe/inscripcion",
+      "Rendir la evaluación según la modalidad elegida"
+    ],
+    "officialUrl": "https://peu.minem.gob.pe/inscripcion",
+    "applicationUrl": "https://peu.minem.gob.pe/inscripcion",
+    "sourceUrls": [
+      "https://proactivo.com.pe/peu-minem-2027-programa-de-extension-universitaria/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Es la primera edición y no hay una próxima anunciada.",
+    "featured": false,
+    "tags": ["energia", "mineria", "beca-integral", "hibrido"]
+  },
+  {
+    "id": "oefa-peu-2027",
+    "slug": "oefa-peu-2027",
+    "title": "Programa de Extensión Universitaria en Fiscalización Ambiental 2027 (PEU OEFA)",
+    "organization": "Organismo de Evaluación y Fiscalización Ambiental (OEFA)",
+    "category": "peu",
+    "description": "Programa virtual de 160 horas en fiscalización ambiental, que incluye monitoreo de agua, aire y suelo. Ofrece 90 becas integrales: 65 para Ciencias, 15 para Derecho y 10 para Economía.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "remoto",
+    "status": "recurring",
+    "applicationStart": "2026-11-09",
+    "applicationDeadline": "2026-11-22",
+    "deadlineTimezone": "America/Lima",
+    "programStart": "2027-01-18",
+    "programEnd": "2027-02-26",
+    "duration": "6 semanas (160 horas), de lunes a viernes de 8:00 a 13:00",
+    "eligibility": "Estudiantes de los dos últimos años o egresados 2026, del tercio superior. Ingeniería de Sistemas NO figura en la lista publicada (solo dice \"otras ingenierías afines\"). La convocatoria 2027 cerró el 22/11/2026.",
+    "eligibleCareers": ["Ingeniería Ambiental", "Ingeniería de Minas", "Ingeniería Eléctrica", "Ingeniería Geográfica", "Ingeniería Geológica", "Ingeniería Industrial", "Ingeniería Pesquera", "Ingeniería Petrolera", "Ingeniería Química", "Ingeniería Forestal", "Biología", "Economía", "Ingeniería Económica", "Derecho"],
+    "academicCycles": "Dos últimos años de estudios o egresados 2026; tercio superior",
+    "languageRequirements": null,
+    "requirements": [
+      "Pertenecer al tercio superior",
+      "Tener disponibilidad a tiempo completo",
+      "Aprobar la evaluación de conocimientos (05/12/2026 en la edición 2027)"
+    ],
+    "benefits": [
+      "Beca de estudio al 100 %",
+      "Los 5 primeros de Ciencias y los 2 primeros de Derecho y de Economía pueden acceder a prácticas en el OEFA"
+    ],
+    "fundingType": "beca-completa",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Inscribirse en oefa.gob.pe/peu2027",
+      "Rendir la evaluación de conocimientos",
+      "Revisar la lista final de admitidos"
+    ],
+    "officialUrl": "https://www.oefa.gob.pe/peu2027/",
+    "applicationUrl": "https://www.oefa.gob.pe/peu2027/",
+    "sourceUrls": [
+      "https://www.oefa.gob.pe/peu2027/",
+      "https://energiminas.com/2026/11/13/oefa-ofrece-90-becas-integrales-para-el-programa-de-extension-universitaria-en-fiscalizacion-ambiental-2027/",
+      "https://proactivo.com.pe/?p=772412"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "PEU 2028: en el ciclo anterior la convocatoria abrió en noviembre; la fecha no está anunciada.",
+    "featured": false,
+    "tags": ["ambiental", "fiscalizacion", "beca-integral", "virtual"]
+  },
+  {
+    "id": "sunass-peu",
+    "slug": "sunass-peu",
+    "title": "Programa de Extensión Universitaria de la Sunass (PEU) – Regulación de Servicios de Saneamiento",
+    "organization": "Superintendencia Nacional de Servicios de Saneamiento (Sunass)",
+    "category": "peu",
+    "description": "Programa semipresencial de especialización en regulación y supervisión de los servicios de agua potable y saneamiento. Ofrece 60 becas integrales y un certificado de más de 150 horas.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "hibrido",
+    "status": "unconfirmed",
+    "applicationStart": "2025-09-22",
+    "applicationDeadline": "2025-11-09",
+    "deadlineTimezone": "America/Lima",
+    "programStart": "2026-01-12",
+    "programEnd": "2026-02-27",
+    "duration": "7 semanas",
+    "eligibility": "Estudiantes de últimos ciclos y egresados recientes de universidades licenciadas por Sunedu. Ingeniería de Sistemas NO está entre las carreras publicadas. Las fechas son de la XIX edición (PEU 2026); no se pudo verificar la edición 2027.",
+    "eligibleCareers": ["Derecho", "Economía", "Ingeniería Económica", "Ingeniería Ambiental", "Ingeniería Sanitaria"],
+    "academicCycles": "Últimos ciclos o egresados recientes",
+    "languageRequirements": null,
+    "requirements": [
+      "Universidad licenciada por Sunedu",
+      "Dedicación exclusiva durante el programa",
+      "No haber sido admitido en ediciones anteriores"
+    ],
+    "benefits": [
+      "Cobertura de los gastos académicos y de alimentación en la fase presencial",
+      "Transporte, alojamiento y pasajes para estudiantes de regiones",
+      "Prácticas para los 5 primeros de cada especialidad",
+      "Acceso a la bolsa de trabajo de la Sunass"
+    ],
+    "fundingType": "beca-completa",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Inscribirse en línea dentro del plazo",
+      "Rendir el examen de admisión, que se toma en todos los departamentos"
+    ],
+    "officialUrl": "https://www.gob.pe/institucion/sunass/campa%C3%B1as/114697-programa-de-extension-universitaria-2026",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://andina.pe/agencia/noticia-sunass-ofrece-60-becas-integrales-sobre-regulacion-servicios-saneamiento-1044848.aspx"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "No se pudo verificar el estado del PEU 2027. La edición anterior tuvo inscripciones entre setiembre y noviembre.",
+    "featured": false,
+    "tags": ["saneamiento", "regulacion", "beca-integral"]
+  },
+  {
+    "id": "ositran-ceu",
+    "slug": "ositran-ceu",
+    "title": "Curso de Extensión Universitaria de Ositrán (CEU) – Regulación de Infraestructura de Transporte",
+    "organization": "Organismo Supervisor de la Inversión en Infraestructura de Transporte de Uso Público (Ositrán)",
+    "category": "peu",
+    "description": "Curso semipresencial y becado en regulación de infraestructura de transporte. Incluye visitas técnicas, talleres de habilidades blandas y módulos introductorios de ciencia de datos e inteligencia artificial.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "hibrido",
+    "status": "unconfirmed",
+    "applicationStart": null,
+    "applicationDeadline": "2025-10-19",
+    "deadlineTimezone": "America/Lima",
+    "programStart": "2026-01-19",
+    "programEnd": "2026-02-26",
+    "duration": "Aprox. 6 semanas",
+    "eligibility": "Estudiantes de últimos ciclos y egresados recientes. Ingeniería de Sistemas NO está entre las carreras publicadas. Las fechas son del CEU 2026; no se pudo verificar la edición 2027.",
+    "eligibleCareers": ["Derecho", "Economía", "Ingeniería Económica", "Ingeniería Civil", "Ingeniería de Transporte"],
+    "academicCycles": "Últimos ciclos o egresados recientes",
+    "languageRequirements": null,
+    "requirements": [
+      "Aprobar el examen de admisión (22/11/2025 en el CEU 2026)"
+    ],
+    "benefits": [
+      "Cobertura total de los gastos académicos, los materiales y la plataforma virtual",
+      "Visitas técnicas presenciales",
+      "Prácticas en Ositrán: acceso directo para los tres primeros de cada especialidad y por entrevista para los demás",
+      "Subvención de prácticas superior a la remuneración mínima, con opción de teletrabajo"
+    ],
+    "fundingType": "beca-completa",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Llenar el formulario de inscripción en línea",
+      "Rendir el examen de admisión"
+    ],
+    "officialUrl": "https://www.gob.pe/institucion/ositran/noticias/1237763-ositran-abre-inscripciones-para-su-xxiii-curso-de-extension-universitaria-en-regulacion-de-infraestructura-de-transporte",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://andina.pe/agencia/noticia-atencion-universitarios-ositran-amplia-plazo-para-postular-a-becas-integrales-1048191.aspx"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "No se pudo verificar el estado del CEU 2027. La edición anterior tuvo inscripciones hasta octubre.",
+    "featured": false,
+    "tags": ["transporte", "regulacion", "beca-integral", "datos", "ia"]
+  },
+  {
+    "id": "proinversion-peu",
+    "slug": "proinversion-peu",
+    "title": "Programa de Extensión Universitaria de ProInversión (PEU) en Asociaciones Público-Privadas y Proyectos en Activos",
+    "organization": "Agencia de Promoción de la Inversión Privada (ProInversión), con ENAP-SERVIR",
+    "category": "peu",
+    "description": "Formación intensiva en Asociaciones Público-Privadas (APP) y Proyectos en Activos, a cargo de docentes universitarios y profesionales del sector. Otorga certificación de ProInversión y de ENAP-SERVIR. La edición 2026 tuvo 50 becarios de varias regiones, entre ellas Puno.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "unconfirmed",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": "Aprox. 3 meses",
+    "eligibility": "Estudiantes y egresados. Las fuentes revisadas no mencionan Ingeniería de Sistemas. El sitio oficial enlaza una \"edición 2027\", pero no se pudo leer su contenido ni sus fechas.",
+    "eligibleCareers": ["Economía", "Derecho", "Ingeniería Civil", "Ingeniería Económica", "Ingeniería Eléctrica", "Ingeniería Mecánica Eléctrica", "Ingeniería Sanitaria", "Ingeniería Ambiental", "Ingeniería Industrial"],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [],
+    "benefits": [
+      "Doble certificación de ProInversión y ENAP (SERVIR)",
+      "Los mejores puestos (14 en la edición 2026) acceden a prácticas preprofesionales y profesionales en ProInversión",
+      "Visitas técnicas a proyectos APP"
+    ],
+    "fundingType": "beca-completa",
+    "applicationCost": null,
+    "applicationSteps": [
+      "Revisar la edición vigente en investinperu.pe/programa-de-extension-universitaria-peu",
+      "Consultas: peu@proinversion.gob.pe"
+    ],
+    "officialUrl": "https://www.investinperu.pe/programa-de-extension-universitaria-peu",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://www.investinperu.pe/",
+      "https://www.investinperu.pe/programa-de-extension-universitaria-peu",
+      "https://proactivo.com.pe/proinversion-fortalece-talento-joven-con-el-peu-2026/",
+      "https://elperuano.pe/noticia/286586-servir-el-estado-puede-y-debe-apostar-por-el-talento-joven"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "El sitio oficial enlaza una edición 2027; no se pudieron verificar sus fechas.",
+    "featured": false,
+    "tags": ["app", "inversion-publica", "infraestructura", "enap"]
+  },
+  {
+    "id": "bcrp-cursos-extension",
+    "slug": "bcrp-cursos-extension",
+    "title": "Cursos de Extensión Universitaria del BCRP (Economía Avanzada y Finanzas Avanzadas)",
+    "organization": "Banco Central de Reserva del Perú (BCRP)",
+    "category": "peu",
+    "description": "Cursos de verano presenciales en Lima, de Economía Avanzada y de Finanzas Avanzadas, con hasta 35 plazas. Los mejores participantes son invitados al proceso de selección profesional del BCRP. Además, el BCRP organiza un Curso de Invierno virtual para estudiantes de Economía de universidades fuera de Lima.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "presencial",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": "2026-01-05",
+    "programEnd": "2026-03-27",
+    "duration": "Aprox. 12 semanas (enero a marzo)",
+    "eligibility": "Estudiantes de Economía o carreras afines de universidades licenciadas. Las fuentes no mencionan Ingeniería de Sistemas; las carreras afines las evalúa el BCRP.",
+    "eligibleCareers": ["Economía"],
+    "academicCycles": "En el Curso de Invierno 2025: 8.º a 10.º ciclo o egresados de los dos años anteriores",
+    "languageRequirements": "Inglés (incluido en el examen; nivel intermedio en el Curso de Invierno)",
+    "requirements": [
+      "Concurso general: examen de matemáticas, economía, finanzas e inglés, más un ensayo y un video de exposición",
+      "Invitación directa para los dos mejores promedios de algunas universidades"
+    ],
+    "benefits": [
+      "Formación sin costo con docentes de primer nivel",
+      "Invitación al proceso de selección profesional del BCRP para los mejores"
+    ],
+    "fundingType": "gratuito",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Revisar la convocatoria en bcrp.gob.pe (sección Proyección Institucional)",
+      "Postular por concurso general o por invitación directa"
+    ],
+    "officialUrl": "https://www.bcrp.gob.pe/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://www.udep.edu.pe/hoy/?p=164961",
+      "https://www.revistaeconomia.com/?p=85588",
+      "https://proactivo.com.pe/?p=740499"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Cursos anuales (verano de enero a marzo e invierno de agosto a setiembre). No se pudo verificar la edición 2027 porque el sitio del BCRP bloqueó el acceso automatizado.",
+    "featured": false,
+    "tags": ["economia", "finanzas", "banca-central"]
+  },
+  {
+    "id": "mef-ceu-lideres",
+    "slug": "mef-ceu-lideres",
+    "title": "Curso de Extensión Universitaria del MEF (CEU +Líderes)",
+    "organization": "Ministerio de Economía y Finanzas (MEF)",
+    "category": "peu",
+    "description": "Curso gratuito de unas 12 semanas sobre política macrofiscal, inversión pública, presupuesto, tesoro y uso de inteligencia artificial y machine learning en economía. Tiene 40 vacantes y la evaluación de admisión se toma de forma presencial en varias regiones, entre ellas Puno.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "recurring",
+    "applicationStart": "2026-03-20",
+    "applicationDeadline": "2026-03-23",
+    "deadlineTimezone": "America/Lima",
+    "programStart": "2026-04-20",
+    "programEnd": "2026-07-20",
+    "duration": "Aprox. 12 semanas",
+    "eligibility": "Egresados recientes de Economía, Ingeniería Económica y Finanzas. Ingeniería de Sistemas NO está entre las carreras publicadas.",
+    "eligibleCareers": ["Economía", "Ingeniería Económica", "Finanzas"],
+    "academicCycles": "Egresados recientes",
+    "languageRequirements": "Inglés aplicado a la economía (parte de la evaluación)",
+    "requirements": [
+      "Evaluación de macroeconomía, microeconomía, econometría, gestión pública e inglés"
+    ],
+    "benefits": [
+      "Programa gratuito",
+      "Se puede convalidar como prácticas profesionales",
+      "Los mejores pueden ser incorporados al MEF, según su desempeño"
+    ],
+    "fundingType": "gratuito",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Revisar las bases en la plataforma de convocatorias del MEF",
+      "Postular en Convo-MEF",
+      "Rendir la evaluación de admisión"
+    ],
+    "officialUrl": "https://www.mef.gob.pe/convocas/procesos_extensionu2026.php?estado=CONCLUIDAS",
+    "applicationUrl": "https://apps4.mineco.gob.pe/ConvMEF/Login",
+    "sourceUrls": [
+      "https://www.mef.gob.pe/convocas/procesos_extensionu2026.php?estado=CONCLUIDAS",
+      "https://proactivo.com.pe/mef-lanza-ceu-lideres-2026-para-formar-jovenes-en-gestion-economica-del-estado/",
+      "https://www.udep.edu.pe/hoy/2026/09/incorporan-al-mef-a-egresada-de-la-udep-que-participo-en-un-curso-de-extension/"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "La edición 2026 tuvo postulación en marzo; la de 2027 no está anunciada.",
+    "featured": false,
+    "tags": ["economia", "finanzas-publicas", "machine-learning", "ia"]
+  },
+  {
+    "id": "midis-peudis",
+    "slug": "midis-peudis",
+    "title": "Programa de Extensión Universitaria en Desarrollo e Inclusión Social (PEUDIS)",
+    "organization": "Ministerio de Desarrollo e Inclusión Social (MIDIS)",
+    "category": "peu",
+    "description": "Programa virtual de 156 horas académicas sobre desarrollo e inclusión social y políticas públicas, con una pasantía presencial en regiones. Otorga certificación del MIDIS y de la Universidad Nacional Jorge Basadre Grohmann, equivalente a 10 créditos.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "hibrido",
+    "status": "unconfirmed",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": "156 horas académicas",
+    "eligibility": "Estudiantes de los dos últimos ciclos y egresados 2025. Admite \"Ingeniería\" en general, sin precisar si incluye Sistemas. La primera edición se lanzó en enero de 2026.",
+    "eligibleCareers": ["Ingeniería", "Ciencias de la Salud", "Economía", "Derecho", "Administración", "Educación", "Ciencias Sociales", "Comunicaciones", "Gestión Pública"],
+    "academicCycles": "Dos últimos ciclos o egresados del año anterior",
+    "languageRequirements": null,
+    "requirements": [],
+    "benefits": [
+      "Certificación oficial del MIDIS y de la UNJBG",
+      "Equivalencia de 10 créditos académicos",
+      "Pasantía en regiones"
+    ],
+    "fundingType": "gratuito",
+    "applicationCost": null,
+    "applicationSteps": [],
+    "officialUrl": "https://elperuano.pe/noticia/286793-midis-lanza-programa-de-extension-universitaria-en-desarrollo-e-inclusion-social",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://elperuano.pe/noticia/286793-midis-lanza-programa-de-extension-universitaria-en-desarrollo-e-inclusion-social"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "No hay una segunda edición anunciada.",
+    "featured": false,
+    "tags": ["inclusion-social", "politicas-publicas", "virtual"]
+  },
+  {
+    "id": "mincetur-cnci",
+    "slug": "mincetur-cnci",
+    "title": "Curso de Negociaciones Comerciales Internacionales (CNCI) – MINCETUR",
+    "organization": "Ministerio de Comercio Exterior y Turismo (MINCETUR)",
+    "category": "peu",
+    "description": "Curso gratuito de política comercial de más de 380 horas académicas, con 45 vacantes y doble certificación de MINCETUR y del ACWL (Centro de Asesoría Legal en Asuntos de la OMC). La XIV edición combina nueve semanas virtuales con una semana presencial.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "hibrido",
+    "status": "recurring",
+    "applicationStart": "2026-10-01",
+    "applicationDeadline": "2026-10-31",
+    "deadlineTimezone": "America/Lima",
+    "programStart": "2027-01-04",
+    "programEnd": "2027-03-12",
+    "duration": "10 semanas",
+    "eligibility": "Estudiantes de los tres últimos ciclos y egresados recientes del tercio superior. Ingeniería de Sistemas NO figura entre las carreras publicadas (solo dice \"afines\").",
+    "eligibleCareers": ["Derecho", "Economía", "Administración", "Negocios Internacionales"],
+    "academicCycles": "Últimos tres ciclos o egresados recientes; tercio superior",
+    "languageRequirements": null,
+    "requirements": [
+      "Pertenecer al tercio superior",
+      "Tener disponibilidad a tiempo completo"
+    ],
+    "benefits": [
+      "Programa 100 % gratuito",
+      "Doble certificación de MINCETUR y del ACWL",
+      "Talleres de simulación de negociaciones y visitas académicas"
+    ],
+    "fundingType": "gratuito",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Inscribirse en la plataforma del CNCI de MINCETUR"
+    ],
+    "officialUrl": "https://consultasenlinea.mincetur.gob.pe/cursoNegociaciones/web/index.html",
+    "applicationUrl": "https://consultasenlinea.mincetur.gob.pe/cursoNegociaciones/web/index.html",
+    "sourceUrls": [
+      "https://elperuano.pe/noticia/305737-quieres-formarte-en-politica-comercial-mincetur-abre-convocatoria-gratuita-para-universitarios-de-todo-el-pais"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "XV CNCI: la convocatoria de la XIV edición se abrió en octubre; la siguiente no está anunciada.",
+    "featured": false,
+    "tags": ["comercio-exterior", "negociaciones", "omc"]
+  },
+  {
+    "id": "sunat-practicas",
+    "slug": "sunat-practicas",
+    "title": "Prácticas preprofesionales y profesionales en la SUNAT",
+    "organization": "Superintendencia Nacional de Aduanas y de Administración Tributaria (SUNAT)",
+    "category": "sector-publico",
+    "description": "La SUNAT publica en su portal Únete convocatorias periódicas de prácticas preprofesionales y profesionales en Lima y en sus sedes regionales. Incluyen vacantes específicas para Ingeniería de Sistemas, por ejemplo en la División de Estadística y en Control Aduanero.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "presencial",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": "Hasta el 31 de diciembre del año de la convocatoria, sujeto a presupuesto",
+    "eligibility": "Prácticas preprofesionales para estudiantes universitarios y prácticas profesionales para egresados universitarios o técnicos de las especialidades de cada convocatoria. Solo se puede postular a una oficina por convocatoria.",
+    "eligibleCareers": ["Ingeniería de Sistemas", "Ingeniería de Computación y Sistemas"],
+    "academicCycles": "Varía según la convocatoria (para prácticas profesionales se pide constancia de egresado)",
+    "languageRequirements": null,
+    "requirements": [
+      "Constancia de egresado (prácticas profesionales) o de estudios (preprofesionales)",
+      "Ofimática a nivel intermedio, según el perfil",
+      "Jornada presencial de 40 horas semanales (de lunes a viernes, de 8:30 a 16:30)"
+    ],
+    "benefits": [
+      "Subvención de S/ 1,600 mensuales en prácticas profesionales (convocatoria PRA N.º 005-2024)",
+      "Las prácticas cuentan como experiencia laboral (Ley 31396)"
+    ],
+    "fundingType": "subvencion",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Revisar las convocatorias vigentes y sus bases en unete.sunat.gob.pe",
+      "Registrar tu hoja de vida en el sistema de postulación",
+      "Pasar las etapas virtuales de evaluación y la entrevista"
+    ],
+    "officialUrl": "https://unete.sunat.gob.pe/",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://unete.sunat.gob.pe/sites/default/files/archivos_adjuntos/PRA%20N%20005-%202024%20PRO%20LIMA.pdf",
+      "https://www.convocatoriasdetrabajo.com/oportunidad-laboral-practicas-sunat-ingenieria-sistemas-computacion-febrero-2026-561102.html"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Convocatorias varias veces al año. En 2026 hubo prácticas preprofesionales para la División de Gestión de Proyectos de Sistemas en febrero, según un agregador.",
+    "featured": true,
+    "tags": ["practicas", "tributacion", "sistemas", "estadistica", "subvencion"]
+  },
+  {
+    "id": "talento-peru-servir",
+    "slug": "talento-peru-servir",
+    "title": "Talento Perú – Portal de empleos y prácticas en el Estado",
+    "organization": "Autoridad Nacional del Servicio Civil (SERVIR)",
+    "category": "sector-publico",
+    "description": "Portal oficial y único del Estado peruano que reúne las ofertas de empleo y de prácticas preprofesionales y profesionales de entidades nacionales, regionales y locales, incluidas las de Puno. Cada oferta se publica al menos 10 días hábiles.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "permanent",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Cualquier ciudadano. Los requisitos (carrera, ciclo, experiencia) dependen de cada oferta. Se puede filtrar por carreras como Ingeniería de Sistemas o Informática.",
+    "eligibleCareers": [],
+    "academicCycles": "Depende de cada oferta",
+    "languageRequirements": null,
+    "requirements": [],
+    "benefits": [
+      "Concentra en un solo lugar las convocatorias CAS, de prácticas y otras del sector público",
+      "Las prácticas en el Estado cuentan como experiencia laboral (Ley 31396)"
+    ],
+    "fundingType": null,
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Buscar ofertas en talentoperu.servir.gob.pe",
+      "Revisar las bases de la oferta",
+      "Postular en la web de la entidad convocante"
+    ],
+    "officialUrl": "https://www.gob.pe/institucion/servir/campa%C3%B1as/4782-talento-peru",
+    "applicationUrl": "https://talentoperu.servir.gob.pe/",
+    "sourceUrls": [
+      "https://cdn.www.gob.pe/uploads/document/file/4667598/Preguntas%20frecuentes%20sobre%20Talento%20Per%C3%BA.pdf",
+      "https://www.leyes.congreso.gob.pe/Documentos/2021_2026/ADLP/Texto_Consolidado/31396-TXM.pdf"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": true,
+    "tags": ["empleo-publico", "practicas", "portal", "cas", "puno"]
+  },
+  {
+    "id": "mef-practicas-convomef",
+    "slug": "mef-practicas-convomef",
+    "title": "Prácticas preprofesionales y profesionales en el MEF (Convo-MEF)",
+    "organization": "Ministerio de Economía y Finanzas (MEF)",
+    "category": "sector-publico",
+    "description": "El MEF publica convocatorias de prácticas en distintas áreas a través de su plataforma en línea Convo-MEF. La postulación es totalmente virtual y la entrevista también.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": null,
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Estudiantes y egresados, según el perfil de cada convocatoria. Las carreras admitidas cambian en cada proceso; las fuentes oficiales revisadas no listan carreras.",
+    "eligibleCareers": [],
+    "academicCycles": "Depende de cada convocatoria",
+    "languageRequirements": null,
+    "requirements": [
+      "Leer las bases de cada convocatoria",
+      "Registrar la formación académica, los conocimientos técnicos y la experiencia en la plataforma"
+    ],
+    "benefits": [],
+    "fundingType": "subvencion",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Ingresar a Convo-MEF con tu DNI",
+      "Elegir \"Nueva postulación Practicante\" y descargar las bases",
+      "Completar las cinco secciones y enviar la postulación"
+    ],
+    "officialUrl": "https://apps4.mineco.gob.pe/ConvMEF/Login",
+    "applicationUrl": "https://apps4.mineco.gob.pe/ConvMEF/Login",
+    "sourceUrls": [
+      "https://www.mef.gob.pe/contenidos/convocas/MU_convocatorias_practicas_2025.pdf",
+      "https://www.mef.gob.pe/convocas/procesos_extensionu2026.php?estado=CONCLUIDAS"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Convocatorias varias veces al año.",
+    "featured": false,
+    "tags": ["practicas", "finanzas-publicas", "portal"]
+  },
+  {
+    "id": "inei-practicas",
+    "slug": "inei-practicas",
+    "title": "Prácticas preprofesionales y profesionales en el INEI (incluida la ODEI Puno)",
+    "organization": "Instituto Nacional de Estadística e Informática (INEI)",
+    "category": "sector-publico",
+    "description": "El INEI convoca prácticas a lo largo del año en Lima y en sus oficinas departamentales. En 2026 hubo una vacante de práctica preprofesional en la Oficina Departamental de Estadística e Informática de Puno (Jr. Lima 541).",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "presencial",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": "Hasta el 31 de diciembre del año de la convocatoria, renovable",
+    "eligibility": "Depende de cada convocatoria. La plaza de Puno (PRAC PRE-017-2026) pedía Ingeniería Estadística e Informática o Ingeniería Económica, no Ingeniería de Sistemas.",
+    "eligibleCareers": [],
+    "academicCycles": "Depende de cada convocatoria",
+    "languageRequirements": null,
+    "requirements": [
+      "Carta de presentación de la universidad",
+      "Ficha de postulación, declaración jurada, DNI y CV documentado"
+    ],
+    "benefits": [
+      "Subvención de S/ 1,130 mensuales en prácticas preprofesionales (2026)",
+      "Subvención de S/ 2,000 mensuales en prácticas profesionales (2026)"
+    ],
+    "fundingType": "subvencion",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Revisar las convocatorias en el portal del INEI o en Talento Perú",
+      "Registrar la ficha y los documentos en el aplicativo de convocatorias del INEI",
+      "Rendir el examen de conocimientos y la entrevista"
+    ],
+    "officialUrl": "https://www.inei.gob.pe/usuarios/convocatoria-depersonal/",
+    "applicationUrl": "https://www.inei.gob.pe/usuarios/convocatoria-depersonal/",
+    "sourceUrls": [
+      "https://www.inei.gob.pe/media/convocatoria_cas/BASES_PRAC_PRE___017_PUNO.pdf",
+      "https://www.inei.gob.pe/media/convocatoria_cas/BASES_PRO_010_2026_OTPP.pdf",
+      "https://www.inei.gob.pe/media/convocatoria_cas/BASES_PRE_024_2026_OEAF.pdf"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "Convocatorias durante todo el año.",
+    "featured": false,
+    "tags": ["practicas", "estadistica", "datos", "puno", "subvencion"]
+  },
+  {
+    "id": "poder-judicial-convocatorias",
+    "slug": "poder-judicial-convocatorias",
+    "title": "Convocatorias de personal del Poder Judicial (sistema PSEP)",
+    "organization": "Poder Judicial del Perú",
+    "category": "sector-publico",
+    "description": "El Poder Judicial publica sus convocatorias de personal (CAS y otras) en el Sistema de Postulación, Evaluación y Selección de Personal (PSEP) y en Talento Perú, tanto en Lima como en las cortes superiores, entre ellas la de Puno.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "presencial",
+    "status": "permanent",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Depende de cada convocatoria. Solo se verificó en fuente oficial una convocatoria CAS; no se verificaron convocatorias de prácticas ni perfiles para Ingeniería de Sistemas.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [],
+    "benefits": [],
+    "fundingType": "pagado",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Revisar las convocatorias en gob.pe/pj o en Talento Perú",
+      "Postular en el sistema PSEP del Poder Judicial"
+    ],
+    "officialUrl": "https://www.gob.pe/institucion/pj/informes-publicaciones/tipos/80-convocatoria-de-trabajo",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://aplicativo.pj.gob.pe/repositoriopsep/9153_AnuncioConvocatoria.pdf"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["empleo-publico", "cas", "justicia", "puno"]
+  },
+  {
+    "id": "pcm-talento-digital-cursos",
+    "slug": "pcm-talento-digital-cursos",
+    "title": "Cursos virtuales gratuitos de IA, programación web y ciberseguridad – Plataforma Nacional de Talento Digital",
+    "organization": "Presidencia del Consejo de Ministros (PCM) – Secretaría de Gobierno y Transformación Digital",
+    "category": "cursos",
+    "description": "La PCM ofrece, a través de la Plataforma Nacional de Talento Digital y en alianza con instituciones tecnológicas internacionales, cursos virtuales gratuitos de inteligencia artificial, programación web y ciberseguridad con opción de certificación internacional.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "remoto",
+    "status": "unconfirmed",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": null,
+    "duration": null,
+    "eligibility": "Estudiantes, ciudadanos, emprendedores, profesionales y servidores públicos. Las fuentes no publican fechas de inscripción ni el detalle de las certificaciones.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [],
+    "benefits": [
+      "Cursos gratuitos",
+      "Opción de certificación internacional (detalles no publicados)"
+    ],
+    "fundingType": "gratuito",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [],
+    "officialUrl": "https://www.gob.pe/institucion/pcm/noticias/1423146-pcm-lanza-cursos-virtuales-gratuitos-de-inteligencia-artificial-programacion-web-y-ciberseguridad-con-certificacion-internacional",
+    "applicationUrl": null,
+    "sourceUrls": [
+      "https://www.elperuano.pe/noticia/301119-pcm-ofrece-cursos-gratis-de-ia-y-seguridad"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": null,
+    "featured": false,
+    "tags": ["ia", "ciberseguridad", "programacion-web", "gobierno-digital", "certificacion"]
+  },
+  {
+    "id": "servir-enap-cursos-mooc",
+    "slug": "servir-enap-cursos-mooc",
+    "title": "Cursos MOOC gratuitos de la ENAP-SERVIR (incluye Transformación Digital)",
+    "organization": "Escuela Nacional de Administración Pública (ENAP) – SERVIR",
+    "category": "cursos",
+    "description": "Cursos virtuales y autoformativos de gestión pública, entre ellos Transformación Digital (24 h), Modernización de la Gestión Pública y Estructura del Estado. Al aprobarlos se obtiene un certificado oficial de la ENAP, útil para quienes quieren trabajar en el Estado.",
+    "country": "Perú",
+    "region": "peru",
+    "modality": "remoto",
+    "status": "recurring",
+    "applicationStart": null,
+    "applicationDeadline": null,
+    "deadlineTimezone": null,
+    "programStart": null,
+    "programEnd": "2026-07-12",
+    "duration": "Entre 16 y 32 horas por curso, a tu ritmo",
+    "eligibility": "Servidores públicos, estudiantes universitarios, egresados y personas interesadas en trabajar en el Estado. La oferta publicada en marzo de 2026 estuvo disponible hasta el 12/07/2026.",
+    "eligibleCareers": [],
+    "academicCycles": null,
+    "languageRequirements": null,
+    "requirements": [
+      "Nota mínima de 14 para obtener el certificado"
+    ],
+    "benefits": [
+      "Cursos gratuitos",
+      "Certificado oficial de la ENAP-SERVIR"
+    ],
+    "fundingType": "gratuito",
+    "applicationCost": "Gratuito",
+    "applicationSteps": [
+      "Inscribirse en gob.pe/cursosmooc"
+    ],
+    "officialUrl": "https://www.gob.pe/cursosmooc",
+    "applicationUrl": "https://www.gob.pe/cursosmooc",
+    "sourceUrls": [
+      "https://www.elperuano.pe/noticia/290837-quieres-trabajar-en-el-estado-inscribete-en-los-cursos-gratuitos-de-servir-y-certifica-competencias"
+    ],
+    "lastVerifiedAt": "2026-11-27",
+    "nextExpectedEdition": "La ENAP abre nuevas ofertas MOOC periódicamente; no se verificó la oferta vigente.",
+    "featured": false,
+    "tags": ["gestion-publica", "transformacion-digital", "mooc", "certificacion"]
+  }
+]

@@ -138,7 +138,7 @@ function S1(ctx: DeckContext) {
     <Frame
       n={1}
       chrome={false}
-      bleed={<AltiplanoScene className="absolute inset-0 h-full w-full" animate={ctx.animate} />}
+      bleed={<AltiplanoScene className="absolute inset-x-0 bottom-0 h-[900px] w-full" animate={ctx.animate} />}
     >
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,13,21,0.85),rgba(8,13,21,0.2)_55%,transparent)]" />
       <div className="relative flex h-full flex-col justify-between px-[120px] py-[96px]">
@@ -405,7 +405,7 @@ function S6(ctx: DeckContext) {
             <br />
             <span className="text-[#ff8f8f]">error: no hay conexión a internet</span>
             <br />
-            <span className="text-faint">// el campo no es la oficina</span>
+            <span className="text-faint">{"// el campo no es la oficina"}</span>
           </div>
           <p {...r(1, "mt-12 text-[34px]")}>
             Mi primer trabajo: <span className="font-semibold text-gold">ECOING</span>
@@ -1060,7 +1060,7 @@ function S25(ctx: DeckContext) {
     <Frame
       n={25}
       chrome={false}
-      bleed={<AltiplanoScene className="absolute inset-0 h-full w-full opacity-60" tone="dawn" labels={false} animate={ctx.animate} />}
+      bleed={<AltiplanoScene className="absolute inset-x-0 bottom-0 h-[900px] w-full opacity-60" tone="dawn" labels={false} animate={ctx.animate} />}
     >
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,13,21,0.95)_40%,rgba(8,13,21,0.5))]" />
       <div className="relative grid h-full grid-cols-[1fr_auto] items-center gap-[100px] px-[120px]">

@@ -87,6 +87,7 @@ export function Deck({ ctx, initial }: { ctx: Omit<DeckContext, "animate">; init
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const mq = window.matchMedia("(max-width: 820px) and (orientation: portrait)");
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- depende del viewport del navegador
     if (params.get("modo") === "lectura" || mq.matches) setReading(true);
   }, []);
 
@@ -146,7 +147,7 @@ export function Deck({ ctx, initial }: { ctx: Omit<DeckContext, "animate">; init
     hideTimeout.current = setTimeout(() => setChrome(false), 2600);
   }, []);
   useEffect(() => {
-    poke();
+    hideTimeout.current = setTimeout(() => setChrome(false), 2600);
     return () => {
       if (hideTimeout.current) clearTimeout(hideTimeout.current);
     };

@@ -11,7 +11,8 @@ const H = 900;
 const LAKE_Y = 600;
 
 function rand(seed: number) {
-  let s = seed;
+  let s = (Math.imul(seed ^ 0x9e3779b9, 2654435761) >>> 0) % 2147483646 + 1;
+  for (let i = 0; i < 4; i++) s = (s * 16807) % 2147483647;
   return () => {
     s = (s * 16807) % 2147483647;
     return (s - 1) / 2147483646;
@@ -83,6 +84,7 @@ export function AltiplanoScene({
   labels = true,
   tone = "night",
   animate = true,
+  align = "xMidYMax",
 }: {
   className?: string;
   connections?: boolean;
@@ -90,12 +92,13 @@ export function AltiplanoScene({
   labels?: boolean;
   tone?: "night" | "dawn";
   animate?: boolean;
+  align?: "xMidYMax" | "xMaxYMax";
 }) {
   const dawn = tone === "dawn";
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
-      preserveAspectRatio="xMidYMax slice"
+      preserveAspectRatio={`${align} slice`}
       className={className}
       role="img"
       aria-label="Ilustración del altiplano y el lago Titicaca con líneas que conectan Puno con el mundo"
